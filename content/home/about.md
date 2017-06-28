@@ -13,7 +13,7 @@ weight = 1
 [interests]
   interests = [
     "Reproducible Research",
-    "Computational Statistics",
+    "Statistical Computing",
     "Machine Learning",
     "Data Visualization"
   ]
@@ -38,4 +38,4 @@ weight = 1
 
 # Biography
 
-Samuel Bohman is a PhD student in the department of Computer and Systems Sciences at Stockholm University. He specializes in reproducible research, statistical computing, and data visualization. 
+Samuel Bohman is a PhD student in the department of Computer and Systems Sciences at Stockholm University. He specializes in reproducible research, statistical computing, machine learning, and data visualization. 
