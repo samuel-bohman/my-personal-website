@@ -20,8 +20,8 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "Samuel Bohman"
-  role = "PhD student in Computer Science"
-  organization = "Stockholm University"
+  role = "PhD student"
+  organization = "Department of Computer and Systems Sciences, Stockholm University"
   organization_url = "http://www.su.se/"
   gravatar = true  # Get your avatar from Gravatar.com? (true/false)
   avatar = "Samuel.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
