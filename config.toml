@@ -1,12 +1,12 @@
-baseurl = "https://example.com/"  # End your URL with a `/` trailing slash.
-title = "Academic"
-copyright = "&copy; 2016 Samuel Bohman"
+baseurl = "https://samuel.netlify.com/"  # End your URL with a `/` trailing slash.
+title = "Samuel Bohman"
+copyright = "&copy; 2017 Samuel Bohman"
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
 
 # Enable comments by entering your Disqus shortname
-disqusShortname = ""
+disqusShortname = "samuelbohman"
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
@@ -20,14 +20,14 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "Samuel Bohman"
-  role = "PhD Student in Computer Science"
+  role = "PhD student in Computer Science"
   organization = "Stockholm University"
   organization_url = "http://www.su.se/"
-  gravatar = false  # Get your avatar from Gravatar.com? (true/false)
+  gravatar = true  # Get your avatar from Gravatar.com? (true/false)
   avatar = "Samuel.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "samboh@dsv.su.se"
   address = "Borgarfjordsgatan 12, 164 07 Kista, Sweden"
-  office_hours = "Monday 10:00 to 13:00 or email for appointment"
+  office_hours = "Contact me through email for appointment"
   phone = "+46 8 16 20 00"
   skype = "samuel.bohman"
   telegram = ""
@@ -136,7 +136,7 @@ defaultContentLanguageInSubdir = false
   [[params.social]]
     icon = "google-scholar"
     icon_pack = "ai"
-    link = "https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ"
+    link = "https://scholar.google.co.uk/citations?user=g0fk-dcAAAAJ&hl=sv&oi=ao"
 
   [[params.social]]
     icon = "github"

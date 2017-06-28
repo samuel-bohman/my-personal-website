@@ -1,7 +1,7 @@
 +++
 # About/Biography widget.
 
-date = "2016-04-20T00:00:00"
+date = "2012-12-18T00:00:00"
 draft = false
 
 widget = "about"
@@ -12,8 +12,8 @@ weight = 1
 # List your academic interests.
 [interests]
   interests = [
-    "Statistics",
-    "Data Science",
+    "Reproducible Research",
+    "Computational Statistics",
     "Machine Learning",
     "Data Visualization"
   ]
@@ -25,7 +25,7 @@ weight = 1
   year = 2017
 
 [[education.courses]]
-  course = "MSc in Decision, Risk and Policy Analysis"
+  course = "MSc in Decision Analysis"
   institution = "Stockholm University"
   year = 2009
 
@@ -38,4 +38,6 @@ weight = 1
 
 # Biography
 
-Samuel Bohman is a PhD Student in the department of Computer and Systems Sciences at Stockholm University, Sweden. His research interests include Data Science and Data Visualization. He primarily relies on R as a statistical workbench. 
+Samuel Bohman is a PhD student in the department of Computer and Systems Sciences at Stockholm University. He specializes in reproducible research, statistical computing, and data visualization. 
+
+This site is created with the blogdown, Hugo, Markdown, Github, Netlify stack. The Markdown source files are hosted on Github. 
