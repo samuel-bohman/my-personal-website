@@ -26,9 +26,9 @@ defaultContentLanguageInSubdir = false
   gravatar = true  # Get your avatar from Gravatar.com? (true/false)
   avatar = "Samuel.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "samboh@dsv.su.se"
-  address = ""
+  address = "Borgarfjordsgatan 12 (Nodhuset), Campus Kista"
   office_hours = ""
-  phone = ""
+  phone = "08-16 20 00"
   telegram = ""
   skype = "samuel.bohman"
   twitter = "samuelbohman"
@@ -154,6 +154,11 @@ defaultContentLanguageInSubdir = false
     icon = "orcid"
     icon_pack = "ai"
     link = "http://orcid.org/0000-0002-5179-1223"
+    
+  [[params.social]]
+    icon = "researchgate"
+    icon_pack = "ai"
+    link = "https://www.researchgate.net/profile/Samuel_Bohman"
 
 
 # Navigation Links
