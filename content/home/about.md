@@ -22,7 +22,7 @@ weight = 1
 [[education.courses]]
   course = "PhD in Computer Science"
   institution = "Stockholm University"
-  year = 2017
+  year = 2018
 
 [[education.courses]]
   course = "MSc in Decision Analysis"
@@ -38,4 +38,4 @@ weight = 1
 
 # Biography
 
-Samuel Bohman is a PhD student in the department of Computer and Systems Sciences at Stockholm University. He specializes in reproducible research, statistical computing, machine learning, and data visualization. 
+Samuel Bohman is a PhD student in the department of Computer and Systems Sciences at Stockholm University. His research interests include reproducible research, statistical computing, machine learning, and data visualization. 
