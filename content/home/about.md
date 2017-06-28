@@ -36,6 +36,6 @@ weight = 1
  
 +++
 
-# Biography
+# About me
 
 Samuel Bohman is a PhD student in the department of Computer and Systems Sciences at Stockholm University. His research interests include reproducible research, statistical computing, machine learning, and data visualization. 
