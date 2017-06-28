@@ -20,17 +20,19 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "Samuel Bohman"
-  role = "PhD student in Computer Science"
+  role = "PhD student"
   organization = "Stockholm University"
-  organization_url = "http://www.su.se/"
+  organization_url = "http://www.dsv.su.se/"
   gravatar = true  # Get your avatar from Gravatar.com? (true/false)
   avatar = "Samuel.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "samboh@dsv.su.se"
-  address = "Borgarfjordsgatan 12, 164 07 Kista, Sweden"
-  office_hours = "Contact me through email for appointment"
-  phone = "+46 8 16 20 00"
-  skype = "samuel.bohman"
+  address = ""
+  office_hours = ""
+  phone = ""
   telegram = ""
+  skype = "samuel.bohman"
+  twitter = "samuelbohman"
+  github = "samuel-bohman"
 
   # Enable Keybase in Contact section by entering your keybase.io username.
   keybase = ""
@@ -142,6 +144,16 @@ defaultContentLanguageInSubdir = false
     icon = "github"
     icon_pack = "fa"
     link = "//github.com/samuel-bohman"
+    
+  [[params.social]]
+    icon = "impactstory"
+    icon_pack = "ai"
+    link = "https://profiles.impactstory.org/u/0000-0002-5179-1223"
+    
+  [[params.social]]
+    icon = "orcid"
+    icon_pack = "ai"
+    link = "http://orcid.org/0000-0002-5179-1223"
 
 
 # Navigation Links
