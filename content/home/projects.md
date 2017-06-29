@@ -10,7 +10,7 @@ subtitle = ""
 widget = "projects"
 
 # Order that this section will appear in.
-weight = 50
+weight = 40
 
 # View.
 # Customize how projects are displayed.
@@ -26,12 +26,16 @@ view = 1
   tag = "*"
   
 [[filter]]
-  name = "Deep Learning"
-  tag = ".deep-learning"
+  name = "R"
+  tag = ".r"
+  
+[[filter]]
+  name = "jQuery"
+  tag = ".jquery"
 
 [[filter]]
   name = "Other"
-  tag = ".demo"
+  tag = ".other"
 
 +++
 

@@ -160,10 +160,10 @@ defaultContentLanguageInSubdir = false
     icon_pack = "ai"
     link = "http://orcid.org/0000-0002-5179-1223"
     
-  [[params.social]]
-    icon = "researchgate"
-    icon_pack = "ai"
-    link = "https://www.researchgate.net/profile/Samuel_Bohman"
+#  [[params.social]]
+#    icon = "researchgate"
+#    icon_pack = "ai"
+#    link = "https://www.researchgate.net/profile/Samuel_Bohman"
 
 
 # Navigation Links

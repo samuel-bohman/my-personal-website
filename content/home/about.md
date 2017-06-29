@@ -38,4 +38,4 @@ weight = 1
 
 # About me
 
-Samuel Bohman is a PhD student in the department of Computer and Systems Sciences at Stockholm University. His research interests include reproducible research, statistical computing, machine learning, and data visualization. 
+My research interests include reproducible research, statistical computing, machine learning, and data visualization. I am passionate about open source software, in particular [R](https://cran.r-project.org/), an interpreted computer language and environment for statistical computing and graphics. Some of my favorite tools that I use almost everyday include the [RStudio IDE](https://www.rstudio.com/), the [tidyverse](http://tidyverse.org/) collection of R packages, and [GitHub](https://github.com/samuel-bohman). In my spare time I enjoy training, traveling, hiking, backpacking, fishing, birdwatching, and other outdoor or wilderness experiences. The picture to the left is taken in Rio de Janeiro, Brazil in 2015.
