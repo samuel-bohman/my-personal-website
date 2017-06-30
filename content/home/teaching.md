@@ -14,13 +14,13 @@ weight = 60
 
 +++
 
-My **teaching** and **examination** experience include the following courses:
+I have been teaching the following courses at Stockholm University:  
 
 - DSA: Decision Support and Analysis
 - BRA: Decision and Risk Analysis
 - DSK2-PRJ: Project in Software Engineering
 
-My thesis **supervision** experience include the following students:
+I have been supervising the following students:  
 
 J. Hofhuis,  *Problems in Performance Measurement Systems Development*  
 M. Hussain, A. Tjernquist, *Self-Service BI and Business Value*  
