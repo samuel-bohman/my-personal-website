@@ -1,2 +1,2 @@
 # My Personal Website
-This is a repository for the source files of my personal website: https://samuel.netlify.com/
+This is the source repository of my personal website. The website is generated via [blogdown](https://github.com/rstudio/blogdown) and deployed on [Netlify](https://www.netlify.com/).
