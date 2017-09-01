@@ -30,6 +30,10 @@ view = 1
   tag = ".r"
   
 [[filter]]
+  name = "Datasets"
+  tag = ".datasets"
+  
+[[filter]]
   name = "jQuery"
   tag = ".jquery"
 
