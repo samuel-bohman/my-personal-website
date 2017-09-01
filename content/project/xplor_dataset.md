@@ -16,7 +16,7 @@ image_preview = "bubbles.jpg"
 tags = ["datasets"]
 
 # Optional external URL for project (replaces project detail page).
-external_link = "https://data.world/samuel-bohman/2015-upplands-vasby-municipality"
+# external_link = "https://data.world/samuel-bohman/2015-upplands-vasby-municipality"
 
 # Does the project detail page use math formatting?
 math = false
