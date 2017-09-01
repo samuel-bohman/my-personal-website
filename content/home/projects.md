@@ -37,9 +37,9 @@ view = 1
   name = "jQuery"
   tag = ".jquery"
 
-[[filter]]
-  name = "Other"
-  tag = ".other"
+# [[filter]]
+#   name = "Other"
+#   tag = ".other"
 
 +++
 

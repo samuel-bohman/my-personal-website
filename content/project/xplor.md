@@ -3,10 +3,10 @@
 date = "2017-06-29"
 
 # Project title.
-title = "xplor: Upplands Väsby Data Explorer"
+title = "Upplands Väsby Data Explorer"
 
 # Project summary to display on homepage.
-summary = "Upplands Väsby Data Explorer is an application for data exploration and visualization built using R. The software is under active development, which means that there may be bugs, incomplete features, or polish required in various areas."
+summary = "Upplands Väsby Data Explorer is an application for data exploration and visualization built using R."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "bubbles.jpg"
