@@ -13,7 +13,7 @@ image_preview = "bubbles.jpg"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["data", "data.world", "survey"]
+tags = ["datasets"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = "https://data.world/samuel-bohman/2015-upplands-vasby-municipality"

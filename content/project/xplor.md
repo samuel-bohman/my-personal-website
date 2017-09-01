@@ -13,7 +13,7 @@ image_preview = "bubbles.jpg"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["r", "shiny", "data-visualization"]
+tags = ["r"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = "https://xplor2.shinyapps.io/xplor/"
