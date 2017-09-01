@@ -6,7 +6,7 @@ date = "2017-09-01"
 title = "Upplands Väsby Citizen Survey Dataset"
 
 # Project summary to display on homepage.
-summary = "This dataset was collected through an experimental online questionnaire in Upplands Väsby municipality in Sweden. It was anonymized to ensure the confidentiality and privacy of the study subjects. The dataset contains 1032 rows and 69 columns."
+summary = "This dataset was collected through an experimental online questionnaire in Upplands Väsby municipality in Sweden."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "bubbles.jpg"
