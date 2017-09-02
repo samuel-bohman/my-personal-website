@@ -14,15 +14,15 @@ caption = ""
 
 +++
 
-A couple of days ago I stumpled upon [blogdown](https://github.com/rstudio/blogdown) and I was immediatly convinced to transition to Hugo with its help. The previous version of my website was hosted on WordPress. Thanks to the [blogdown book](https://bookdown.org/yihui/blogdown/) the setup was quite easy: it took me about a days work. However, the migration from WordPress to Hugo via Jekyll using the python tool [exitwp](https://github.com/thomasf/exitwp) did not fully succeed (I lost all the comments). Since I did not want to spend too much time on it, I decided to leave [my old WordPress website](http://samboh.blogs.dsv.su.se/) as is, and start afresh with my new Hugo website. Once all is set up, the work process is really simple.
+A couple of days ago I stumpled upon [blogdown](https://github.com/rstudio/blogdown) and I was immediatly convinced to transition from WordPress to [Hugo](https://gohugo.io/) with its help. Thanks to the [blogdown book](https://bookdown.org/yihui/blogdown/) the setup was easy: it took me about a day's work. However, the migration from WordPress to Hugo via Jekyll using the Python tool [exitwp](https://github.com/thomasf/exitwp) did not fully succeed (I lost all the comments). Since I did not want to spend too much time on this problem, I decided to leave [my old WordPress website](http://samboh.blogs.dsv.su.se/) and start anew with Hugo. Once everything is set up and running, the work process is really smooth and enjoyable.
 
 In a nutshell, this is my work process: 
 
-1. Blogdown: I write all blog posts in [R Markdown](http://rmarkdown.rstudio.com/) using [RStudio IDE](https://www.rstudio.com/products/RStudio/) and the blogdown package. 
-2. GitHub: Then, I push all source files to [my-personal-website](https://github.com/samuel-bohman/my-personal-website) repository.
-3. Netlify: Each time new content is pushed to my GitHub repository, Netlify automatically updates [my new website](https://samuel.netlify.com/) (this one!) through a webhook. 
+1. Blogdown: I write all blog posts in [R Markdown](http://rmarkdown.rstudio.com/) using [RStudio IDE](https://www.rstudio.com/products/RStudio/). 
+2. GitHub: Then, I push all new content to my-personal-website repository on [GitHub](https://github.com/samuel-bohman/my-personal-website).
+3. Netlify: Each time new content is pushed to GitHub, Netlify automatically updates [my new website](https://samuel.netlify.com/) (this one!) through a webhook. It only takes about 30 seconds or so for the new content to be generated. 
 
-For more information and tutorials, I suggest the following resources:  
+For more detailed information and tutorials, I suggest the following resources:  
 
 - [Up and running with blogdown](https://apreshill.rbind.io/post/up-and-running-with-blogdown/) by Alison Presmanes Hill  
 - [Making a Website Using Blogdown, Hugo, and GitHub pages](https://proquestionasker.github.io/blog/Making_Site/) by Amber Thomas  
