@@ -28,18 +28,30 @@ view = 1
 [[filter]]
   name = "R"
   tag = ".r"
+
+[[filter]]
+  name = "Python"
+  tag = ".python"
   
 [[filter]]
-  name = "Datasets"
-  tag = ".datasets"
+  name = "Scala"
+  tag = ".scala"
+  
+[[filter]]
+  name = "SQL"
+  tag = ".sql"
+  
+[[filter]]
+  name = "C++"
+  tag = ".cpp"
   
 [[filter]]
   name = "jQuery"
   tag = ".jquery"
 
-# [[filter]]
-#   name = "Other"
-#   tag = ".other"
+[[filter]]
+  name = "Other"
+  tag = ".other"
 
 +++
 
