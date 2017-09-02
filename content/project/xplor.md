@@ -9,7 +9,7 @@ title = "Upplands Väsby Data Explorer"
 summary = "Upplands Väsby Data Explorer is a web application built in R for data exploration and visualization."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
-image_preview = "bubbles.jpg"
+image_preview = "Rlogo.png"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
