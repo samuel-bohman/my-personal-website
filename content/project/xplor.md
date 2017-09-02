@@ -6,7 +6,7 @@ date = "2017-06-29"
 title = "Upplands Väsby Data Explorer"
 
 # Project summary to display on homepage.
-summary = "Upplands Väsby Data Explorer is a web application built in R for data exploration and visualization."
+summary = "Upplands Väsby Data Explorer is a web application for data exploration and visualization built in R and Shiny."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "shiny-200x232.png"
