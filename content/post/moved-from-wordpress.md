@@ -14,7 +14,7 @@ caption = ""
 
 +++
 
-A couple of days ago I stumpled upon [blogdown](https://github.com/rstudio/blogdown) and I was immediatly convinced to transition from WordPress to [Hugo](https://gohugo.io/) with its help. Thanks to the [blogdown book](https://bookdown.org/yihui/blogdown/) the setup was easy: it took me about a day's work. However, the migration from WordPress to Hugo via Jekyll using the Python tool [exitwp](https://github.com/thomasf/exitwp) did not fully succeed (I lost all the comments). Since I did not want to spend too much time on this problem, I decided to leave [my old WordPress website](http://samboh.blogs.dsv.su.se/) and start anew with Hugo. Once everything is set up and running, the work process is really smooth and enjoyable.
+A couple of days ago I stumpled upon [blogdown](https://github.com/rstudio/blogdown) and I was immediatly convinced to transition from WordPress to [Hugo](https://gohugo.io/), a static website generator, with its help. Thanks to the [blogdown book](https://bookdown.org/yihui/blogdown/) the setup was easy: it took me about a day's work. However, the migration from WordPress to Hugo via Jekyll using the Python tool [exitwp](https://github.com/thomasf/exitwp) did not fully succeed (I lost all the comments). Since I did not want to spend too much time on this problem, I decided to leave [my old WordPress website](http://samboh.blogs.dsv.su.se/) and start anew with Hugo. Once everything is set up and running, the work process is really smooth and enjoyable. Hugo’s is extremely fast and takes the fun back into site-building. Writing text in markdown and deploying with git is how I as a computer scientist like to make content. 
 
 In a nutshell, this is my work process: 
 
