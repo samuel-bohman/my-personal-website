@@ -20,7 +20,7 @@ In a nutshell, this is my work process:
 
 1. Blogdown: I write all blog posts in [R Markdown](http://rmarkdown.rstudio.com/) using [RStudio IDE](https://www.rstudio.com/products/RStudio/). 
 2. GitHub: Then, I push all new content to my-personal-website repository on [GitHub](https://github.com/samuel-bohman/my-personal-website).
-3. Netlify: Each time new content is pushed to GitHub, Netlify automatically updates [my new website](https://samuel.netlify.com/) (this one!) through a webhook. It only takes about 30 seconds or so for the new content to be generated. 
+3. Netlify: Each time new content is pushed to GitHub, Netlify automatically updates [my new website](https://samuel.netlify.com/) (this one!) through a webhook. It only takes about 10 seconds or so for the new content to be generated. 
 
 For more detailed information and tutorials, I suggest the following resources:  
 
