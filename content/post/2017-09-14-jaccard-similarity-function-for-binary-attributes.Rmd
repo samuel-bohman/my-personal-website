@@ -13,6 +13,8 @@ summary: "Simple function for calculating the Jaccard index and the complementar
 
 Simple function for calculating the Jaccard index (similarity coefficient) and the complementary Jaccard distance for binary attributes. 
 
+The function takes two arguments: `x` a dataframe or matrix object, and `m` the `MARGIN` argument used in the `apply` function. If your data is in wide format similar to dataset `df1` set `m = 2` to instruct `apply` to apply `sum` over the columns. If your data is in long format similar to dataset `df2` set `m = 1` to instruct `apply` to apply `sum` over the rows. 
+
 ```{r}
 df1 <- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
 row.names(df1) <- c("A", "B")
@@ -40,8 +42,6 @@ jaccard <- function(x, m) {
   } else break
 }
 ```
-
-The function takes two arguments: `x` a dataframe or matrix object, and `m` the `MARGIN` argument used in the `apply` function. If your data is in wide format similar to dataset `df1` you set `m = 2` to instruct `apply` to apply `sum` over the columns. If your data is in long format similar to dataset `df2` you set `m = 1` to instruct `apply` to apply `sum` over the rows. 
 
 ```{r}
 jaccard(df1, 2)
