@@ -11,7 +11,7 @@ output:
 summary: "Simple function for calculating the Jaccard index and the complementary Jaccard distance for binary attributes."
 ---
 
-Simple function for calculating the Jaccard index (similarity coefficient) and the complementary Jaccard distance (dissimilarity coefficient) for binary attributes.
+Simple function for calculating the Jaccard index (similarity coefficient) and the complementary Jaccard distance for binary attributes. 
 
 ```{r}
 library(MASS)
