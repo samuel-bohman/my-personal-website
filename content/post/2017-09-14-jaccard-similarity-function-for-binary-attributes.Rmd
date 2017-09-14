@@ -1,0 +1,49 @@
+---
+title: Jaccard index function for binary attributes
+author: Samuel Bohman
+date: '2017-09-14'
+slug: jaccard-similarity-function
+categories: []
+tags:
+  - r
+---
+
+Simple function for calculating the Jaccard index (similarity coefficient) and the complementary Jaccard distance (dissimilarity coefficient) for binary attributes: 
+
+```{r}
+library(MASS)
+
+df1 <- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
+row.names(df1) <- c("A", "B")
+
+df2 <- data.frame(
+  IDS = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
+  CESD = c(1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
+
+jaccard <- function(df, margin) {
+  if (margin == 1 | margin == 2) {
+    M_00 <- apply(df, margin, sum) == 0
+    M_11 <- apply(df, margin, sum) == 2
+    if (margin == 1) {
+      df <- df[!M_00, ]
+      JSim <- sum(M_11) / nrow(df)
+    } else {
+      df <- df[, !M_00]
+      JSim <- sum(M_11) / length(df)
+    }
+    JDist <- 1 - JSim
+    return(c(JSim = JSim, JDist = JDist))
+  } else break
+}
+```
+
+The function takes two arguments, `df` a dataframe or matrix object, and `margin` which is the `MARGIN` argument used by the `apply` function. 
+
+```{r}
+jaccard(df1, 2)
+```
+
+```{r}
+jaccard(df2, 1)
+```
+
