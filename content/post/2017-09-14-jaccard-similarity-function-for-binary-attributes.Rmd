@@ -14,8 +14,6 @@ summary: "Simple function for calculating the Jaccard index and the complementar
 Simple function for calculating the Jaccard index (similarity coefficient) and the complementary Jaccard distance for binary attributes. 
 
 ```{r}
-library(MASS)
-
 df1 <- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
 row.names(df1) <- c("A", "B")
 
