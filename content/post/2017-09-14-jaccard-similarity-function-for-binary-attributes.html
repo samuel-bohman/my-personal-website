@@ -22,22 +22,22 @@ df2 &lt;- data.frame(
   IDS = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
   CESD = c(1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
 
-jaccard &lt;- function(df, margin) {
-  if (margin == 1 | margin == 2) {
-    M_00 &lt;- apply(df, margin, sum) == 0
-    M_11 &lt;- apply(df, margin, sum) == 2
-    if (margin == 1) {
-      df &lt;- df[!M_00, ]
-      JSim &lt;- sum(M_11) / nrow(df)
+jaccard &lt;- function(x, m) {
+  if (m == 1 | m == 2) {
+    M_00 &lt;- apply(x, m, sum) == 0
+    M_11 &lt;- apply(x, m, sum) == 2
+    if (m == 1) {
+      x &lt;- x[!M_00, ]
+      JSim &lt;- sum(M_11) / nrow(x)
     } else {
-      df &lt;- df[, !M_00]
-      JSim &lt;- sum(M_11) / length(df)
+      x &lt;- x[, !M_00]
+      JSim &lt;- sum(M_11) / length(x)
     }
     JDist &lt;- 1 - JSim
     return(c(JSim = JSim, JDist = JDist))
   } else break
 }</code></pre>
-<p>The function takes two arguments, <code>df</code> a dataframe or matrix object, and <code>margin</code> which is the <code>MARGIN</code> argument used in the <code>apply</code> function.</p>
+<p>The function takes two arguments: <code>x</code> a dataframe or matrix object, and <code>m</code> the <code>MARGIN</code> argument used in the <code>apply</code> function.</p>
 <pre class="r"><code>jaccard(df1, 2)</code></pre>
 <pre><code>##  JSim JDist 
 ##   0.2   0.8</code></pre>
