@@ -34,10 +34,6 @@ view = 1
   tag = ".python"
   
 [[filter]]
-  name = "Scala"
-  tag = ".scala"
-  
-[[filter]]
   name = "SQL"
   tag = ".sql"
   
