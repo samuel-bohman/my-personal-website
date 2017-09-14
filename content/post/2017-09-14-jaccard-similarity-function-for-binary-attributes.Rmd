@@ -4,6 +4,7 @@ author: Samuel Bohman
 date: '2017-09-14'
 tags:
   - r
+  - jaccard
 slug: jaccard-similarity-function-for-binary-attributes
 output:
   blogdown::html_page
