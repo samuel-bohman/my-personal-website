@@ -41,7 +41,7 @@ jaccard <- function(x, m) {
 }
 ```
 
-The function takes two arguments: `x` a dataframe or matrix object, and `m` the `MARGIN` argument used in the `apply` function. 
+The function takes two arguments: `x` a dataframe or matrix object, and `m` the `MARGIN` argument used in the `apply` function. If your data is in wide format similar to dataset `df1` you set `m = 2` to instruct `apply` to apply `sum` over the columns. If your data is in long format similar to dataset `df2` you set `m = 1` to instruct `apply` to apply `sum` over the rows. 
 
 ```{r}
 jaccard(df1, 2)

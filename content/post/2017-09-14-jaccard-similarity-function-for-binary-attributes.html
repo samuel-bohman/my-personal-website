@@ -47,7 +47,7 @@ head(df2)</code></pre>
     return(c(JSim = JSim, JDist = JDist))
   } else break
 }</code></pre>
-<p>The function takes two arguments: <code>x</code> a dataframe or matrix object, and <code>m</code> the <code>MARGIN</code> argument used in the <code>apply</code> function.</p>
+<p>The function takes two arguments: <code>x</code> a dataframe or matrix object, and <code>m</code> the <code>MARGIN</code> argument used in the <code>apply</code> function. If your data is in wide format similar to dataset <code>df1</code> you set <code>m = 2</code> to instruct <code>apply</code> to apply <code>sum</code> over the columns. If your data is in long format similar to dataset <code>df2</code> you set <code>m = 1</code> to instruct <code>apply</code> to apply <code>sum</code> over the rows.</p>
 <pre class="r"><code>jaccard(df1, 2)</code></pre>
 <pre><code>##  JSim JDist 
 ##   0.2   0.8</code></pre>
