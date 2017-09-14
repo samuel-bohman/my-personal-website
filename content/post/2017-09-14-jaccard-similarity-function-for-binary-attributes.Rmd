@@ -5,6 +5,8 @@ date: '2017-09-14'
 tags:
   - r
 slug: jaccard-similarity-function-for-binary-attributes
+output:
+  blogdown::html_page
 ---
 
 Simple function for calculating the Jaccard index (similarity coefficient) and the complementary Jaccard distance (dissimilarity coefficient) for binary attributes: 
