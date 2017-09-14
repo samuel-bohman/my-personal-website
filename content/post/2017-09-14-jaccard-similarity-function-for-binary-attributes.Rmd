@@ -16,11 +16,13 @@ Simple function for calculating the Jaccard index (similarity coefficient) and t
 ```{r}
 df1 <- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
 row.names(df1) <- c("A", "B")
+head(df1)
 
 # Example data from https://stats.stackexchange.com/questions/176613/jaccard-similarity-in-r
 df2 <- data.frame(
   IDS = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
   CESD = c(1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
+head(df2)
 
 jaccard <- function(x, m) {
   if (m == 1 | m == 2) {
