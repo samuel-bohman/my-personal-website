@@ -34,16 +34,12 @@ view = 1
   tag = ".python"
   
 [[filter]]
+  name = "Julia"
+  tag = ".julia"
+  
+[[filter]]
   name = "SQL"
   tag = ".sql"
-  
-[[filter]]
-  name = "C++"
-  tag = ".cpp"
-  
-[[filter]]
-  name = "jQuery"
-  tag = ".jquery"
 
 [[filter]]
   name = "Other"
