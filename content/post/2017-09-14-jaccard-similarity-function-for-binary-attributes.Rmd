@@ -24,7 +24,7 @@ head(df1)
 
 df2 <- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
 row.names(df2) <- c("A", "B")
-head(df2)
+df2
 
 jaccard <- function(x, m) {
   if (m == 1 | m == 2) {
