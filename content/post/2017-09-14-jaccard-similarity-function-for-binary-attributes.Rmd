@@ -13,17 +13,17 @@ summary: "Simple function for calculating the Jaccard similarity and the complem
 
 Simple function for calculating the Jaccard similarity and the complementary Jaccard distance for binary attributes. 
 
-The function takes two arguments: `x` a dataframe or matrix object, and `m` the `MARGIN` argument used in the `apply` function. If your data is in wide format similar to  `df1` set `m = 2` to apply `sum` over the columns. If your data is in long format similar to `df2` set `m = 1` to apply `sum` over the rows. 
+The function takes two arguments: `x` a dataframe or matrix object, and `m` the `MARGIN` argument used in the `apply` function. If your data is in long format similar to `df1` set `m = 1` to apply `sum` over the rows. If your data is in wide format similar to  `df2` set `m = 2` to apply `sum` over the columns. 
 
 ```{r}
-df1 <- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
-row.names(df1) <- c("A", "B")
-head(df1)
-
 # Example data from https://stats.stackexchange.com/questions/176613/jaccard-similarity-in-r
-df2 <- data.frame(
+df1 <- data.frame(
   IDS = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
   CESD = c(1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
+head(df1)
+
+df2 <- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
+row.names(df2) <- c("A", "B")
 head(df2)
 
 jaccard <- function(x, m) {
@@ -44,10 +44,10 @@ jaccard <- function(x, m) {
 ```
 
 ```{r}
-jaccard(df1, 2)
+jaccard(df1, 1)
 ```
 
 ```{r}
-jaccard(df2, 1)
+jaccard(df2, 2)
 ```
 

@@ -14,18 +14,12 @@ summary: "Simple function for calculating the Jaccard similarity and the complem
 
 
 <p>Simple function for calculating the Jaccard similarity and the complementary Jaccard distance for binary attributes.</p>
-<p>The function takes two arguments: <code>x</code> a dataframe or matrix object, and <code>m</code> the <code>MARGIN</code> argument used in the <code>apply</code> function. If your data is in wide format similar to <code>df1</code> set <code>m = 2</code> to apply <code>sum</code> over the columns. If your data is in long format similar to <code>df2</code> set <code>m = 1</code> to apply <code>sum</code> over the rows.</p>
-<pre class="r"><code>df1 &lt;- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
-row.names(df1) &lt;- c(&quot;A&quot;, &quot;B&quot;)
-head(df1)</code></pre>
-<pre><code>##   Q1 Q2 Q3 Q4 Q5 Q6
-## A  1  0  0  1  1  0
-## B  0  1  1  0  1  0</code></pre>
+<p>The function takes two arguments: <code>x</code> a dataframe or matrix object, and <code>m</code> the <code>MARGIN</code> argument used in the <code>apply</code> function. If your data is in long format similar to <code>df1</code> set <code>m = 1</code> to apply <code>sum</code> over the rows. If your data is in wide format similar to <code>df2</code> set <code>m = 2</code> to apply <code>sum</code> over the columns.</p>
 <pre class="r"><code># Example data from https://stats.stackexchange.com/questions/176613/jaccard-similarity-in-r
-df2 &lt;- data.frame(
+df1 &lt;- data.frame(
   IDS = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 
   CESD = c(1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
-head(df2)</code></pre>
+head(df1)</code></pre>
 <pre><code>##   IDS CESD
 ## 1   1    1
 ## 2   1    1
@@ -33,6 +27,12 @@ head(df2)</code></pre>
 ## 4   1    0
 ## 5   1    1
 ## 6   1    1</code></pre>
+<pre class="r"><code>df2 &lt;- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
+row.names(df2) &lt;- c(&quot;A&quot;, &quot;B&quot;)
+head(df2)</code></pre>
+<pre><code>##   Q1 Q2 Q3 Q4 Q5 Q6
+## A  1  0  0  1  1  0
+## B  0  1  1  0  1  0</code></pre>
 <pre class="r"><code>jaccard &lt;- function(x, m) {
   if (m == 1 | m == 2) {
     M_00 &lt;- apply(x, m, sum) == 0
@@ -48,9 +48,9 @@ head(df2)</code></pre>
     return(c(JSim = JSim, JDist = JDist))
   } else break
 }</code></pre>
-<pre class="r"><code>jaccard(df1, 2)</code></pre>
-<pre><code>##  JSim JDist 
-##   0.2   0.8</code></pre>
-<pre class="r"><code>jaccard(df2, 1)</code></pre>
+<pre class="r"><code>jaccard(df1, 1)</code></pre>
 <pre><code>##      JSim     JDist 
 ## 0.1860465 0.8139535</code></pre>
+<pre class="r"><code>jaccard(df2, 2)</code></pre>
+<pre><code>##  JSim JDist 
+##   0.2   0.8</code></pre>
