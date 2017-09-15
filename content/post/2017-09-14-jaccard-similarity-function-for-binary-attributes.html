@@ -1,19 +1,19 @@
 ---
-title: Jaccard similarity function for binary attributes
+title: Jaccard index function for binary attributes
 author: Samuel Bohman
 date: '2017-09-14'
 tags:
   - r
-  - jaccard-similarity
-slug: jaccard-similarity-function-for-binary-attributes
+  - jaccard-index
+slug: jaccard-index-function-for-binary-attributes
 output:
   blogdown::html_page
-summary: "Simple function for calculating the Jaccard similarity and the complementary Jaccard distance for binary attributes."
+summary: "Simple function for calculating the Jaccard index (similarity) for binary attributes."
 ---
 
 
 
-<p>Simple function for calculating the Jaccard similarity and the complementary Jaccard distance for binary attributes.</p>
+<p>Function for calculating the Jaccard index (similarity) and the complementary Jaccard distance for binary attributes.</p>
 <p>The function takes two arguments: <code>x</code> a dataframe or matrix object, and <code>m</code> the <code>MARGIN</code> argument used in the <code>apply</code> function. If your data is in long format similar to <code>df1</code> set <code>m = 1</code> to apply <code>sum</code> over the rows. If your data is in wide format similar to <code>df2</code> set <code>m = 2</code> to apply <code>sum</code> over the columns.</p>
 <pre class="r"><code># Example data from https://stats.stackexchange.com/questions/176613/jaccard-similarity-in-r
 df1 &lt;- data.frame(
@@ -39,18 +39,18 @@ df2</code></pre>
     M_11 &lt;- apply(x, m, sum) == 2
     if (m == 1) {
       x &lt;- x[!M_00, ]
-      JSim &lt;- sum(M_11) / nrow(x)
+      j_index &lt;- sum(M_11) / nrow(x)
     } else {
       x &lt;- x[, !M_00]
-      JSim &lt;- sum(M_11) / length(x)
+      j_index &lt;- sum(M_11) / length(x)
     }
-    JDist &lt;- 1 - JSim
-    return(c(JSim = JSim, JDist = JDist))
+    j_dist &lt;- 1 - j_index
+    return(c(j_index = j_index, j_dist = j_dist))
   } else break
 }</code></pre>
 <pre class="r"><code>jaccard(df1, 1)</code></pre>
-<pre><code>##      JSim     JDist 
+<pre><code>##   j_index    j_dist 
 ## 0.1860465 0.8139535</code></pre>
 <pre class="r"><code>jaccard(df2, 2)</code></pre>
-<pre><code>##  JSim JDist 
-##   0.2   0.8</code></pre>
+<pre><code>## j_index  j_dist 
+##     0.2     0.8</code></pre>
