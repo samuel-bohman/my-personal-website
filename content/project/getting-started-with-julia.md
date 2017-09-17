@@ -30,13 +30,11 @@ caption = "My caption :smile:"
 
 # Installation
 
-Julia is a high-level, high-performance dynamic programming language for numerical computing with performance comparable to traditional statically-typed languages such as C. It is multi-paradigm, combining features of imperative, functional, and object-oriented programming. Julia provides ease and expressiveness for high-level numerical computing, in the same way as languages such as R, MATLAB, and Python, but also supports general programming. Julia is free and open source. 
+[Julia](https://julialang.org/) is a high-level, high-performance dynamic programming language for numerical computing with performance comparable to traditional statically-typed languages such as C. It is multi-paradigm, combining features of imperative, functional, and object-oriented programming. Julia provides ease and expressiveness for high-level numerical computing, in the same way as languages such as R, MATLAB, and Python, but also supports general programming. Julia is free and open source. 
 
 ## Julia
 
-Download [Julia](https://julialang.org/) and run the installer. 
-
-Extract the `.tar.gz` file downloaded to a folder on your computer. Next, run the following command in a terminal:
+Download Julia and extract the `.tar.gz` file downloaded to a folder on your computer. Next, run the following command in a terminal:
 
 ```bash
 sudo ln -s <where you extracted the julia archive>/bin/julia /usr/local/bin/julia
