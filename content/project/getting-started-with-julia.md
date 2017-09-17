@@ -9,7 +9,7 @@ title = "Getting Started with Julia"
 summary = "Installation of the Julia programming language on Linux Ubuntu"
 
 # Optional image to display on homepage (relative to `static/img/` folder).
-image_preview = "julia.png"
+image_preview = "julia-200x232.png"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
