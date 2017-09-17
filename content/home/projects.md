@@ -38,6 +38,10 @@ view = 1
   tag = ".julia"
   
 [[filter]]
+  name = "Wolfram"
+  tag = ".wolfram"
+  
+[[filter]]
   name = "SQL"
   tag = ".sql"
 

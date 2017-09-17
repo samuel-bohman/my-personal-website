@@ -1,0 +1,31 @@
++++
+# Date this page was created.
+date = "2017-09-17"
+
+# Project title.
+title = "Wolfram Language"
+
+# Project summary to display on homepage.
+summary = "Unlike other programming languages, the philosophy of the Wolfram Language is to build as much knowledge—about algorithms and about the world—into the language as possible."
+
+# Optional image to display on homepage (relative to `static/img/` folder).
+image_preview = "wolfram-200x232.png"
+
+# Tags: can be used for filtering projects.
+# Example: `tags = ["machine-learning", "deep-learning"]`
+tags = ["wolfram"]
+
+# Optional external URL for project (replaces project detail page).
+# external_link = ""
+
+# Does the project detail page use math formatting?
+math = false
+
+# Optional featured image (relative to `static/img/` folder).
+[header]
+# image = "headers/bubbles-wide.jpg"
+caption = "My caption :smile:"
+
++++
+
+The philosophy of the Wolfram Language is to automate as much as possible, so programmers can concentrate on defining what they want to do, and the language will automatically figure out how to do it. The Wolfram Language represents everything—data, formulas, code, graphics, documents, interfaces, etc.—as symbolic expressions, making possible a new level of programming flexibility and power. Built into the Wolfram Language are "notebook" documents that mix executable code with text, graphics, interfaces, and more.
