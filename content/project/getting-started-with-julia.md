@@ -6,7 +6,7 @@ date = "2017-09-17"
 title = "Getting Started with Julia"
 
 # Project summary to display on homepage.
-summary = "Installation of the Julia programming language on Linux Ubuntu"
+summary = "Installation of the Julia programming language and setup of alternative IDEs on Ubuntu 16.04."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "julia-200x232.png"
@@ -30,6 +30,8 @@ caption = "My caption :smile:"
 
 # Installation
 
+Julia is a high-level, high-performance dynamic programming language for numerical computing with performance comparable to traditional statically-typed languages such as C. It is multi-paradigm, combining features of imperative, functional, and object-oriented programming. Julia provides ease and expressiveness for high-level numerical computing, in the same way as languages such as R, MATLAB, and Python, but also supports general programming. Julia is free and open source. 
+
 ## Julia
 
 Download [Julia](https://julialang.org/) and run the installer. 
@@ -40,7 +42,21 @@ Extract the `.tar.gz` file downloaded to a folder on your computer. Next, run th
 sudo ln -s <where you extracted the julia archive>/bin/julia /usr/local/bin/julia
 ```
 
-To start Julia, just type `julia` in a terminal window. 
+To start Julia, just type `julia` in a terminal window:
+
+```julia
+samuel@ASUS:~$ julia
+               _
+   _       _ _(_)_     |  A fresh approach to technical computing
+  (_)     | (_) (_)    |  Documentation: http://docs.julialang.org
+   _ _   _| |_  __ _   |  Type "?help" for help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 0.4.5 (2016-03-18 00:58 UTC)
+ _/ |\__'_|_|_|\__'_|  |  
+|__/                   |  x86_64-linux-gnu
+
+julia>
+```
 
 To update the Julia packages, keeping Julia itself the same, run `Pkg.update()` at the Julia prompt. 
 
@@ -60,7 +76,7 @@ To run the Anaconda Navigator GUI after installation, run the command `anaconda-
 
 Next, at the prompt, type
 
-```bash
+```julia
 Pkg.add("IJulia")
 ```
 
@@ -68,7 +84,7 @@ to install IJulia. On Linux, it defaults to looking for jupyter in your PATH fir
 
 In Julia, at the `julia>` prompt, type 
 
-```bash
+```julia
 using IJulia
 notebook()
 ```
