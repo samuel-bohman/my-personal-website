@@ -6,7 +6,7 @@ date = "2017-09-17"
 title = "Wolfram Language"
 
 # Project summary to display on homepage.
-summary = "Unlike other programming languages, the philosophy of the Wolfram Language is to build as much knowledge—about algorithms and about the world—into the language as possible."
+summary = "The philosophy of the Wolfram Language is to build as much knowledge into the language as possible."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "wolfram-200x232.png"
