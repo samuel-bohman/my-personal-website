@@ -90,3 +90,6 @@ notebook()
 ```
 
 to launch the IJulia notebook in your browser. Alternatively, you can run `jupyter notebook` from the command line. Click on the New button and choose the Julia option to start a new "notebook". 
+
+Enjoy! :smile:
+
