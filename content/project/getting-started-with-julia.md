@@ -60,6 +60,8 @@ To update the Julia packages, keeping Julia itself the same, run `Pkg.update()` 
 
 ## Anaconda
 
+Anaconda is a free, platform-agnostic Python distribution and packet manager. The [Jupyter Notebook](http://jupyter.org/) comes bundled with Anaconda. 
+
 Download [Anaconda](https://www.anaconda.com). 
 
 After downloading the installer, run the following command from a terminal:
@@ -68,7 +70,7 @@ After downloading the installer, run the following command from a terminal:
 $ bash Anaconda3-4.4.0-Linux-x86_64.sh
 ```
 
-To run the Anaconda Navigator GUI after installation, run the command `anaconda-navigator`. 
+If you want to check out the Anaconda Navigator GUI after installation, run the command `anaconda-navigator`. Pretty cool! :snake:
 
 ## IJulia
 
