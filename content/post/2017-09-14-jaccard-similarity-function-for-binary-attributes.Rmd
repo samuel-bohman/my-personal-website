@@ -68,7 +68,7 @@ df3
 jaccard(df3, 1)
 ```
 
-Enjoy! `:smiley:` :smiley: `writeLines("\U0001F603")`
+Enjoy! `"\U0001F603"` `"\U+1F603"` `"\U+1F40D"`
 
 ```{r}
 writeLines("\U0001F603")
