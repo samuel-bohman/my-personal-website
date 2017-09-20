@@ -39,4 +39,4 @@ weight = 1
 
 # About me
 
-My research interests include statistical computing, machine learning, data visualization, literate programming, and reproducible research. I am passionate about open source software, in particular [R](https://cran.r-project.org/), an interpreted computer language and environment for statistical computing and graphics. You can find my profile on  [StackExchange](https://stackexchange.com/users/7449689/samuel?tab=accounts) and [RStudio Community](https://community.rstudio.com/u/samuel/summary). 
+I am passionate about finding insights in data through mathematical tools and presenting those insights to non-technical audiences. You can find my profile on  [StackExchange](https://stackexchange.com/users/7449689/samuel?tab=accounts) and [RStudio Community](https://community.rstudio.com/u/samuel/summary). 
