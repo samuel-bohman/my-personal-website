@@ -3,7 +3,7 @@
 date = "2017-09-22"
 
 # Project title.
-title = "Most Harmful Weather Events in the USA"
+title = "Most Harmful Weather Events"
 
 # Project summary to display on homepage.
 summary = "A Study of the U.S. National Oceanic and Atmospheric Administration’s storm database 1950-2011."
@@ -146,5 +146,7 @@ ggplot(df2b[1:5, ]) +
     y = "Total Damage in Billion USD", 
     title = "Most Harmful Events in USA between 1950-2011")
 ```
+
+![Plot](static/project/2017-09-21-most-harmful-weather-events-in-the-usa_files/figure-html/plot-1.png)
 
 As can be seen in the plot above, floods have the greatest economic consequences followed by hurricane/typhoon, tornado, storm surge, and hail.
