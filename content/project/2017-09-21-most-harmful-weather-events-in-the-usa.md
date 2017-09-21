@@ -28,8 +28,7 @@ math = false
 
 +++
 
-<img src="plot-1.png"/>
-
+![noaa](https://www.ncdc.noaa.gov/cdo-web/images/promos/cdo_cover_hex.png)
 
 # Synopsis
 
