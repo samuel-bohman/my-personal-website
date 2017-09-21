@@ -20,7 +20,7 @@ weight = 1
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Computer Science"
+  course = "PhD in Human-Machine Interaction"
   institution = "Stockholm University"
   year = 2018
 
