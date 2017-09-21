@@ -3,7 +3,7 @@
 date = "2017-09-22"
 
 # Project title.image = "projects/Titanic_md_files/Titanic.jpg"
-title = "The Perfect Storm"
+title = "Most Harmful Weather Events in the USA"
 
 # Project summary to display on homepage.
 summary = "A Study of the U.S. National Oceanic and Atmospheric Administration’s storm database 1950-2011."
@@ -29,11 +29,11 @@ math = false
 
 ![noaa](https://www.ncdc.noaa.gov/cdo-web/images/promos/cdo_cover_hex.png)
 
-# Synopsis
+# Introduction
 
 Storms and other severe weather events can cause both public health and economic problems for communities and municipalities. Many severe events can result in fatalities, injuries, and property damage, and preventing such outcomes to the extent possible is a key concern. This project involves an analysis of the U.S. [National Oceanic and Atmospheric Administration's](http://www.noaa.gov/) (NOAA) storm database. The analysis shows that tornadoes are the most harmul severe weather events with respect to population health, followed by excessive heat, flash floods, heat, and lightning. With respect to economic consequences, floods are the most harmful weather events followed by hurricane/typhoon, tornado, storm surge, and hail. 
 
-# Data Processing
+# Data
 
 ```r
 library(readr)
