@@ -29,11 +29,19 @@ math = false
 
 ![noaa](https://www.ncdc.noaa.gov/cdo-web/images/promos/cdo_cover_hex.png)
 
+- [Introduction](#introduction)
+  -  [Loading packages](#loading-packages)
+  -  [Importing data](#importing-data)
+- [Results](#results)
+  - [Question 1](#question-1)
+  - [Question 2](#question-2)
+- [Conclusions](#conclusions)
+
 # Introduction
 
-Storms and other severe weather events can cause both public health and economic problems for communities and municipalities. Many severe events can result in fatalities, injuries, and property damage, and preventing such outcomes to the extent possible is a key concern. This project involves an analysis of the U.S. [National Oceanic and Atmospheric Administration's](http://www.noaa.gov/) (NOAA) storm database. The analysis shows that tornadoes are the most harmul severe weather events with respect to population health, followed by excessive heat, flash floods, heat, and lightning. With respect to economic consequences, floods are the most harmful weather events followed by hurricane/typhoon, tornado, storm surge, and hail. 
+Storms and other severe weather events can cause both public health and economic problems for communities and municipalities. Many severe events can result in fatalities, injuries, and property damage, and preventing such outcomes to the extent possible is a key concern. This project involves an analysis of the U.S. [National Oceanic and Atmospheric Administration's](http://www.noaa.gov/) (NOAA) storm database. 
 
-# Data
+## Loading Packages
 
 ```r
 library(readr)
@@ -41,6 +49,8 @@ library(dplyr)
 library(forcats)
 library(ggplot2)
 ```
+
+# Importing Data
 
 We first read in the data in the form of a comma-separated-value file included in the bzip2 compressed file. We code missing values as blank or empty fields or `NA`s. 
 
@@ -175,3 +185,7 @@ ggplot(df2b[1:5, ]) +
 ![plot](/img/plot-1.png) 
 
 As can be seen in the plot above, floods have the greatest economic consequences followed by hurricane/typhoon, tornado, storm surge, and hail.
+
+# Conclusions
+
+The analysis shows that tornadoes are the most harmul severe weather events with respect to population health, followed by excessive heat, flash floods, heat, and lightning. With respect to economic consequences, floods are the most harmful weather events followed by hurricane/typhoon, tornado, storm surge, and hail. 
