@@ -9,7 +9,7 @@ title = "Most Harmful Weather Events"
 summary = "A Study of the U.S. National Oceanic and Atmospheric Administration’s storm database 1950-2011."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
-image_preview = "tidyverse-200x232.png"
+image_preview = "noaa-200x232.png"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
