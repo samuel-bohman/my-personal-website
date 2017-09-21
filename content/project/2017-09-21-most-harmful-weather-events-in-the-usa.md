@@ -25,7 +25,7 @@ math = false
 [header]
 # image = "headers/bubbles-wide.jpg"
 # caption = "My caption :smile:"
-
+![noaa](https://www.ncdc.noaa.gov/cdo-web/images/promos/cdo_cover_hex.png)
 +++
 
 ![noaa](https://www.ncdc.noaa.gov/cdo-web/images/promos/cdo_cover_hex.png)
@@ -41,9 +41,9 @@ library(tidyverse)
 library(forcats)
 ```
 
-We first read in the data in the form of a comma-separated-value file included in the bzip2 compressed file. We code missing values as blank or empty fields or NAs. 
+After we have downloaded the file from the NOAA website, we read in and uncompress the data included in the bzip2 file. We code missing values as blank or empty fields or `NA`s. 
 
-```r
+```r # https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2
 df <- read_csv(file = "repdata_data_StormData.csv.bz2", na = c(" ", "", "NA"))
 ```
 
