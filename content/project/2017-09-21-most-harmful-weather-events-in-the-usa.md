@@ -1,15 +1,32 @@
----
-title: Most Harmful Weather Events in the USA
-author: Samuel Bohman
-date: '2017-09-21'
-tags:
-  - r
-  - tidyverse
-slug: most-harmful-weather-events-in-the-usa
-output:
-  blogdown::html_page
-summary: "A Study of the U.S. National Oceanic and Atmospheric Administration’s storm database 1950-2011."
----
++++
+# Date this page was created.
+date = "2017-09-22"
+
+# Project title.
+title = "Most Harmful Weather Events in the USA"
+
+# Project summary to display on homepage.
+summary = "A Study of the U.S. National Oceanic and Atmospheric Administration’s storm database 1950-2011."
+
+# Optional image to display on homepage (relative to `static/img/` folder).
+image_preview = "r-200x232.png"
+
+# Tags: can be used for filtering projects.
+# Example: `tags = ["machine-learning", "deep-learning"]`
+tags = ["r"]
+
+# Optional external URL for project (replaces project detail page).
+# external_link = ""
+
+# Does the project detail page use math formatting?
+math = false
+
+# Optional featured image (relative to `static/img/` folder).
+[header]
+# image = "headers/bubbles-wide.jpg"
+# caption = "My caption :smile:"
+
++++
 
 ![](https://www.ncdc.noaa.gov/cdo-web/images/promos/cdo_cover_hex.png)
 
@@ -20,26 +37,26 @@ Storms and other severe weather events can cause both public health and economic
 
 # Data Processing
 
-```{r, message = FALSE}
+```r
 library(tidyverse)
 library(forcats)
 ```
 
 We first read in the data in the form of a comma-separated-value file included in the bzip2 compressed file. We code missing values as blank or empty fields or NAs. 
 
-```{r, message = FALSE}
+```r
 df <- read_csv(file = "repdata_data_StormData.csv.bz2", na = c(" ", "", "NA"))
 ```
 
 For question 1, the columns we are interested in are EVTYPE, FATALITIES, and INJURIES. We extract those columns and save to a new dataframe. 
 
-```{r}
+```r
 df1 <- df %>% select(EVTYPE, FATALITIES, INJURIES)
 ```
 
 Next, we calculate the sums of fatalities and injuries by event type and save the results. 
 
-```{r}
+```r
 df1b <- df1 %>% group_by(EVTYPE) %>% 
   summarize(
     FATALITIES = sum(FATALITIES, na.rm = T), 
@@ -49,23 +66,23 @@ df1b <- df1 %>% group_by(EVTYPE) %>%
 
 For question 2, the columns we are interested in are EVTYPE, PROPDMG, PROPDMGEXP, CROPDMG, and CROPDMGEXP. We extract those columns and save to a new dataframe. 
 
-```{r}
+```r
 df2 <- df %>% select(EVTYPE, PROPDMG, PROPDMGEXP, CROPDMG, CROPDMGEXP)
 ```
 
 The PROPDMGEXP is the exponent values for PROPDMG. In the same way, CROPDMGEXP is the exponent values for CROPDMG (B or b = Billion, M or m = Million, K or k = Thousand, H or h = Hundred). The number from 0 to 8 represent x times ten to the power of one, or $X \times 10^1$. The symbols "-", "+" and "?" are treated as zero so that the damage result becomes zero too: $X \times 0 = 0$. For more information, see [this](https://rstudio-pubs-static.s3.amazonaws.com/58957_37b6723ee52b455990e149edde45e5b6.html) link. 
 
-```{r}
+```r
 unique(df2$PROPDMGEXP)
 ```
 
-```{r}
+```r
 unique(df2$CROPDMGEXP)
 ```
 
 Next, we calculate the sums of property damage and crop damage by event type and save the results. 
 
-```{r}
+```r
 df2b <- df2 %>% group_by(EVTYPE) %>%
   mutate(PROPDMG = ifelse(PROPDMGEXP == "-", PROPDMG *    0, PROPDMG)) %>% # PROP
   mutate(PROPDMG = ifelse(PROPDMGEXP == "?", PROPDMG *    0, PROPDMG)) %>%
@@ -106,7 +123,7 @@ df2b <- df2 %>% group_by(EVTYPE) %>%
 
 *Across the United States, which types of events (as indicated in the EVTYPE variable) are most harmful with respect to population health?*
 
-```{r}
+```r
 head(df1b, 5)
 ```
 
@@ -116,11 +133,11 @@ As can be seen in the table above, tornadoes are the most harmul severe weather 
 
 *Across the United States, which types of events have the greatest economic consequences?*
 
-```{r}
+```r
 head(df2b, 5)
 ```
 
-```{r, plot}
+```r
 ggplot(df2b[1:5, ]) +
   aes(fct_inorder(EVTYPE), TOT_DMG / 10^9) +
   geom_bar(stat = "identity", fill = "darkseagreen") +
