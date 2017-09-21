@@ -81,7 +81,7 @@ We would also like to investigate which types of weather events have the greates
 df2 <- df %>% select(EVTYPE, PROPDMG, PROPDMGEXP, CROPDMG, CROPDMGEXP)
 ```
 
-The `PROPDMGEXP` is the exponent values for `PROPDMG`. In the same way, `CROPDMGEXP` is the exponent values for `CROPDMG`. `B` or `b` = Billion, `M` or `m` = Million, `K` or `k` = Thousand, `H` or `h` = Hundred. The numbers from 0 to 8 represent `10^1 = 10`. The symbol `+` represents `10^0 = 1`. `NA` and the symbols `-` and `?` are treated as zero.
+The `PROPDMGEXP` is the exponent values for `PROPDMG`. In the same way, `CROPDMGEXP` is the exponent values for `CROPDMG`. `B` or `b` = Billion, `M` or `m` = Million, `K` or `k` = Thousand, `H` or `h` = Hundred. The numbers from 0 to 8 represent `10^1 = 10`. The symbol `+` represents `10^0 = 1`. `NA` and the symbol `-` and `?` are treated as zero.
 
 ```r
 unique(df2$PROPDMGEXP) 
@@ -99,7 +99,7 @@ unique(df2$CROPDMGEXP)
 [1] NA  "M" "K" "m" "B" "?" "0" "k" "2"
 ```
 
-Next, we calculate the sums of property damage and crop damage by event type and save the results. 
+Next, we calculate the sums of `PROPDMG` and `CROPDMG` by `EVTYPE` and save the results. 
 
 ```r
 df2b <- df2 %>% group_by(EVTYPE) %>%
