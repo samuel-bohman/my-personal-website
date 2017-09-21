@@ -28,7 +28,7 @@ math = false
 
 +++
 
-<img src = "plot-1.png"/>
+<img src="plot-1.png"/>
 
 
 # Synopsis
