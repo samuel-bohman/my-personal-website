@@ -78,7 +78,15 @@ unique(df2$PROPDMGEXP)
 ```
 
 ```r
+[1] "K" "M" NA  "B" "m" "+" "0" "5" "6" "?" "4" "2" "3" "h" "7" "H" "-" "1" "8"
+```
+
+```r
 unique(df2$CROPDMGEXP) 
+```
+
+```r
+[1] NA  "M" "K" "m" "B" "?" "0" "k" "2"
 ```
 
 Next, we calculate the sums of property damage and crop damage by event type and save the results. 
@@ -126,6 +134,14 @@ df2b <- df2 %>% group_by(EVTYPE) %>%
 
 ```r
 head(df1b, 5)
+# A tibble: 5 x 3
+          EVTYPE FATALITIES INJURIES
+           <chr>      <dbl>    <dbl>
+1        TORNADO       5633    91346
+2 EXCESSIVE HEAT       1903     6525
+3    FLASH FLOOD        978     1777
+4           HEAT        937     2100
+5      LIGHTNING        816     5230
 ```
 
 As can be seen in the table above, tornadoes are the most harmul severe weather events with respect to population health, followed by excessive heat, flash floods, heat, and lightning. 
@@ -136,6 +152,14 @@ As can be seen in the table above, tornadoes are the most harmul severe weather 
 
 ```r
 head(df2b, 5)
+# A tibble: 5 x 4
+             EVTYPE      PROPDMG    CROPDMG      TOT_DMG
+              <chr>        <dbl>      <dbl>        <dbl>
+1             FLOOD 144657709800 5661968450 150319678250
+2 HURRICANE/TYPHOON  69305840000 2607872800  71913712800
+3           TORNADO  56937162897  414954710  57352117607
+4       STORM SURGE  43323536000       5000  43323541000
+5              HAIL  15732269877 3025954650  18758224527
 ```
 
 ```r
