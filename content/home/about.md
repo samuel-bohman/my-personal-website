@@ -15,7 +15,6 @@ weight = 1
     "Statistical Computing",
     "Machine Learning",
     "Data Visualization",
-    "Literate Programming",
     "Reproducible Research"
   ]
 
@@ -39,4 +38,4 @@ weight = 1
 
 # About me
 
-I am passionate about finding insights in data through mathematical tools and presenting those insights to non-technical audiences. You can find my profile on  [StackExchange](https://stackexchange.com/users/7449689/samuel?tab=accounts) and [RStudio Community](https://community.rstudio.com/u/samuel/summary). 
+I am passionate about finding insights in data through mathematical tools and presenting those insights to non-technical audiences. I am an active member of [StackExchange](https://stackexchange.com/users/7449689/samuel?tab=accounts) and [RStudio Community](https://community.rstudio.com/u/samuel/summary). 
