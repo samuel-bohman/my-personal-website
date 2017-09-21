@@ -49,13 +49,13 @@ We first read in the data in the form of a comma-separated-value file included i
 df <- read_csv(file = "repdata_data_StormData.csv.bz2", na = c(" ", "", "NA"))
 ```
 
-We would like to investigate which types of weather events are most harmful with respect to population health. We select the columns EVTYPE, FATALITIES, and INJURIES and save the results to a new dataframe. 
+We would like to investigate which types of weather events are most harmful with respect to population health. We select the columns `EVTYPE`, `FATALITIES`, and `INJURIES` and save the results to a new dataframe. 
 
 ```r
 df1 <- df %>% select(EVTYPE, FATALITIES, INJURIES)
 ```
 
-Next, we calculate the sums of fatalities and injuries by event type and save the results. 
+Next, we calculate the sums of `FATALITIES` and `INJURIES` by `EVTYPE` and save the results. 
 
 ```r
 df1b <- df1 %>% group_by(EVTYPE) %>% 
@@ -122,7 +122,7 @@ df2b <- df2 %>% group_by(EVTYPE) %>%
 
 ## Question 1
 
-*Across the United States, which types of events (as indicated in the EVTYPE variable) are most harmful with respect to population health?*
+*Across the United States, which types of weather events are most harmful with respect to population health?*
 
 ```r
 head(df1b, 5)
