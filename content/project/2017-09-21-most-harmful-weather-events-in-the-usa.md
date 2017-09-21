@@ -48,7 +48,7 @@ We first read in the data in the form of a comma-separated-value file included i
 df <- read_csv(file = "repdata_data_StormData.csv.bz2", na = c(" ", "", "NA"))
 ```
 
-For question 1, the columns we are interested in are EVTYPE, FATALITIES, and INJURIES. We extract those columns and save to a new dataframe. 
+We would like to investigate which types of weather events are most harmful with respect to population health. We select the columns EVTYPE, FATALITIES, and INJURIES and save the results to a new dataframe. 
 
 ```r
 df1 <- df %>% select(EVTYPE, FATALITIES, INJURIES)
@@ -64,13 +64,13 @@ df1b <- df1 %>% group_by(EVTYPE) %>%
   arrange(desc(FATALITIES), desc(INJURIES))
 ```
 
-For question 2, the columns we are interested in are EVTYPE, PROPDMG, PROPDMGEXP, CROPDMG, and CROPDMGEXP. We extract those columns and save to a new dataframe. 
+We would also like to investigate which types of weather events have the greatest economic consequences. The columns we are interested in are `EVTYPE`, `PROPDMG`, `PROPDMGEXP`, `CROPDMG`, and `CROPDMGEXP`. We select these columns and save to a new dataframe.
 
 ```r
 df2 <- df %>% select(EVTYPE, PROPDMG, PROPDMGEXP, CROPDMG, CROPDMGEXP)
 ```
 
-The PROPDMGEXP is the exponent values for PROPDMG. In the same way, CROPDMGEXP is the exponent values for CROPDMG (B or b = Billion, M or m = Million, K or k = Thousand, H or h = Hundred). The number from 0 to 8 represent x times ten to the power of one, or $X \times 10^1$. The symbols "-", "+" and "?" are treated as zero so that the damage result becomes zero too: $X \times 0 = 0$. For more information, see [this](https://rstudio-pubs-static.s3.amazonaws.com/58957_37b6723ee52b455990e149edde45e5b6.html) link. 
+The `PROPDMGEXP` is the exponent values for `PROPDMG`. In the same way, `CROPDMGEXP` is the exponent values for `CROPDMG`. `B` or `b` = Billion, `M` or `m` = Million, `K` or `k` = Thousand, `H` or `h` = Hundred. The numbers from 0 to 8 represent `10^1 = 10`. The symbol `+` represents `10^0 = 1`. `NA` and the symbols `-` and `?` are treated as zero.
 
 ```r
 unique(df2$PROPDMGEXP)
