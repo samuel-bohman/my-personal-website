@@ -6,7 +6,7 @@ date = "2017-09-17"
 title = "Getting Started with Julia"
 
 # Project summary to display on homepage.
-summary = "Installation of the Julia programming language and setup of alternative IDEs on Ubuntu 16.04."
+summary = "Installation the Julia programming language and setup of IDEs on Ubuntu 16.04."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "julia-200x232.png"
@@ -28,7 +28,7 @@ math = false
 
 +++
 
-# Installation
+# Introduction
 
 [Julia](https://julialang.org/) is a high-level, high-performance dynamic programming language for numerical computing with performance comparable to traditional statically-typed languages such as C. It is multi-paradigm, combining features of imperative, functional, and object-oriented programming. Julia provides ease and expressiveness for high-level numerical computing, in the same way as languages such as R, MATLAB, and Python, but also supports general programming. Julia is free and open source. 
 
