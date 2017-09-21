@@ -2,7 +2,7 @@
 # Date this page was created.
 date = "2017-09-22"
 
-# Project title.
+# Project title.image = "projects/Titanic_md_files/Titanic.jpg"
 title = "Most Harmful Weather Events"
 
 # Project summary to display on homepage.
@@ -28,7 +28,7 @@ math = false
 
 +++
 
-![](https://www.ncdc.noaa.gov/cdo-web/images/promos/cdo_cover_hex.png)
+<img src = "plot-1.png"/>
 
 
 # Synopsis
@@ -147,6 +147,6 @@ ggplot(df2b[1:5, ]) +
     title = "Most Harmful Events in USA between 1950-2011")
 ```
 
-![plot](project/2017-09-21-most-harmful-weather-events-in-the-usa/plot-1.png) 
+![plot](plot-1.png) 
 
 As can be seen in the plot above, floods have the greatest economic consequences followed by hurricane/typhoon, tornado, storm surge, and hail.
