@@ -146,6 +146,6 @@ ggplot(df2b[1:5, ]) +
     title = "Most Harmful Events in USA between 1950-2011")
 ```
 
-![plot](/static/img/plot-1.png) 
+![plot](/static/project/plot-1.png) 
 
 As can be seen in the plot above, floods have the greatest economic consequences followed by hurricane/typhoon, tornado, storm surge, and hail.
