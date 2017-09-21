@@ -3,7 +3,7 @@
 date = "2017-09-22"
 
 # Project title.image = "projects/Titanic_md_files/Titanic.jpg"
-title = "Most Harmful Weather Events"
+title = "The Perfect Storm"
 
 # Project summary to display on homepage.
 summary = "A Study of the U.S. National Oceanic and Atmospheric Administration’s storm database 1950-2011."
