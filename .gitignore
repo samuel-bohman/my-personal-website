@@ -35,3 +35,5 @@ vignettes/*.pdf
 # Hugo
 blogdown
 public
+
+*.Rproj

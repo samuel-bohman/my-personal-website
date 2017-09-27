@@ -20,7 +20,7 @@ weight = 1
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Human-Computer Interaction"
+  course = "PhD in Man-Machine Interaction"
   institution = "Stockholm University"
   year = 2018
 
@@ -38,4 +38,5 @@ weight = 1
 
 # About me
 
-I am passionate about finding insights in data through mathematical tools and presenting those insights to non-technical audiences. You can find me on [StackExchange](https://stackexchange.com/users/7449689/samuel?tab=accounts) and [RStudio Community](https://community.rstudio.com/u/samuel/summary).  
+I am passionate about finding insights in data through mathematical tools and presenting those insights to non-technical audiences. 
+In my spare time, I like to study and work out. 
