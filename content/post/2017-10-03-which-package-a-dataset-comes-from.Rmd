@@ -13,8 +13,6 @@ summary: "Have you ever wondered where a particular dataset is coming from?"
 Have you ever wondered where a particular dataset is coming from? Yesterday, I read a blog post in which the author used a dataset called "gold", but he did not mention the origin of the dataset. To find out, I developed a simple function called `datasearch`. It takes one argument, `p`, which is a character string containing a regular expression `pattern` (used by `grepl`) and returns a `data.frame`: 
 
 ```{r, warning = FALSE}
-library(stringr)
-
 datasearch <- function(p) {
   ds <- as.data.frame(data(package = .packages(all.available = TRUE))$results)
   ds[grepl(p, ds$Package) | grepl(p, ds$Item) | grepl(p, ds$Title), -2]
