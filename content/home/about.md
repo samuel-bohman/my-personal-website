@@ -35,9 +35,9 @@ weight = 1
  
 +++
 
-# About
+# Hello!
 
-I am passionate about finding insights in data through statistical techniques and methods and presenting those insights to non-technical audiences. This blog is a collection of articles, projects, and tutorials on data science topics and my own experiments with data. In my spare time, I like to study and work out. 
+I'm Samuel, a PhD student in the Department of Computer and Systems Sciences, Stockholm University. I am passionated about finding insights in data through statistical techniques and machine learning methods and presenting those insights to decision-makers and non-technical audiences. Prior to my PhD studies, I was a research assistant at the [Institute for Futures Studies](http://www.iffs.se/en/), an independent research institute based in Stockholm. This is my personal website with a collection of articles, projects, tutorials, and my own experiments with data. 
 
 Me on [StackExchange](https://stackexchange.com/users/7449689/samuel?tab=accounts)  
 Me on [RStudio Community](https://community.rstudio.com/u/samuel/summary)  
