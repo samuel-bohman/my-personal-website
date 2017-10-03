@@ -1,13 +1,16 @@
 ---
-title: "Which Package a Dataset Comes From"
-author: "Samuel Bohman"
+title: Which Package a Dataset Comes From
+author: Samuel Bohman
 date: "2017-10-03"
+tags: 
+  - r
+  - r-packages 
 slug: which-package-a-dataset-comes-from
-tags: r
-draft: false
+output: blogdown::html_page
+summary: "I often need to find out which package a particular dataset is coming from. Yesterday, for example, I read a blog post..."
 ---
 
-I often need to find out which package a particular dataset comes from. Yesterday, for example, I read a blog post in which the author used a dataset called "gold", but the author did not mention where the dataset was coming from. To find out, I have develop a simple function `datasearch` that takes one argument, `p`, a character string containing a regular expression `pattern` used by the `grepl` function: 
+I often need to find out which package a particular dataset is coming from. Yesterday, for example, I read a blog post in which the author used a dataset called "gold", but the author did not mention the origin of the dataset. To find out, I developed a simple function called `datasearch`. It takes one argument, `p`, which is a character string containing a regular expression `pattern` (used by `grepl`) and returns a `data.frame`:
 
 ```{r, warning = FALSE}
 library(stringr)
@@ -24,4 +27,4 @@ datasearch("gold")
 datasearch("1982")
 ```
 
-At this stage, the function only searches the available packages on the local computer, not on [CRAN](https://cran.r-project.org/) or [GitHub](https://github.com/).   
+At this stage, the function only searches in the available packages on the local computer, not on [CRAN](https://cran.r-project.org/) or [GitHub](https://github.com/).   

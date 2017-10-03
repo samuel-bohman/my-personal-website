@@ -4,11 +4,11 @@ copyright = "&copy; 2017 Samuel Bohman"
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+paginate = 10
 
 # Enable comments by entering your Disqus shortname
 disqusShortname = "samuelbohman"
-
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = ""
@@ -17,31 +17,49 @@ googleAnalytics = ""
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
+[outputs]
+  home = [ "HTML", "CSS" ]
+
 [blackfriday]
   hrefTargetBlank = true
 
 [params]
+  # Color theme.
+  #   Choose from `default`, `ocean`, `forest`, or `coffee`.
+  color_theme = "default"
+  
+  # Font style.
+  #   Choose from `default` or `classic`.
+  font = "default"
+
+  # Your details.
   name = "Samuel Bohman"
   role = "PhD student"
-  organization = "Stockholm University"
-  organization_url = "http://www.dsv.su.se/"
+  
+  # Organizations/Affiliations.
+  #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
+  organizations = [ { name = "Stockholm University", url = "www.su.se" } ]
+
   gravatar = true  # Get your avatar from Gravatar.com? (true/false)
   avatar = "Samuel.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
   email = "samboh@dsv.su.se"
   address = "Borgarfjordsgatan 12 (Nodhuset), Campus Kista"
-  office_hours = ""
+  office_hours = "email for appointment"
   phone = "08-16 20 00"
-  telegram = ""
   skype = "samuel.bohman"
   twitter = "samuelbohman"
   github = "samuel-bohman"
+  telegram = ""
 
   # Enable Keybase in Contact section by entering your keybase.io username.
   keybase = ""
 
   # Date format (refer to Go's date format: http://flippinggodateformat.com )
   #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
-  date_format = "Mon, Jan 2, 2006"
+  date_format = "Jan 2, 2006"
+  
+  # Show estimated reading time for posts?
+  reading_time = true
 
   # Enable global LaTeX math rendering?
   #   If false, you can enable it locally on a per page basis.
@@ -81,7 +99,7 @@ defaultContentLanguageInSubdir = false
   #   For more info on the highlighting options, see:
   #   https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/#highlighting-options
   highlight = true
-  highlight_languages = ["r", "python", "julia", "sql"]
+  highlight_languages = ["r"]
   # highlight_style = "github"
   # highlight_version = "9.9.0"
 
@@ -90,7 +108,7 @@ defaultContentLanguageInSubdir = false
 
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
-  custom_css = ["my-style.css"]
+  # custom_css = ["my-style.css"]
   custom_js  = []
 
   # Publication types.
@@ -128,7 +146,7 @@ defaultContentLanguageInSubdir = false
   #   Full list: https://jpswalsh.github.io/academicons/
 
   [[params.social]]
-    icon = "paper-plane"
+    icon = "envelope"
     icon_pack = "fa"
     link = "mailto:samboh@dsv.su.se"
     

@@ -1,15 +1,18 @@
 ---
-title: "Which Package a Dataset Comes From"
-author: "Samuel Bohman"
+title: Which Package a Dataset Comes From
+author: Samuel Bohman
 date: "2017-10-03"
+tags: 
+  - r
+  - r-packages 
 slug: which-package-a-dataset-comes-from
-tags: r
-draft: false
+output: blogdown::html_page
+summary: "I often need to find out which package a particular dataset is coming from. Yesterday, for example, I read a blog post..."
 ---
 
 
 
-<p>I often need to find out which package a particular dataset comes from. Yesterday, for example, I read a blog post in which the author used a dataset called “gold”, but the author did not mention where the dataset was coming from. To find out, I have develop a simple function <code>datasearch</code> that takes one argument, <code>p</code>, a character string containing a regular expression <code>pattern</code> used by the <code>grepl</code> function:</p>
+<p>I often need to find out which package a particular dataset is coming from. Yesterday, for example, I read a blog post in which the author used a dataset called “gold”, but the author did not mention the origin of the dataset. To find out, I developed a simple function called <code>datasearch</code>. It takes one argument, <code>p</code>, which is a character string containing a regular expression <code>pattern</code> (used by <code>grepl</code>) and returns a <code>data.frame</code>:</p>
 <pre class="r"><code>library(stringr)
 
 datasearch &lt;- function(p) {
@@ -29,4 +32,4 @@ datasearch(&quot;gold&quot;)</code></pre>
 ## 178      AER PSID7682     PSID Earnings Panel Data (1976-1982)
 ## 2408  mlmRev    Hsb82            High School and Beyond - 1982
 ## 2550   poLCA    gss82 1982 General Social Survey (sample data)</code></pre>
-<p>At this stage, the function only searches the available packages on the local computer, not on <a href="https://cran.r-project.org/">CRAN</a> or <a href="https://github.com/">GitHub</a>.</p>
+<p>At this stage, the function only searches in the available packages on the local computer, not on <a href="https://cran.r-project.org/">CRAN</a> or <a href="https://github.com/">GitHub</a>.</p>
