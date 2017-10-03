@@ -7,12 +7,12 @@ tags:
   - r-packages 
 slug: which-package-a-dataset-comes-from
 output: blogdown::html_page
-summary: "I often need to find out which package a particular dataset is coming from. Yesterday, for example, I read a blog post..."
+summary: "Have you ever wondered where a particular dataset is coming from?"
 ---
 
 
 
-<p>I often need to find out which package a particular dataset is coming from. Yesterday, for example, I read a blog post in which the author used a dataset called “gold”, but the author did not mention the origin of the dataset. To find out, I developed a simple function called <code>datasearch</code>. It takes one argument, <code>p</code>, which is a character string containing a regular expression <code>pattern</code> (used by <code>grepl</code>) and returns a <code>data.frame</code>:</p>
+<p>Have you ever wondered where a particular dataset is coming from? Yesterday, I read a blog post in which the author used a dataset called “gold”, but he did not mention the origin of the dataset. To find out, I developed a simple function called <code>datasearch</code>. It takes one argument, <code>p</code>, which is a character string containing a regular expression <code>pattern</code> (used by <code>grepl</code>) and returns a <code>data.frame</code>:</p>
 <pre class="r"><code>library(stringr)
 
 datasearch &lt;- function(p) {
@@ -32,4 +32,4 @@ datasearch(&quot;gold&quot;)</code></pre>
 ## 178      AER PSID7682     PSID Earnings Panel Data (1976-1982)
 ## 2408  mlmRev    Hsb82            High School and Beyond - 1982
 ## 2550   poLCA    gss82 1982 General Social Survey (sample data)</code></pre>
-<p>At this stage, the function only searches in the available packages on the local computer, not on <a href="https://cran.r-project.org/">CRAN</a> or <a href="https://github.com/">GitHub</a>.</p>
+<p>At the moment, the function only searches in the available packages on the local computer, not <a href="https://cran.r-project.org/">CRAN</a> or <a href="https://github.com/">GitHub</a>.</p>
