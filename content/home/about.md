@@ -37,6 +37,6 @@ weight = 1
 
 # About me
 
-I'm Samuel, a PhD student in the Department of Computer and Systems Sciences, Stockholm University. I am passionated about statistics, computing, and programming. Prior to my PhD studies, I was a research assistant at the [Institute for Futures Studies](http://www.iffs.se/en/), an independent research institute based in Stockholm. This is my personal website with a collection of articles, projects, tutorials, and my own experiments with data. 
+I am PhD student in the Department of Computer and Systems Sciences, Stockholm University. I am passionated about statistics, computing, and programming. Prior to my PhD studies, I was a research assistant at the [Institute for Futures Studies](http://www.iffs.se/en/), an independent research institute based in Stockholm. This is my personal website with a collection of articles, projects, tutorials, and my own experiments with data. 
 
 In addition to the links provided next to my portrait, you can find me on [StackExchange](https://stackexchange.com/users/7449689/samuel?tab=accounts) and [RStudio Community](https://community.rstudio.com/u/samuel/summary). 
