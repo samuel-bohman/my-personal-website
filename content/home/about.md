@@ -39,3 +39,6 @@ weight = 1
 # About
 
 I am passionate about finding insights in data through mathematical tools and presenting those insights to non-technical audiences. This blog is a collection of articles, projects, and tutorials on data science topics and my own experiments with data. In my spare time, I like to study and work out. 
+
+Me on [StackExchange](https://stackexchange.com/users/7449689/samuel?tab=accounts)
+Me on [RStudio Community](https://community.rstudio.com/u/samuel/summary)

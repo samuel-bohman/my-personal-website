@@ -4,6 +4,7 @@ author: "Samuel Bohman"
 date: "2017-10-03"
 slug: which-package-a-dataset-comes-from
 tags: r
+draft: false
 ---
 
 I often need to find out which package a particular dataset comes from. Yesterday, for example, I read a blog post in which the author used a dataset called "gold", but the author did not mention where the dataset was coming from. To find out, I have develop a simple function `datasearch` that takes one argument, `p`, a character string containing a regular expression `pattern` used by the `grepl` function: 
