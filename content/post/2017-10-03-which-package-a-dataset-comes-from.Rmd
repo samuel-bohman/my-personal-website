@@ -1,0 +1,27 @@
+---
+title: "Which Package a Dataset Comes From"
+author: "Samuel Bohman"
+date: '2017-10-03'
+slug: which-package-a-dataset-comes-from
+tags: r
+categories: []
+---
+
+I often need to find out which package a particular dataset comes from. Yesterday, for example, I read a blog post in which the author used a dataset called "gold", but the author did not mention where the dataset was coming from. To find out, I have develop a simple function `datasearch` that takes one argument, `p`, a character string containing a regular expression `pattern` used by the `grepl` function: 
+
+```{r, warning = FALSE}
+library(stringr)
+
+datasearch <- function(p) {
+  ds <- as.data.frame(data(package = .packages(all.available = TRUE))$results)
+  ds[grepl(p, ds$Package) | grepl(p, ds$Item) | grepl(p, ds$Title), -2]
+}
+
+datasearch("gold")
+```
+
+```{r, warning = FALSE}
+datasearch("1982")
+```
+
+At this stage, the function only searches the available packages on the local computer, not on [CRAN](https://cran.r-project.org/) or [GitHub](https://github.com/).   
