@@ -10,7 +10,7 @@ tags:
 slug: jaccard-similarity-function-for-binary-attributes
 output:
   blogdown::html_page
-summary: "Function for calculating the Jaccard similarity and distance for binary attributes."
+summary: "Function for calculating the Jaccard similarity and distance coefficients for binary attributes."
 ---
 
 Function for calculating the Jaccard similarity and the complementary Jaccard distance for binary attributes. The function takes two arguments: `x` a dataframe or matrix object, and `m` the `MARGIN` argument used in the `apply` function. If your data is in long format set `m = 1` to apply `sum` over the rows. Conversely, If your data is in wide format set `m = 2` to apply `sum` over the columns. Logical vectors work too. 
