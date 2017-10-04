@@ -15,8 +15,38 @@ summary: "Function for calculating the Jaccard similarity and distance coefficie
 
 
 
-<p>Function for calculating the Jaccard similarity and the complementary Jaccard distance for binary attributes. The function takes two arguments: <code>x</code> a dataframe or matrix object, and <code>m</code> the <code>MARGIN</code> argument used in the <code>apply</code> function. If your data is in long format set <code>m = 1</code> to apply <code>sum</code> over the rows. Conversely, If your data is in wide format set <code>m = 2</code> to apply <code>sum</code> over the columns. Logical vectors work too.</p>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>The Jaccard similarity is a distance function which measures the similarity between two sets of data. In the simplest case where we have binary attributes, meaning the attributes are either 0 or 1, true or false, etc., the Jaccard similarity is equal to the intersection of A and B divided by their union:</p>
+<p><span class="math display">\[
+J_S(A, B) = \frac{|A \cap B|}{|A \cup B|} = \frac{|A \cap B|}{|A| + |B| - |A \cap B|}
+\]</span></p>
+<p>The complement to the Jaccard index is the Jaccard distance and it measures dissimilarity between binary vectors:</p>
+<p><span class="math display">\[
+J_D(A, B) = 1 - J_S(A, B)
+\]</span></p>
+<div id="example" class="section level3">
+<h3>Example</h3>
+<p>Assume we have two vectors A and B in a data frame along 6 dimensions:</p>
+<pre class="r"><code>df &lt;- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
+row.names(df) &lt;- c(&quot;A&quot;, &quot;B&quot;)
+df</code></pre>
+<pre><code>##   Q1 Q2 Q3 Q4 Q5 Q6
+## A  1  0  0  1  1  0
+## B  0  1  1  0  1  0</code></pre>
+<p>To calculate the Jaccard similarity we use the following formula:</p>
+<p><span class="math display">\[
+J = \frac{M_{11}}{M_{01} + M_{10} + M_{11}}
+\]</span></p>
+<p>In other words, the Jaccard similarity coefficient measures the number of attributes where A and B are both 1, divided by the number of attributes where A and B are dissimilar, plus the number of attributes where they are both 1.</p>
+<p>{{% alert note %}} Notice that the Jaccard similarity does not include the combination where they are both 0. {{% /alert %}}</p>
+</div>
+</div>
+<div id="the-function-jaccard.r" class="section level2">
+<h2>The Function <code>jaccard.R</code></h2>
+<p>The function calcuates the Jaccard similarity and the Jaccard distance for binary attributes. It takes two arguments: <code>x</code> a dataframe or matrix object, and <code>m</code> the <code>MARGIN</code> argument used in the <code>apply</code> function. If your data is in long format set <code>m = 1</code> to apply <code>sum</code> over the rows. Conversely, If your data is in wide format set <code>m = 2</code> to apply <code>sum</code> over the columns. Logical vectors work too.</p>
 {{% gist "samuel-bohman" "e0df06467661da6023a4eab6ab06e791" %}}
+</div>
 <div id="examples" class="section level2">
 <h2>Examples</h2>
 <p>Data in long format:</p>
