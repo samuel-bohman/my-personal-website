@@ -20,7 +20,7 @@ $$
 J_S(A, B) = \frac{|A \cap B|}{|A \cup B|} = \frac{|A \cap B|}{|A| + |B| - |A \cap B|}
 $$
 
-The complement to the Jaccard similarity is the Jaccard distance and it measures dissimilarity between binary vectors: 
+The complement to the Jaccard similarity is the Jaccard distance and it measures dissimilarity between two sets: 
 
 $$
 J_D(A, B) = 1 - J_S(A, B)
