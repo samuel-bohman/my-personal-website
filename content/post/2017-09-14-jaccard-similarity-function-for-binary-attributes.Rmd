@@ -1,17 +1,19 @@
 ---
-title: Jaccard index function for binary attributes
+title: Jaccard similarity function for binary attributes
 author: Samuel Bohman
 date: '2017-09-14'
 tags:
   - r
   - jaccard-index
-slug: jaccard-index-function-for-binary-attributes
+  - jaccard-similarity
+  - jaccard-distance
+slug: jaccard-similarity-function-for-binary-attributes
 output:
   blogdown::html_page
-summary: "Function for calculating the Jaccard index and Jaccard distance for binary attributes."
+summary: "Function for calculating the Jaccard similarity and distance for binary attributes."
 ---
 
-Function for calculating the Jaccard index (similarity) and the complementary Jaccard distance for binary attributes. The function takes two arguments: `x` a dataframe or matrix object, and `m` the `MARGIN` argument used in the `apply` function. If your data is in long format set `m = 1` to apply `sum` over the rows. Conversely, If your data is in wide format set `m = 2` to apply `sum` over the columns. Logical vectors work too. 
+Function for calculating the Jaccard similarity and the complementary Jaccard distance for binary attributes. The function takes two arguments: `x` a dataframe or matrix object, and `m` the `MARGIN` argument used in the `apply` function. If your data is in long format set `m = 1` to apply `sum` over the rows. Conversely, If your data is in wide format set `m = 2` to apply `sum` over the columns. Logical vectors work too. 
 
 ```{r, echo = FALSE}
 blogdown::shortcode("gist", "samuel-bohman", "e0df06467661da6023a4eab6ab06e791")
