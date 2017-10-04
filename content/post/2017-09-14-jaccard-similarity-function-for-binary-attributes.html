@@ -13,22 +13,8 @@ summary: "Function for calculating the Jaccard index and Jaccard distance for bi
 
 
 
-<p>Function for calculating the Jaccard index (similarity) and the complementary Jaccard distance for binary attributes. The function takes two arguments: <code>x</code> a dataframe or matrix object, and <code>m</code> the <code>MARGIN</code> argument used in the <code>apply</code> function. If your data is in long format similar to <code>df1</code> set <code>m = 1</code> to apply <code>sum</code> over the rows. If your data is in wide format similar to <code>df2</code> set <code>m = 2</code> to apply <code>sum</code> over the columns.</p>
-<pre class="r"><code>jaccard &lt;- function(x, m) {
-  if (m == 1 | m == 2) {
-    M_00 &lt;- apply(x, m, sum) == 0
-    M_11 &lt;- apply(x, m, sum) == 2
-    if (m == 1) {
-      x &lt;- x[!M_00, ]
-      j_index &lt;- sum(M_11) / nrow(x)
-    } else {
-      x &lt;- x[, !M_00]
-      j_index &lt;- sum(M_11) / length(x)
-    }
-    j_dist &lt;- 1 - j_index
-    return(c(j_index = j_index, j_dist = j_dist))
-  } else break
-}</code></pre>
+<p>Function for calculating the Jaccard index (similarity) and the complementary Jaccard distance for binary attributes. The function takes two arguments: <code>x</code> a dataframe or matrix object, and <code>m</code> the <code>MARGIN</code> argument used in the <code>apply</code> function. If your data is in long format set <code>m = 1</code> to apply <code>sum</code> over the rows. Conversely, If your data is in wide format set <code>m = 2</code> to apply <code>sum</code> over the columns. Logical vectors work too.</p>
+{{% gist "samuel-bohman" "e0df06467661da6023a4eab6ab06e791" %}}
 <div id="examples" class="section level2">
 <h2>Examples</h2>
 <p>Data in long format:</p>
@@ -43,8 +29,9 @@ head(df1)</code></pre>
 ## 4   1    0
 ## 5   1    1
 ## 6   1    1</code></pre>
-<pre class="r"><code>jaccard(df1, 1)</code></pre>
-<pre><code>##   j_index    j_dist 
+<pre class="r"><code>source(&quot;jaccard.R&quot;)
+jaccard(df1, 1)</code></pre>
+<pre><code>##      JSim     JDist 
 ## 0.5555556 0.4444444</code></pre>
 <p>Data in wide format:</p>
 <pre class="r"><code>df2 &lt;- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L))
@@ -53,8 +40,8 @@ df2</code></pre>
 ## 1  1  0  0  1  1
 ## 2  0  1  1  0  1</code></pre>
 <pre class="r"><code>jaccard(df2, 2)</code></pre>
-<pre><code>## j_index  j_dist 
-##     0.2     0.8</code></pre>
+<pre><code>##  JSim JDist 
+##   0.2   0.8</code></pre>
 <p>Logical vectors work too:</p>
 <pre class="r"><code>df3 &lt;- data.frame(A = c(TRUE, TRUE, TRUE), B = c(TRUE, TRUE, FALSE))
 df3</code></pre>
@@ -63,7 +50,7 @@ df3</code></pre>
 ## 2 TRUE  TRUE
 ## 3 TRUE FALSE</code></pre>
 <pre class="r"><code>jaccard(df3, 1)</code></pre>
-<pre><code>##   j_index    j_dist 
+<pre><code>##      JSim     JDist 
 ## 0.6666667 0.3333333</code></pre>
 <p>Enjoy! 😄</p>
 </div>

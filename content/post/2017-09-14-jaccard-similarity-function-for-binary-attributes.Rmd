@@ -11,24 +11,10 @@ output:
 summary: "Function for calculating the Jaccard index and Jaccard distance for binary attributes."
 ---
 
-Function for calculating the Jaccard index (similarity) and the complementary Jaccard distance for binary attributes. The function takes two arguments: `x` a dataframe or matrix object, and `m` the `MARGIN` argument used in the `apply` function. If your data is in long format similar to `df1` set `m = 1` to apply `sum` over the rows. If your data is in wide format similar to  `df2` set `m = 2` to apply `sum` over the columns. 
+Function for calculating the Jaccard index (similarity) and the complementary Jaccard distance for binary attributes. The function takes two arguments: `x` a dataframe or matrix object, and `m` the `MARGIN` argument used in the `apply` function. If your data is in long format set `m = 1` to apply `sum` over the rows. Conversely, If your data is in wide format set `m = 2` to apply `sum` over the columns. Logical vectors work too. 
 
-```{r}
-jaccard <- function(x, m) {
-  if (m == 1 | m == 2) {
-    M_00 <- apply(x, m, sum) == 0
-    M_11 <- apply(x, m, sum) == 2
-    if (m == 1) {
-      x <- x[!M_00, ]
-      j_index <- sum(M_11) / nrow(x)
-    } else {
-      x <- x[, !M_00]
-      j_index <- sum(M_11) / length(x)
-    }
-    j_dist <- 1 - j_index
-    return(c(j_index = j_index, j_dist = j_dist))
-  } else break
-}
+```{r, echo = FALSE}
+blogdown::shortcode("gist", "samuel-bohman", "e0df06467661da6023a4eab6ab06e791")
 ```
 
 ## Examples
@@ -43,6 +29,7 @@ head(df1)
 ```
 
 ```{r}
+source("jaccard.R")
 jaccard(df1, 1)
 ```
 
