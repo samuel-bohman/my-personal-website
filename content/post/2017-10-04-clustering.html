@@ -1,0 +1,183 @@
+---
+title: What is Clustering?
+author: Samuel Bohman
+date: "2017-10-04"
+tags: 
+  - unsupervised learning
+  - clustering
+slug: clustering
+output: blogdown::html_page
+summary: "An introduction to clustering concepts and algorithms."
+---
+
+
+
+<p>Keywords: clustering, outliers, distance measures, data structures, data matrix, distance matrix, Jaccard similarity, Jaccard distance, Minkowski distance, Manhattan distance, Euclidean distance, K-Means clustering, K-Means++, K-Median, K-Medoids, PAM, CLARA, hierarchical clustering</p>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<div id="clustering-what-is-it" class="section level3">
+<h3>Clustering, what is it?</h3>
+<p>Clustering or cluster analysis is an unsupervised machine learning technique. We can think of clustering as creating subgroups. More precisely, clustering is a grouping of objects such that the objects within a group are similar to one another and different from the objects in other groups. More formally, we want to minimize the <em>intra-cluster</em> distances of objects and maximize the <em>inter-cluster</em> distances. There are many ways to do this, and in this brief introduction you are going to learn some common algorithms.</p>
+</div>
+<div id="common-applications" class="section level3">
+<h3>Common Applications</h3>
+<ul>
+<li>Image processing: cluster images based on their visual content</li>
+<li>WWW: cluster groups of users based on their online behavior</li>
+<li>Bioinformatics: cluster similar proteins based on their chemical structure</li>
+</ul>
+</div>
+</div>
+<div id="the-clustering-task" class="section level2">
+<h2>The Clustering Task</h2>
+<p>The first and foremost question is: How do we compare objects? What does similar even mean? How do we measure the distance between objects?</p>
+<p>The second question we need to answer is: What is a good clustering? How do we determine the quality of a clustering solution? Depending on your application domain and question, some distance metrics applies while others do not, and you have to figure out which quality metric you are going to use for the task at hand.</p>
+</div>
+<div id="distance-measures" class="section level2">
+<h2>Distance Measures</h2>
+<p>Definition:</p>
+<p>Let <span class="math inline">\(O_1\)</span> and <span class="math inline">\(O_2\)</span> be two objects from the universe of possible objects. The distance (dissimilarity) between <span class="math inline">\(O_1\)</span> and <span class="math inline">\(O_2\)</span> is a real number denoted by <span class="math inline">\(D(O_1, O_2)\)</span>.</p>
+</div>
+<div id="data-matrix" class="section level2">
+<h2>Data Matrix</h2>
+<ul>
+<li><span class="math inline">\(n\)</span> objects</li>
+<li><span class="math inline">\(d\)</span> attributes/dimensions</li>
+</ul>
+</div>
+<div id="distance-matrix" class="section level2">
+<h2>Distance Matrix</h2>
+<pre class="r"><code>?dist</code></pre>
+</div>
+<div id="jaccard-similarity" class="section level2">
+<h2>Jaccard similarity</h2>
+<p>The Jaccard similarity coefficient (a.k.a. the Jaccard index) is a distance function for binary vectors:</p>
+<p><span class="math display">\[
+J(A, B) = \frac{|A \cap B|}{|A \cup B|} = \frac{|A \cap B|}{|A| + |B| - |A \cap B|}
+\]</span> Example:</p>
+<p><span class="math display">\[
+J = \frac{M_{11}}{M_{01} + M_{10} + M_{11}}
+\]</span></p>
+<pre class="r"><code>df &lt;- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
+row.names(df) &lt;- c(&quot;A&quot;, &quot;B&quot;)
+df</code></pre>
+<pre><code>##   Q1 Q2 Q3 Q4 Q5 Q6
+## A  1  0  0  1  1  0
+## B  0  1  1  0  1  0</code></pre>
+<pre class="r"><code># source(&quot;jaccard.R&quot;)
+# jaccard(df, 2)</code></pre>
+</div>
+<div id="jaccard-distance" class="section level2">
+<h2>Jaccard distance</h2>
+<p>The Jaccard distance is the complement to the Jaccard index and it measures dissimilarity between binary vectors:</p>
+<p><span class="math display">\[
+\text{Jdist}(A, B) = 1 - \text{JSim}(A, B)
+\]</span></p>
+</div>
+<div id="minkowski-distance" class="section level2">
+<h2>Minkowski distance</h2>
+<p>The Minkowski distance is a metric in a normed vector space which can be considered as a generalization of both the Euclidean distance and the Manhattan distance.</p>
+<p><span class="math display">\[
+X = \left(x_1, x_2, \ldots, x_n \right) \text{and } Y = \left(y_1, y_2, \ldots, y_n \right) \in \mathbb{R}^n
+\]</span></p>
+<p><span class="math display">\[
+L_p(x, y) = \left( \sum_{i = 1}^d | x_i - y_i |^p \right)^{1/p}
+\]</span> Minkowski distance is typically used with <span class="math inline">\(p\)</span> being 1 or 2, which correspond to the Manhattan distance and the Euclidean distance, respectively.</p>
+</div>
+<div id="manhattan-distance" class="section level2">
+<h2>Manhattan distance</h2>
+<p><span class="math display">\[
+L_1(x, y) = \sum_{i = 1}^d | x_i - y_i |
+\]</span> Example:</p>
+<p><span class="math display">\[
+L_1(x, y) = |2-1| + |2-4| + |3-4| + |-1-0| = |1| + |-2| + |-1| + |-1| = 1 + 2 + 1 +1 = 5
+\]</span></p>
+<pre class="r"><code>x &lt;- c(2, 2, 3, -1)
+y &lt;- c(1, 4, 4, 0)
+z &lt;- matrix(c(x, y), byrow = T, nrow = 2)
+dist(z, method = &quot;manhattan&quot;)</code></pre>
+<pre><code>##   1
+## 2 5</code></pre>
+</div>
+<div id="euclidean-distance" class="section level2">
+<h2>Euclidean distance</h2>
+<p><span class="math display">\[
+L_2(x, y) = \sqrt{|x_1 - y_1|^2 + |x_2 - y_2|^2 + \ldots + |x_n - y_n|^2}
+\]</span></p>
+<p>Example:</p>
+<p><span class="math display">\[
+L_2(x, y) = \sqrt{(2-1)^2 + (2-4)^2 + (3-4)^2 + (-1-0)^2} = \sqrt{1^2 + (-2)^2 + (-1)^2 + (-1)^2} = \sqrt{1 + 4 + 1 + 1} = \sqrt{7} \approx 2.65
+\]</span></p>
+<pre class="r"><code>x &lt;- c(2, 2, 3, -1)
+y &lt;- c(1, 4, 4, 0)
+z &lt;- matrix(c(x, y), byrow = T, nrow = 2)
+dist(z, method = &quot;euclidean&quot;)</code></pre>
+<pre><code>##          1
+## 2 2.645751</code></pre>
+</div>
+<div id="k-means-clustering" class="section level2">
+<h2>K-Means Clustering</h2>
+<p>Algorithm for partitioning a data set into <span class="math inline">\(K\)</span> distinct, non-overlapping clusters. To perform <span class="math inline">\(K\)</span>-means clustering, we must first specify the desired number of clusters <span class="math inline">\(K\)</span>; then the algorithm will assign each observation to exactly one of the <span class="math inline">\(K\)</span> clusters.</p>
+<p><span class="math display">\[
+\text{minimize}
+\]</span></p>
+<p>Example:</p>
+<pre class="r"><code>set.seed(123)
+x &lt;- matrix(rnorm(500), ncol = 2)
+km.out &lt;- kmeans(x, 3, nstart = 50)
+plot(x, col = km.out$cluster)</code></pre>
+<p><img src="/post/2017-10-04-clustering_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Algorithmic properties: - NP-hard if <span class="math inline">\(d &gt;= 2\)</span><br />
+- Finding the best solution in polynomial time is infeasible<br />
+- For <span class="math inline">\(d = 1\)</span> the problem is solvable in polynomial time<br />
+- Finds a local optimum<br />
+- Often converges quickly<br />
+- Relative efficient<br />
+- Guaranteed to converge after at most <span class="math inline">\(K^N\)</span> iterations<br />
+- Choice of initial points can have a large influence on the result</p>
+</div>
+<div id="k-means" class="section level2">
+<h2>K-Means++</h2>
+<p>An alternative as a way of avoiding the sometimes poor clustering found the by the standard <em>k</em>-means algorithm.</p>
+</div>
+<div id="k-median" class="section level2">
+<h2>K-Median</h2>
+<p>The <em>K</em>-median algorithm is the same as the <em>K</em>-means algorithm, except that for each dimension we identify the median (the Manhattan distance) instead of the mean (the Euclidean distance).</p>
+<p>Algorithmic properties:<br />
+- Less sensitive (more robust) against outliers</p>
+</div>
+<div id="k-medoids" class="section level2">
+<h2>K-Medoids</h2>
+<p>Similar to <em>K</em>-means but the centers are objects from the data set, for example images.</p>
+<p>K-means vs. K-medoids:<br />
+- K-medoids is more flexible: any distance/similarity measure<br />
+- K-medoids is robust w.r.t. outliers<br />
+- K-medoids is more expensive</p>
+</div>
+<div id="clustering-large-applications-clara" class="section level2">
+<h2>Clustering Large Applications (CLARA)</h2>
+<p>Draws multiple samples of the data set, applies PAM on each sample, and gives the best clustering as output.<br />
+- Strength: dealing with large data sets<br />
+- Weakness: efficiency depends on sample size</p>
+</div>
+<div id="hierarchical-clustering" class="section level2">
+<h2>Hierarchical Clustering</h2>
+<p>Produces a set of nested clusters organized as a hierarchical tree or dendogram. No assumption about the number of clusters.</p>
+<p>Agglomerative<br />
+- Start with points as individual clusters<br />
+- At each step, merge the closest pair of clusters until only one cluster remains<br />
+Divisive<br />
+- Start with one all-inclusive cluster<br />
+- At each step, split a cluster until each cluster contains a point</p>
+<p>Distance between two clusters:</p>
+<p>Single-link distance: minimum distance (maximum similarity) between two objects in <span class="math inline">\(C_i\)</span> and <span class="math inline">\(C_j\)</span><br />
+- Can handle non-elliptical shapes<br />
+- Sensitive to noise and outliers<br />
+Complete-link distance: maximum distance (minimum similarity) between two objects in <span class="math inline">\(C_i\)</span> and <span class="math inline">\(C_j\)</span><br />
+- More balanced clusters<br />
+- Less sensitive to noise and outliers<br />
+- Tends to break large clusters - all clusters tend to have similar diameter<br />
+Average-link distance: average distance between two objects in <span class="math inline">\(C_i\)</span> and <span class="math inline">\(C_j\)</span><br />
+- Compromise between single and complete<br />
+Ward’s distance:</p>
+</div>

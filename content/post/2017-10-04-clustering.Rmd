@@ -1,0 +1,209 @@
+---
+title: What is Clustering?
+author: Samuel Bohman
+date: "2017-10-04"
+tags: 
+  - unsupervised learning
+  - clustering
+slug: clustering
+output: blogdown::html_page
+summary: "An introduction to clustering concepts and algorithms."
+---
+
+Keywords: clustering, outliers, distance measures, data structures, data matrix, distance matrix, Jaccard similarity, Jaccard distance, Minkowski distance, Manhattan distance, Euclidean distance, K-Means clustering, K-Means++, K-Median, K-Medoids, PAM, CLARA, hierarchical clustering
+
+## Introduction 
+
+### Clustering, what is it? 
+
+Clustering or cluster analysis is an unsupervised machine learning technique. We can think of clustering as creating subgroups. More precisely, clustering is a grouping of objects such that the objects within a group are similar to one another and different from the objects in other groups. More formally, we want to minimize the *intra-cluster* distances of objects and maximize the *inter-cluster* distances. There are many ways to do this, and in this brief introduction you are going to learn some common algorithms. 
+
+### Common Applications 
+- Image processing: cluster images based on their visual content
+- WWW: cluster groups of users based on their online behavior
+- Bioinformatics: cluster similar proteins based on their chemical structure
+
+## The Clustering Task
+
+The first and foremost question is: How do we compare objects? What does similar even mean? How do we measure the distance between objects? 
+
+The second question we need to answer is: What is a good clustering? How do we determine the quality of a clustering solution? Depending on your application domain and question, some distance metrics applies while others do not, and you have to figure out which quality metric you are going to use for the task at hand. 
+
+## Distance Measures 
+
+Definition:
+
+Let $O_1$ and $O_2$ be two objects from the universe of possible objects. The distance (dissimilarity) between $O_1$ and $O_2$ is a real number denoted by $D(O_1, O_2)$. 
+
+## Data Matrix
+
+- $n$ objects
+- $d$ attributes/dimensions
+
+## Distance Matrix
+
+```{r}
+?dist
+```
+
+
+## Jaccard similarity
+
+The Jaccard similarity coefficient (a.k.a. the Jaccard index) is a distance function for binary vectors: 
+
+$$
+J(A, B) = \frac{|A \cap B|}{|A \cup B|} = \frac{|A \cap B|}{|A| + |B| - |A \cap B|}
+$$
+Example: 
+
+$$
+J = \frac{M_{11}}{M_{01} + M_{10} + M_{11}}
+$$
+
+```{r}
+df <- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
+row.names(df) <- c("A", "B")
+df
+```
+
+```{r}
+# source("jaccard.R")
+# jaccard(df, 2)
+```
+
+## Jaccard distance
+
+The Jaccard distance is the complement to the Jaccard index and it measures dissimilarity between binary vectors: 
+
+$$
+\text{Jdist}(A, B) = 1 - \text{JSim}(A, B)
+$$
+
+## Minkowski distance
+
+The Minkowski distance is a metric in a normed vector space which can be considered as a generalization of both the Euclidean distance and the Manhattan distance.
+
+$$
+X = \left(x_1, x_2, \ldots, x_n \right) \text{and } Y = \left(y_1, y_2, \ldots, y_n \right) \in \mathbb{R}^n
+$$
+
+$$
+L_p(x, y) = \left( \sum_{i = 1}^d | x_i - y_i |^p \right)^{1/p}
+$$
+Minkowski distance is typically used with $p$ being 1 or 2, which correspond to the Manhattan distance and the Euclidean distance, respectively. 
+
+## Manhattan distance
+
+$$
+L_1(x, y) = \sum_{i = 1}^d | x_i - y_i |
+$$
+Example:
+
+$$
+L_1(x, y) = |2-1| + |2-4| + |3-4| + |-1-0| = |1| + |-2| + |-1| + |-1| = 1 + 2 + 1 +1 = 5
+$$
+
+```{r}
+x <- c(2, 2, 3, -1)
+y <- c(1, 4, 4, 0)
+z <- matrix(c(x, y), byrow = T, nrow = 2)
+dist(z, method = "manhattan")
+```
+
+## Euclidean distance
+
+$$
+L_2(x, y) = \sqrt{|x_1 - y_1|^2 + |x_2 - y_2|^2 + \ldots + |x_n - y_n|^2}
+$$
+
+Example:
+
+$$
+L_2(x, y) = \sqrt{(2-1)^2 + (2-4)^2 + (3-4)^2 + (-1-0)^2} = \sqrt{1^2 + (-2)^2 + (-1)^2 + (-1)^2} = \sqrt{1 + 4 + 1 + 1} = \sqrt{7} \approx 2.65
+$$
+
+```{r}
+x <- c(2, 2, 3, -1)
+y <- c(1, 4, 4, 0)
+z <- matrix(c(x, y), byrow = T, nrow = 2)
+dist(z, method = "euclidean")
+```
+
+## K-Means Clustering
+
+Algorithm for partitioning a data set into $K$ distinct, non-overlapping clusters. To perform $K$-means clustering, we must first specify the desired number of clusters $K$; then the algorithm will assign each observation to exactly one of the $K$ clusters. 
+
+$$
+\text{minimize}
+$$
+
+Example:
+
+```{r}
+set.seed(123)
+x <- matrix(rnorm(500), ncol = 2)
+km.out <- kmeans(x, 3, nstart = 50)
+plot(x, col = km.out$cluster)
+```
+
+Algorithmic properties:
+- NP-hard if $d >= 2$  
+- Finding the best solution in polynomial time is infeasible  
+- For $d = 1$ the problem is solvable in polynomial time  
+- Finds a local optimum  
+- Often converges quickly  
+- Relative efficient  
+- Guaranteed to converge after at most $K^N$ iterations  
+- Choice of initial points can have a large influence on the result  
+
+## K-Means++
+
+An alternative as a way of avoiding the sometimes poor clustering found the by the standard *k*-means algorithm. 
+
+## K-Median
+
+The *K*-median algorithm is the same as the *K*-means algorithm, except that for each dimension we identify the median (the Manhattan distance) instead of the mean (the Euclidean distance).  
+
+Algorithmic properties:  
+- Less sensitive (more robust) against outliers  
+
+## K-Medoids
+
+Similar to *K*-means but the centers are objects from the data set, for example images.   
+
+K-means vs. K-medoids:  
+- K-medoids is more flexible: any distance/similarity measure  
+- K-medoids is robust w.r.t. outliers  
+- K-medoids is more expensive  
+
+## Clustering Large Applications (CLARA)
+
+Draws multiple samples of the data set, applies PAM on each sample, and gives the best clustering as output.   
+- Strength: dealing with large data sets  
+- Weakness: efficiency depends on sample size  
+    
+## Hierarchical Clustering
+
+Produces a set of nested clusters organized as a hierarchical tree or dendogram. No assumption about the number of clusters.  
+
+Agglomerative  
+- Start with points as individual clusters  
+- At each step, merge the closest pair of clusters until only one cluster remains  
+Divisive  
+- Start with one all-inclusive cluster  
+- At each step, split a cluster until each cluster contains a point  
+
+Distance between two clusters:
+
+Single-link distance: minimum distance (maximum similarity) between two objects in $C_i$ and $C_j$  
+  - Can handle non-elliptical shapes  
+  - Sensitive to noise and outliers  
+Complete-link distance: maximum distance (minimum similarity) between two objects in $C_i$ and $C_j$  
+  - More balanced clusters  
+  - Less sensitive to noise and outliers  
+  - Tends to break large clusters - all clusters tend to have similar diameter  
+Average-link distance: average distance between two objects in $C_i$ and $C_j$  
+  - Compromise between single and complete  
+Ward's distance: 
+
+
