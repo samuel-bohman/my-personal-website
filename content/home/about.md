@@ -37,4 +37,4 @@ weight = 1
 
 # About me
 
-I am PhD student in the Department of Computer and Systems Sciences, Stockholm University. I am passionate about statistics, computing, and programming. Prior to my PhD studies, I was a research assistant at the Institute for Futures Studies, an independent research institute based in Stockholm. This is my personal website with a collection of articles, projects, tutorials, and my own experiments with data.  
+I am PhD student in the Department of Computer and Systems Sciences, Stockholm University. I am passionate about statistics, computing, and programming. Prior to my PhD studies, I was a research assistant at the Institute for Futures Studies, an independent research institute based in Stockholm. This is my personal website and portfolio featuring my articles, projects, and tutorials. 
