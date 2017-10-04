@@ -4,7 +4,6 @@ author: Samuel Bohman
 date: '2017-09-14'
 tags:
   - r
-  - jaccard-index
   - jaccard-similarity
   - jaccard-distance
 slug: jaccard-similarity-function-for-binary-attributes
@@ -21,25 +20,19 @@ summary: "Function for calculating the Jaccard similarity and distance coefficie
 <p><span class="math display">\[
 J_S(A, B) = \frac{|A \cap B|}{|A \cup B|} = \frac{|A \cap B|}{|A| + |B| - |A \cap B|}
 \]</span></p>
-<p>The complement to the Jaccard index is the Jaccard distance and it measures dissimilarity between binary vectors:</p>
+<p>The complement to the Jaccard similarity is the Jaccard distance and it measures dissimilarity between binary vectors:</p>
 <p><span class="math display">\[
 J_D(A, B) = 1 - J_S(A, B)
 \]</span></p>
 <div id="example" class="section level3">
 <h3>Example</h3>
-<p>Assume we have two vectors A and B in a data frame along 6 dimensions:</p>
-<pre class="r"><code>df &lt;- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
-row.names(df) &lt;- c(&quot;A&quot;, &quot;B&quot;)
-df</code></pre>
-<pre><code>##   Q1 Q2 Q3 Q4 Q5 Q6
-## A  1  0  0  1  1  0
-## B  0  1  1  0  1  0</code></pre>
-<p>To calculate the Jaccard similarity we use the following formula:</p>
+<p>For example, Assume we have two vectors A and B. To calculate the Jaccard similarity we use the following formula:</p>
 <p><span class="math display">\[
 J = \frac{M_{11}}{M_{01} + M_{10} + M_{11}}
 \]</span></p>
 <p>In other words, the Jaccard similarity coefficient measures the number of attributes where A and B are both 1, divided by the number of attributes where A and B are dissimilar, plus the number of attributes where they are both 1.</p>
-<p>{{% alert note %}} Notice that the Jaccard similarity does not include the combination where they are both 0. {{% /alert %}}</p>
+<p>{{% alert note %}} Notice that the Jaccard similarity does not include the combination where they are both 0.<br />
+{{% /alert %}}</p>
 </div>
 </div>
 <div id="the-function-jaccard.r" class="section level2">

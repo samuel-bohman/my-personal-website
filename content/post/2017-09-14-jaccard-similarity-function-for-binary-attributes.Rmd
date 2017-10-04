@@ -4,7 +4,6 @@ author: Samuel Bohman
 date: '2017-09-14'
 tags:
   - r
-  - jaccard-index
   - jaccard-similarity
   - jaccard-distance
 slug: jaccard-similarity-function-for-binary-attributes
@@ -21,22 +20,15 @@ $$
 J_S(A, B) = \frac{|A \cap B|}{|A \cup B|} = \frac{|A \cap B|}{|A| + |B| - |A \cap B|}
 $$
 
-The complement to the Jaccard index is the Jaccard distance and it measures dissimilarity between binary vectors: 
+The complement to the Jaccard similarity is the Jaccard distance and it measures dissimilarity between binary vectors: 
 
 $$
 J_D(A, B) = 1 - J_S(A, B)
 $$
 
 ### Example 
-Assume we have two vectors A and B in a data frame along 6 dimensions: 
 
-```{r}
-df <- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L), Q6 = c(0L, 0L))
-row.names(df) <- c("A", "B")
-df
-```
-
-To calculate the Jaccard similarity we use the following formula: 
+For example, Assume we have two vectors A and B. To calculate the Jaccard similarity we use the following formula: 
 
 $$
 J = \frac{M_{11}}{M_{01} + M_{10} + M_{11}}
@@ -45,7 +37,7 @@ $$
 In other words, the Jaccard similarity coefficient measures the number of attributes where A and B are both 1, divided by the number of attributes where A and B are dissimilar, plus the number of attributes where they are both 1. 
 
 {{% alert note %}}
-Notice that the Jaccard similarity does not include the combination where they are both 0. 
+Notice that the Jaccard similarity does not include the combination where they are both 0.  
 {{% /alert %}}
 
 ## The Function `jaccard.R`
