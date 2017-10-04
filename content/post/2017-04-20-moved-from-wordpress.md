@@ -1,7 +1,7 @@
 +++
-date = "2016-04-20T12:00:00"
+date = "2017-06-28T12:00:00"
 draft = false
-tags = ["blogdown", "hugo", "github", "netlify"]
+tags = ["blogdown", "hugo", "netlify"]
 title = "Moved from WordPress to Hugo"
 math = false
 summary = """
