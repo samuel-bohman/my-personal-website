@@ -66,14 +66,3 @@ dist(z, method = &quot;manhattan&quot;)</code></pre>
 L_p(x, y) = \left( \sum_{i = 1}^d | x_i - y_i |^p \right)^{1/p}
 \]</span> Minkowski distance is typically used with <span class="math inline">\(p\)</span> being 1 or 2, which correspond to <span class="math inline">\(L_1\)</span> or the Manhattan distance and <span class="math inline">\(L_2\)</span> or the Euclidean distance, respectively.</p>
 </div>
-<div id="partitioning-algorithms" class="section level2">
-<h2>Partitioning Algorithms</h2>
-<p>The first group of clustering algorithms we are going to look at is called partitioning algorithms. The basic concept is to construct a partition of a set of <span class="math inline">\(n\)</span> objects into a set of <span class="math inline">\(k\)</span> clusters, in which each object belongs to <em>exactly one</em> cluster.</p>
-<div id="k-means-clustering" class="section level3">
-<h3>K-Means Clustering</h3>
-<p>K-means is one of the most popular clustering algorithms. The goal of the K-means algorithm is to partition a data set into a desired number of non-overlapping clusters <span class="math inline">\(K\)</span>, so that the total <em>within-cluster variation</em> <span class="math inline">\(W(C_K)\)</span> is minimized. Formally, we want to solve the problem:</p>
-<p><span class="math display">\[
-\ \min_{C_1,...,C_K} \left \{ \sum_{k=1}^K W(C_K) \right \}
-\]</span></p>
-</div>
-</div>

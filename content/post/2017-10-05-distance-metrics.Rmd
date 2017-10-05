@@ -84,16 +84,3 @@ $$
 L_p(x, y) = \left( \sum_{i = 1}^d | x_i - y_i |^p \right)^{1/p}
 $$
 Minkowski distance is typically used with $p$ being 1 or 2, which correspond to $L_1$ or the Manhattan distance and $L_2$ or the Euclidean distance, respectively. 
-
-## Partitioning Algorithms
-
-The first group of clustering algorithms we are going to look at is called partitioning algorithms. The basic concept is to construct a partition of a set of $n$ objects into a set of $k$ clusters, in which each object belongs to *exactly one* cluster. 
-
-### K-Means Clustering
-
-K-means is one of the most popular clustering algorithms. The goal of the K-means algorithm is to partition a data set into a desired number of non-overlapping clusters $K$, so that the total *within-cluster variation* $W(C_K)$ is minimized. Formally, we want to solve the problem: 
-
-$$
-\ \min_{C_1,...,C_K} \left \{ \sum_{k=1}^K W(C_K) \right \}
-$$
-
