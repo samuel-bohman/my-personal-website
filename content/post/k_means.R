@@ -1,9 +1,9 @@
-k_means <- function(x, k, max.iter = 20) {
+k_means <- function(x, k, iter.max = 10) {
   random_index <- sample(1:k, nrow(x), replace = TRUE)
   data_w_cluster <- cbind(x, clusterID = random_index)
   iterations <- 1
-  plot(data_w_cluster[, 1:2])
-  legend("topleft", paste0("i = ", 0))
+  plot(data_w_cluster[, 1:2], xaxt = "n", yaxt = "n")
+  legend("topright", paste0("i = ", 0), bg = NULL)
   while(TRUE) {
     centroids <- matrix(rep(0, times = k * ncol(x)), nrow = k, ncol = ncol(x))
     for(i in 1:k) {
@@ -21,13 +21,13 @@ k_means <- function(x, k, max.iter = 20) {
       km.clusters <- obs_new_clusterID
       centroid.matrix <- centroids
       break
-    } else if (iterations > max.iter) {
+    } else if (iterations > iter.max) {
       break
     } else {
       data_w_cluster$clusterID <- obs_new_clusterID
-      plot(data_w_cluster[, 1:2], col = alpha(data_w_cluster$clusterID, 0.4))
-      points(centroids[, 1:2], pch = 20, cex = 2, col = 1:k)
-      legend("topleft", paste0("i = ", iterations))
+      plot(data_w_cluster[, 1:2], col = alpha(data_w_cluster$clusterID, 0.7), xaxt = "n", yaxt = "n")
+      points(centroids[, 1:2], pch = 4, cex = 1.5, lwd = 2, col = 1:k)
+      legend("topright", paste0("i = ", iterations), bg = NULL)
       iterations <- iterations + 1
     }
   }
