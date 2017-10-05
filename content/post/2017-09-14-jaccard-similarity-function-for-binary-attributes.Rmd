@@ -37,7 +37,7 @@ $$
 In other words, the Jaccard similarity coefficient measures the number of attributes where A and B are both 1, divided by the number of attributes where A and B are dissimilar, plus the number of attributes where they are both 1. 
 
 {{% alert note %}}
-Notice that the Jaccard similarity does not include the combination where they are both 0.  
+Notice that the Jaccard similarity does not include the combination where they are both 0. An alternative measure is the Single Matching Coefficient (SMC) which takes this combination into account. 
 {{% /alert %}}
 
 ## The Function `jaccard.R`
