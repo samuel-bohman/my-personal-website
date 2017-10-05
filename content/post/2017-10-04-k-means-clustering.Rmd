@@ -18,7 +18,7 @@ $$
 
 This is in fact a very difficult problem to solve precisely, since there are almost $K^n$ ways to partition $n$ observations into $K$ clusters. Fortunately, the k-means algorithm can find a pretty good solution to this problem. 
 
-The function `kmeans()` performs k-means clustering in R. We will illustrate the `k-means` algorithm below with some simulated data and `k = 3`. 
+The function `kmeans()` performs k-means clustering in R. We will illustrate the `k-means` algorithm below with some simulated data and the number of clusters `k = 3`. 
 
 ```{r}
 set.seed(5)

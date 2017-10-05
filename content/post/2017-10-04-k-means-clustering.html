@@ -17,7 +17,7 @@ summary: "A brief tutorial on the k-means algorithm."
 \ \min_{C_1,...,C_K} \left \{ \sum_{k=1}^K W(C_K) \right \}
 \]</span></p>
 <p>This is in fact a very difficult problem to solve precisely, since there are almost <span class="math inline">\(K^n\)</span> ways to partition <span class="math inline">\(n\)</span> observations into <span class="math inline">\(K\)</span> clusters. Fortunately, the k-means algorithm can find a pretty good solution to this problem.</p>
-<p>The function <code>kmeans()</code> performs k-means clustering in R. We will illustrate the <code>k-means</code> algorithm below with some simulated data and <code>k = 3</code>.</p>
+<p>The function <code>kmeans()</code> performs k-means clustering in R. We will illustrate the <code>k-means</code> algorithm below with some simulated data and the number of clusters <code>k = 3</code>.</p>
 <pre class="r"><code>set.seed(5)
 x &lt;- matrix(rnorm(50 * 2), ncol = 2)
 x[1:25, 1] &lt;- x[1:25, 1] + 3
