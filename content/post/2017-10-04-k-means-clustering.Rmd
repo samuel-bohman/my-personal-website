@@ -1,0 +1,50 @@
+---
+title: The K-Means Algorithm
+author: Samuel Bohman
+date: "2017-10-04"
+tags: 
+  - unsupervised learning
+  - k-means
+slug: the-k-means-algorithm
+output: blogdown::html_page
+summary: "A brief tutorial on the k-means algorithm."
+---
+
+K-means is one of the most popular clustering algorithms. The goal of the algorithm is to partition a data set into a desired number of non-overlapping clusters $K$, so that the total *within-cluster variation* $W(C_K)$ is minimized. Formally, we want to solve the problem: 
+
+$$
+\ \min_{C_1,...,C_K} \left \{ \sum_{k=1}^K W(C_K) \right \}
+$$
+
+This is in fact a very difficult problem to solve precisely, since there are almost $K^n$ ways to partition $n$ observations into $K$ clusters. Fortunately, the k-means algorithm can find a pretty good solution to this problem. 
+
+We will illustrate how the k-means algorithm works based on simulated data. For each step of the algorith, a new plot is produced. 
+
+```{r}
+set.seed(5)
+xy <- data.frame(rnorm(100), rnorm(100))
+kmeans(x = xy, centers = 3, iter.max = 15)
+```
+
+```{r, echo = FALSE}
+library(scales)
+library(RColorBrewer)
+source("my_dist.R")
+source("k_means.R")
+palette(brewer.pal(3, "Dark2"))
+par(cex = 0.6, ann = F, mai = c(0, 0, 0, 0), mfrow = c(3, 3))
+set.seed(5)
+xy <- data.frame(rnorm(100), rnorm(100))
+k_means(xy, k = 3, max.iter = 15)
+```
+
+In the figure, the first plot where i = 0 shows just the data in `xy`. The algorithm has not started yet, therefore `i = 0`.The next plot shows the first iteration of the k-means algorithm. 
+
+In the figure, 
+
+Algorithmic properties of the k-means algorithm:  
+- For $d = 1$ the problem is solvable in polynomial time  
+- NP-hard if $d >= 2$  
+- Finds a local optimum; often converges quickly  
+- Guaranteed to converge after at most $K^N$ iterations  
+- Choice of initial points can have a large influence on the result  
