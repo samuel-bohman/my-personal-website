@@ -1,0 +1,101 @@
+---
+title: Distance Metrics
+author: Samuel Bohman
+date: "2017-10-05"
+tags: 
+  - distance-metrics
+  - Euclidean
+  - Manhattan
+  - Minkowski
+slug: distance-metrics
+output: blogdown::html_page
+summary: "A brief overview of distance metrics used in unsupervised learning."
+---
+
+## Distance Metrics, what is it?
+
+There are many distance metrics; here we will take a look at three: the Euclidean distance, the Manhattan distance, and the Minkowski distance.  
+
+### Euclidean distance
+
+The Euclidean or direct "bird-flight" distance is by far the most commonly used distance metric. It can be thought of as the straight line distance between two points. It is defined as follows: 
+
+$$
+\left( \sum_{j=1}^P \left(x_{aj} - x_{bj}\right)^2 \right)^{1/2}
+$$
+
+#### Example
+
+Assume we have two vectors: $X = [2, 2, 3, -1]$ and $Y = [1, 4, 4, 0]$. The Euclidean distance between $X$ and $Y$ can then be calculated as follows: 
+
+$$L_2(x, y) = \sqrt{(2-1)^2 + (2-4)^2 + (3-4)^2 + (-1-0)^2}$$
+
+$$=\sqrt{1^2 + (-2)^2 + (-1)^2 + (-1)^2}$$
+
+$$=\sqrt{1 + 4 + 1 + 1}$$
+
+$$=\sqrt{7} \approx 2.65$$
+
+In R: 
+
+```{r}
+x <- c(2, 2, 3, -1)
+y <- c(1, 4, 4, 0)
+m <- matrix(data = c(x, y), byrow = T, nrow = 2)
+dist(m, method = "euclidean")
+```
+
+### Manhattan Distance
+
+The Manhattan or "city-block" distance (or "Pac-Man" distance `r emo::ji("smile")`) is another common metric used for datasets with binary predictors. 
+
+```{r, echo = FALSE}
+blogdown::shortcode("figure", 
+                    src = "https://upload.wikimedia.org/wikipedia/commons/0/08/Manhattan_distance.svg", 
+                    alt = "Manhattan distance")
+```
+
+In the figure, the blue, red, and yellow lines show various ways of getting from the lower left corner to the upper right corner using the grid layout. The green straight line shows the Euclidean distance in comparison. 
+
+The Manhattan metric is defined as follows: 
+
+$$
+L_1(x, y) = \sum_{i = 1}^d | x_i - y_i |
+$$
+
+#### Example 
+
+Assume we have two vectors: $X = [0, 5, 5, 6, 6]$ and $Y = [0, 0, 2, 2, 6]$ which corresponds to the yellow line in the figure. Thus, the Manhattan distance between $X$ and $Y$ can then be calculated as follows: 
+
+$$L_1(x, y) = |0-0| + |5-0| + |5-2| + |6-2| + |6-6| = 12$$
+In R, we can do the following: 
+
+```{r}
+# The yellow line
+x <- c(0, 5, 5, 6, 6)
+y <- c(0, 0, 2, 2, 6)
+z <- matrix(c(x, y), byrow = T, nrow = 2)
+dist(z, method = "manhattan")
+```
+
+### Minkowski Distance
+
+The Minkowski distance can be considered a generalization of both the Euclidean distance and the Manhattan distance. It is defined as follows: 
+
+$$
+L_p(x, y) = \left( \sum_{i = 1}^d | x_i - y_i |^p \right)^{1/p}
+$$
+Minkowski distance is typically used with $p$ being 1 or 2, which correspond to $L_1$ or the Manhattan distance and $L_2$ or the Euclidean distance, respectively. 
+
+## Partitioning Algorithms
+
+The first group of clustering algorithms we are going to look at is called partitioning algorithms. The basic concept is to construct a partition of a set of $n$ objects into a set of $k$ clusters, in which each object belongs to *exactly one* cluster. 
+
+### K-Means Clustering
+
+K-means is one of the most popular clustering algorithms. The goal of the K-means algorithm is to partition a data set into a desired number of non-overlapping clusters $K$, so that the total *within-cluster variation* $W(C_K)$ is minimized. Formally, we want to solve the problem: 
+
+$$
+\ \min_{C_1,...,C_K} \left \{ \sum_{k=1}^K W(C_K) \right \}
+$$
+
