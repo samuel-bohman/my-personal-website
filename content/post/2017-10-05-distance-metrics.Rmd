@@ -4,15 +4,13 @@ author: Samuel Bohman
 date: "2017-10-05"
 tags: 
   - distance-metrics
-  - Euclidean
-  - Manhattan
-  - Minkowski
+  - euclidean
+  - manhattan
+  - minkowski
 slug: distance-metrics
 output: blogdown::html_page
 summary: "A brief overview of distance metrics used in unsupervised learning."
 ---
-
-## Distance Metrics, what is it?
 
 There are many distance metrics; here we will take a look at three: the Euclidean distance, the Manhattan distance, and the Minkowski distance.  
 

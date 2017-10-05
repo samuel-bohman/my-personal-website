@@ -4,9 +4,9 @@ author: Samuel Bohman
 date: "2017-10-05"
 tags: 
   - distance-metrics
-  - Euclidean
-  - Manhattan
-  - Minkowski
+  - euclidean
+  - manhattan
+  - minkowski
 slug: distance-metrics
 output: blogdown::html_page
 summary: "A brief overview of distance metrics used in unsupervised learning."
@@ -14,8 +14,6 @@ summary: "A brief overview of distance metrics used in unsupervised learning."
 
 
 
-<div id="distance-metrics-what-is-it" class="section level2">
-<h2>Distance Metrics, what is it?</h2>
 <p>There are many distance metrics; here we will take a look at three: the Euclidean distance, the Manhattan distance, and the Minkowski distance.</p>
 <div id="euclidean-distance" class="section level3">
 <h3>Euclidean distance</h3>
@@ -67,7 +65,6 @@ dist(z, method = &quot;manhattan&quot;)</code></pre>
 <p><span class="math display">\[
 L_p(x, y) = \left( \sum_{i = 1}^d | x_i - y_i |^p \right)^{1/p}
 \]</span> Minkowski distance is typically used with <span class="math inline">\(p\)</span> being 1 or 2, which correspond to <span class="math inline">\(L_1\)</span> or the Manhattan distance and <span class="math inline">\(L_2\)</span> or the Euclidean distance, respectively.</p>
-</div>
 </div>
 <div id="partitioning-algorithms" class="section level2">
 <h2>Partitioning Algorithms</h2>

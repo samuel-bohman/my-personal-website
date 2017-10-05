@@ -10,8 +10,6 @@ output: blogdown::html_page
 summary: "A brief tutorial on the k-means algorithm."
 ---
 
-## The K-Means Algorithm
-
 K-means is one of the most popular clustering algorithms. The goal of the K-means algorithm is to partition a data set into a desired number of non-overlapping clusters $K$, so that the total *within-cluster variation* $W(C_K)$ is minimized. Formally, we want to solve the problem: 
 
 $$
@@ -20,7 +18,7 @@ $$
 
 This is in fact a very difficult problem to solve precisely, since there are almost $K^n$ ways to partition $n$ observations into $K$ clusters. Fortunately, the K-means algorithm can find a pretty good solution to this problem. 
 
-#### Example
+## Example
 
 ```{r}
 load("cluster.RData")
@@ -71,7 +69,6 @@ k_means <- function(x, k, max.iter = 20) {
 
 km_clusters <- k_means(cluster.data, k = 3, max.iter = 15)
 ```
-
 
 Algorithmic properties:
 - NP-hard if $d >= 2$  

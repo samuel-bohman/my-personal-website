@@ -12,15 +12,13 @@ summary: "A brief tutorial on the k-means algorithm."
 
 
 
-<div id="the-k-means-algorithm" class="section level2">
-<h2>The K-Means Algorithm</h2>
 <p>K-means is one of the most popular clustering algorithms. The goal of the K-means algorithm is to partition a data set into a desired number of non-overlapping clusters <span class="math inline">\(K\)</span>, so that the total <em>within-cluster variation</em> <span class="math inline">\(W(C_K)\)</span> is minimized. Formally, we want to solve the problem:</p>
 <p><span class="math display">\[
 \ \min_{C_1,...,C_K} \left \{ \sum_{k=1}^K W(C_K) \right \}
 \]</span></p>
 <p>This is in fact a very difficult problem to solve precisely, since there are almost <span class="math inline">\(K^n\)</span> ways to partition <span class="math inline">\(n\)</span> observations into <span class="math inline">\(K\)</span> clusters. Fortunately, the K-means algorithm can find a pretty good solution to this problem.</p>
-<div id="example" class="section level4">
-<h4>Example</h4>
+<div id="example" class="section level2">
+<h2>Example</h2>
 <pre class="r"><code>load(&quot;cluster.RData&quot;)
 set.seed(5)
 
@@ -77,5 +75,4 @@ km_clusters &lt;- k_means(cluster.data, k = 3, max.iter = 15)</code></pre>
 - Relative efficient<br />
 - Guaranteed to converge after at most <span class="math inline">\(K^N\)</span> iterations<br />
 - Choice of initial points can have a large influence on the result</p>
-</div>
 </div>
