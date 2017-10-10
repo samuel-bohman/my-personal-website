@@ -37,4 +37,4 @@ weight = 1
 
 # About me
 
-I am a PhD student in the Department of Computer and Systems Sciences at Stockholm University. Prior to my PhD studies, I was a research assistant at the Institute for Futures Studies, an independent research institute based in Stockholm. This is my personal website and portfolio featuring my articles, projects, and tutorials. 
+I am a PhD student in the Department of Computer and Systems Sciences at Stockholm University. Prior to my PhD studies, I was a research assistant at the Institute for Futures Studies, an independent research institute based in Stockholm. 
