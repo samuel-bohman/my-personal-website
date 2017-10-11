@@ -13,7 +13,7 @@ summary: "A step-by-step tutorial on how to install CUDA on Ubuntu 16.04."
 
 
 
-<p>This blog post describes how to install NVIDIA CUDA on Ubuntu 16.04 for parallel computing. The exact appearance and the output lines might be different on your system. Read more at the official NVIDIA documentations website: <a href="http://docs.nvidia.com/cuda/cuda-installation-guide-linux/" class="uri">http://docs.nvidia.com/cuda/cuda-installation-guide-linux/</a>.</p>
+<p>This blog post describes how to install NVIDIA CUDA on Ubuntu 16.04 for parallel computing. The exact appearance and the output lines might be different on your system.</p>
 <div id="pre-installation-actions" class="section level2">
 <h2>Pre-Installation Actions</h2>
 <div id="verify-you-have-a-cuda-capable-gpu" class="section level3">
@@ -137,7 +137,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 <div id="verify-nvidia-smi" class="section level4">
 <h4>Verify NVIDIA SMI</h4>
 <pre class="bash"><code>nvidia-smi</code></pre>
-<pre><code>## Wed Oct 11 23:29:28 2017       
+<pre><code>## Wed Oct 11 23:32:46 2017       
 ## +-----------------------------------------------------------------------------+
 ## | NVIDIA-SMI 384.81                 Driver Version: 384.81                    |
 ## |-------------------------------+----------------------+----------------------+
@@ -145,7 +145,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 ## | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
 ## |===============================+======================+======================|
 ## |   0  GeForce GTX 106...  Off  | 00000000:01:00.0  On |                  N/A |
-## | 24%   31C    P8     7W / 120W |    779MiB /  6057MiB |      0%      Default |
+## | 24%   31C    P8     7W / 120W |    779MiB /  6057MiB |      1%      Default |
 ## +-------------------------------+----------------------+----------------------+
 ##                                                                                
 ## +-----------------------------------------------------------------------------+
@@ -220,17 +220,17 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 ##  Host to Device Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          12531.0
+##    33554432          12571.4
 ## 
 ##  Device to Host Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          13170.8
+##    33554432          13187.3
 ## 
 ##  Device to Device Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          144665.2
+##    33554432          144714.9
 ## 
 ## Result = PASS
 ## 
