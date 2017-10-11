@@ -7,9 +7,11 @@ categories: []
 tags:
   - cuda
   - ubuntu 16.04
+  - parallel computing
+summary: "This blog post describes how to install NVIDIA CUDA on Ubuntu 16.04."
 ---
 
-This is a short version of NVIDIAs CUDA Installation Guide for Linux. The exact appearance and the output lines might be different on your system. Read more at the official NVIDIA documentations website: http://docs.nvidia.com/cuda/cuda-installation-guide-linux/. 
+This blog post describes how to install NVIDIA CUDA on Ubuntu 16.04 for parallel computing. The exact appearance and the output lines might be different on your system. Read more at the official NVIDIA documentations website: http://docs.nvidia.com/cuda/cuda-installation-guide-linux/.  
 
 ## Pre-Installation Actions
 

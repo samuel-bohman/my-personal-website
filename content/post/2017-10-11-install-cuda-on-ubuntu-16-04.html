@@ -7,11 +7,13 @@ categories: []
 tags:
   - cuda
   - ubuntu 16.04
+  - parallel computing
+summary: "This blog post describes how to install NVIDIA CUDA on Ubuntu 16.04."
 ---
 
 
 
-<p>This is a short version of NVIDIAs CUDA Installation Guide for Linux. The exact appearance and the output lines might be different on your system. Read more at the official NVIDIA documentations website: <a href="http://docs.nvidia.com/cuda/cuda-installation-guide-linux/" class="uri">http://docs.nvidia.com/cuda/cuda-installation-guide-linux/</a>.</p>
+<p>This blog post describes how to install NVIDIA CUDA on Ubuntu 16.04 for parallel computing. The exact appearance and the output lines might be different on your system. Read more at the official NVIDIA documentations website: <a href="http://docs.nvidia.com/cuda/cuda-installation-guide-linux/" class="uri">http://docs.nvidia.com/cuda/cuda-installation-guide-linux/</a>.</p>
 <div id="pre-installation-actions" class="section level2">
 <h2>Pre-Installation Actions</h2>
 <div id="verify-you-have-a-cuda-capable-gpu" class="section level3">
@@ -135,7 +137,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 <div id="verify-nvidia-smi" class="section level4">
 <h4>Verify NVIDIA SMI</h4>
 <pre class="bash"><code>nvidia-smi</code></pre>
-<pre><code>## Wed Oct 11 23:10:24 2017       
+<pre><code>## Wed Oct 11 23:18:27 2017       
 ## +-----------------------------------------------------------------------------+
 ## | NVIDIA-SMI 384.81                 Driver Version: 384.81                    |
 ## |-------------------------------+----------------------+----------------------+
@@ -143,14 +145,14 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 ## | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
 ## |===============================+======================+======================|
 ## |   0  GeForce GTX 106...  Off  | 00000000:01:00.0  On |                  N/A |
-## | 24%   28C    P8     8W / 120W |    781MiB /  6057MiB |      0%      Default |
+## | 24%   34C    P8     7W / 120W |    791MiB /  6057MiB |      1%      Default |
 ## +-------------------------------+----------------------+----------------------+
 ##                                                                                
 ## +-----------------------------------------------------------------------------+
 ## | Processes:                                                       GPU Memory |
 ## |  GPU       PID   Type   Process name                             Usage      |
 ## |=============================================================================|
-## |    0      2445      G   /usr/lib/xorg/Xorg                           471MiB |
+## |    0      2445      G   /usr/lib/xorg/Xorg                           480MiB |
 ## |    0      2966      G   compiz                                       306MiB |
 ## |    0      3406      G   /usr/lib/firefox/firefox                       1MiB |
 ## +-----------------------------------------------------------------------------+</code></pre>
@@ -218,17 +220,17 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 ##  Host to Device Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          12557.6
+##    33554432          12576.8
 ## 
 ##  Device to Host Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          13099.8
+##    33554432          13191.0
 ## 
 ##  Device to Device Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          144704.5
+##    33554432          144626.6
 ## 
 ## Result = PASS
 ## 
