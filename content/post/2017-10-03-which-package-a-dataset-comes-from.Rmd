@@ -25,4 +25,12 @@ datasearch("gold")
 datasearch("1982")
 ```
 
-At the moment, the function only searches in the available packages on the local computer, not [CRAN](https://cran.r-project.org/) or [GitHub](https://github.com/).   
+At the moment, the function only searches the packages that are available on the local computer, not on [CRAN](https://cran.r-project.org/) or [GitHub](https://github.com/).
+
+Additional trix:
+
+```{r}
+# list of datasets in a particular package
+data(package = "ggplot2")
+```
+
