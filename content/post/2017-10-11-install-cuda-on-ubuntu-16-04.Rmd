@@ -41,7 +41,7 @@ uname -r
 
 The kernel headers and development packages for the currently running kernel can be installed with:
 
-```{r, eval = FALSE}
+```{bash, eval = FALSE}
 sudo apt-get install linux-headers-$(uname -r)
 ```
 

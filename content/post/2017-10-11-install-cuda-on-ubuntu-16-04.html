@@ -55,7 +55,7 @@ summary: "A step-by-step tutorial on how to install CUDA on Ubuntu 16.04."
 <pre class="bash"><code>uname -r</code></pre>
 <pre><code>## 4.10.0-37-generic</code></pre>
 <p>The kernel headers and development packages for the currently running kernel can be installed with:</p>
-<pre class="r"><code>sudo apt-get install linux-headers-$(uname -r)</code></pre>
+<pre class="bash"><code>sudo apt-get install linux-headers-$(uname -r)</code></pre>
 </div>
 <div id="choose-an-installation-method" class="section level3">
 <h3>Choose an Installation Method</h3>
@@ -137,7 +137,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 <div id="verify-nvidia-smi" class="section level4">
 <h4>Verify NVIDIA SMI</h4>
 <pre class="bash"><code>nvidia-smi</code></pre>
-<pre><code>## Wed Oct 11 23:37:54 2017       
+<pre><code>## Wed Oct 11 23:39:35 2017       
 ## +-----------------------------------------------------------------------------+
 ## | NVIDIA-SMI 384.81                 Driver Version: 384.81                    |
 ## |-------------------------------+----------------------+----------------------+
@@ -145,7 +145,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 ## | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
 ## |===============================+======================+======================|
 ## |   0  GeForce GTX 106...  Off  | 00000000:01:00.0  On |                  N/A |
-## | 24%   39C    P0    27W / 120W |    779MiB /  6057MiB |      0%      Default |
+## | 24%   36C    P8     8W / 120W |    779MiB /  6057MiB |      0%      Default |
 ## +-------------------------------+----------------------+----------------------+
 ##                                                                                
 ## +-----------------------------------------------------------------------------+
@@ -220,17 +220,17 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 ##  Host to Device Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          12575.4
+##    33554432          12561.9
 ## 
 ##  Device to Host Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          13193.6
+##    33554432          13196.5
 ## 
 ##  Device to Device Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          144583.8
+##    33554432          144723.2
 ## 
 ## Result = PASS
 ## 
