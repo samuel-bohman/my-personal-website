@@ -138,7 +138,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 <h4>Verify NVIDIA System Management Interface</h4>
 <p>The NVIDIA System Management Interface (nvidia-smi) is a command line utility intended to aid in the management and monitoring of NVIDIA GPU devices.</p>
 <pre class="bash"><code>nvidia-smi</code></pre>
-<pre><code>## Wed Oct 11 23:43:29 2017       
+<pre><code>## Wed Oct 11 23:46:35 2017       
 ## +-----------------------------------------------------------------------------+
 ## | NVIDIA-SMI 384.81                 Driver Version: 384.81                    |
 ## |-------------------------------+----------------------+----------------------+
@@ -146,14 +146,14 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 ## | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
 ## |===============================+======================+======================|
 ## |   0  GeForce GTX 106...  Off  | 00000000:01:00.0  On |                  N/A |
-## | 24%   36C    P8     8W / 120W |    779MiB /  6057MiB |      5%      Default |
+## | 24%   33C    P8     7W / 120W |    774MiB /  6057MiB |      0%      Default |
 ## +-------------------------------+----------------------+----------------------+
 ##                                                                                
 ## +-----------------------------------------------------------------------------+
 ## | Processes:                                                       GPU Memory |
 ## |  GPU       PID   Type   Process name                             Usage      |
 ## |=============================================================================|
-## |    0      2445      G   /usr/lib/xorg/Xorg                           476MiB |
+## |    0      2445      G   /usr/lib/xorg/Xorg                           472MiB |
 ## |    0      2966      G   compiz                                       298MiB |
 ## |    0      3406      G   /usr/lib/firefox/firefox                       1MiB |
 ## +-----------------------------------------------------------------------------+</code></pre>
@@ -165,7 +165,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 </div>
 <div id="run-devicequery" class="section level4">
 <h4>Run <code>deviceQuery</code></h4>
-<p>If the CUDA software is installed and configured correctly, the output for deviceQuery should look similar to the output below.</p>
+<p>If the CUDA software is installed and configured correctly, the output for <code>deviceQuery</code> should look similar to the output below.</p>
 <pre class="bash"><code>~/NVIDIA_CUDA-9.0_Samples/bin/x86_64/linux/release/./deviceQuery</code></pre>
 <pre><code>## /home/samuel/NVIDIA_CUDA-9.0_Samples/bin/x86_64/linux/release/./deviceQuery Starting...
 ## 
@@ -214,7 +214,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 </div>
 <div id="run-bandwidthtest" class="section level4">
 <h4>Run <code>bandwidthTest</code></h4>
-<p>Running the bandwidthTest program ensures that the system and the CUDA-capable device are able to communicate correctly.</p>
+<p>Running the <code>bandwidthTest</code> program ensures that the system and the CUDA-capable device are able to communicate correctly.</p>
 <pre class="bash"><code>~/NVIDIA_CUDA-9.0_Samples/bin/x86_64/linux/release/./bandwidthTest</code></pre>
 <pre><code>## [CUDA Bandwidth Test] - Starting...
 ## Running on...
@@ -225,24 +225,24 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 ##  Host to Device Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          12554.5
+##    33554432          12546.1
 ## 
 ##  Device to Host Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          13173.3
+##    33554432          13167.0
 ## 
 ##  Device to Device Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          139097.1
+##    33554432          144458.6
 ## 
 ## Result = PASS
 ## 
 ## NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.</code></pre>
-<p>The important point is that you obtain measurements, and that the second-to-last line (<code>Result = PASS</code>) confirms that all necessary tests passed.</p>
-<p>DONE!</p>
-<p>Enjoy! 😄</p>
+<p>The important point is that you obtain measurements, and that the second-to-last line (<code>Result = PASS</code>) confirms that all necessary tests passed. Finally done!</p>
+<p>If this post was helpful to you, please comment below!</p>
+<p>Cheers 😄</p>
 </div>
 </div>
 </div>
