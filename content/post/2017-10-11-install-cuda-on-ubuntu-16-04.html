@@ -106,7 +106,7 @@ sudo apt-get --purge remove &lt;package_name&gt;  # Ubuntu</code></pre>
 </div>
 <div id="post-installation-actions" class="section level2">
 <h2>Post-Installation Actions</h2>
-<p>The post-installation actions must be manually performed. These actions are split into mandatory, recommended, and optional sections.</p>
+<p>The post-installation actions must be manually performed.</p>
 <div id="environment-setup" class="section level3">
 <h3>Environment Setup</h3>
 <pre class="bash"><code>export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
@@ -137,7 +137,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 <div id="verify-nvidia-smi" class="section level4">
 <h4>Verify NVIDIA SMI</h4>
 <pre class="bash"><code>nvidia-smi</code></pre>
-<pre><code>## Wed Oct 11 23:32:46 2017       
+<pre><code>## Wed Oct 11 23:37:54 2017       
 ## +-----------------------------------------------------------------------------+
 ## | NVIDIA-SMI 384.81                 Driver Version: 384.81                    |
 ## |-------------------------------+----------------------+----------------------+
@@ -145,7 +145,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 ## | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
 ## |===============================+======================+======================|
 ## |   0  GeForce GTX 106...  Off  | 00000000:01:00.0  On |                  N/A |
-## | 24%   31C    P8     7W / 120W |    779MiB /  6057MiB |      1%      Default |
+## | 24%   39C    P0    27W / 120W |    779MiB /  6057MiB |      0%      Default |
 ## +-------------------------------+----------------------+----------------------+
 ##                                                                                
 ## +-----------------------------------------------------------------------------+
@@ -220,17 +220,17 @@ export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRAR
 ##  Host to Device Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          12571.4
+##    33554432          12575.4
 ## 
 ##  Device to Host Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          13187.3
+##    33554432          13193.6
 ## 
 ##  Device to Device Bandwidth, 1 Device(s)
 ##  PINNED Memory Transfers
 ##    Transfer Size (Bytes) Bandwidth(MB/s)
-##    33554432          144714.9
+##    33554432          144583.8
 ## 
 ## Result = PASS
 ## 

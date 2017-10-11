@@ -108,7 +108,7 @@ sudo reboot
 
 ## Post-Installation Actions
 
-The post-installation actions must be manually performed. These actions are split into mandatory, recommended, and optional sections.
+The post-installation actions must be manually performed. 
 
 ### Environment Setup
 
