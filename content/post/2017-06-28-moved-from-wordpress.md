@@ -5,7 +5,7 @@ tags = ["blogdown", "hugo", "netlify"]
 title = "Moved from WordPress to Hugo"
 math = false
 summary = """
-In this blog post I give some tips for bloggin with [blogdown](https://github.com/rstudio/blogdown). 
+My first blog post with [blogdown](https://github.com/rstudio/blogdown). 
 """
 
 [header]
