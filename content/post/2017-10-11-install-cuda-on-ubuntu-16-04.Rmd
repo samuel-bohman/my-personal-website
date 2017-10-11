@@ -141,7 +141,9 @@ cat /proc/driver/nvidia/version
 nvcc -V
 ```
 
-#### Verify NVIDIA SMI
+#### Verify NVIDIA System Management Interface
+
+The NVIDIA System Management Interface (nvidia-smi) is a command line utility intended to aid in the management and monitoring of NVIDIA GPU devices. 
 
 ```{bash}
 nvidia-smi
@@ -155,7 +157,7 @@ Go to the folder where the samples resides: `~/NVIDIA_CUDA-9.0_Samples`.
 make
 ```
 
-Run `deviceQuery`  
+#### Run `deviceQuery`  
 
 If the CUDA software is installed and configured correctly, the output for deviceQuery should look similar to the output below. 
 
@@ -165,7 +167,7 @@ If the CUDA software is installed and configured correctly, the output for devic
 
 The important outcomes are that a device was found (`Detected 1 CUDA Capable device(s)`), that the device matches the one on your system (`Device 0: "GeForce GTX 1060 6GB"`), and that the test passed (`Result = PASS`).
 
-Run `bandwidthTest`  
+#### Run `bandwidthTest`  
 
 Running the bandwidthTest program ensures that the system and the CUDA-capable device are able to communicate correctly. 
 
