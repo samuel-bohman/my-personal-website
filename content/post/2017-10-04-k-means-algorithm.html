@@ -3,11 +3,10 @@ title: The K-Means Algorithm
 author: Samuel Bohman
 date: "2017-10-04"
 tags: 
-  - unsupervised learning
   - k-means
 slug: the-k-means-algorithm
 output: blogdown::html_page
-summary: "A brief tutorial on the k-means algorithm."
+summary: "This blog post is a brief tutorial on the k-means algorithm."
 ---
 
 
@@ -30,7 +29,7 @@ km.out &lt;- kmeans(x = x, centers = 3, nstart = 10)</code></pre>
 ##  1  2  3 
 ## 11 14 25</code></pre>
 <p>We can plot the data with each observation colored according to its cluster assignment at each step of the assignment process to see how the algorithm works.</p>
-<p><img src="/post/2017-10-04-k-means-clustering_files/figure-html/unnamed-chunk-3-1.png" width="576" /></p>
+<p><img src="/post/2017-10-04-k-means-algorithm_files/figure-html/unnamed-chunk-3-1.png" width="576" /></p>
 <p>The figure shows the process of the k-means algorithm with <code>k = 3</code>. The plot in the upper left corner shows just the data. The next plot shows the first iteration of the k-means algorithm. You can see that it has chosen three centroids arbitrarily somewhere in the middle of the plot and appointed every point in the dataset to the closest centroid (green, chocolate, or purple). For each iteration the algorithm recalculates the centroids based on the (new) cluster assignments of the data points. After some iterations, the centroids will stabilize and stop moving with each iteration. From the first iteration to the second iteration, the centroids moved a lot. But after the second iteration, they moved less.</p>
 <p>Some of the algorithmic properties of k-means are:<br />
 - For <span class="math inline">\(d = 1\)</span> the problem is solvable in polynomial time<br />

@@ -3,11 +3,10 @@ title: The K-Means Algorithm
 author: Samuel Bohman
 date: "2017-10-04"
 tags: 
-  - unsupervised learning
   - k-means
 slug: the-k-means-algorithm
 output: blogdown::html_page
-summary: "A brief tutorial on the k-means algorithm."
+summary: "This blog post is a brief tutorial on the k-means algorithm."
 ---
 
 K-means is one of the most popular clustering algorithms. The goal of the algorithm is to partition a data set into a desired number of non-overlapping clusters $K$, so that the total *within-cluster variation* $W(C_K)$ is minimized. Formally, we want to solve the problem: 
