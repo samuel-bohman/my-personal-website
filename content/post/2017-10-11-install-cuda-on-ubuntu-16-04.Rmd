@@ -1,0 +1,201 @@
+---
+title: Install CUDA on Ubuntu 16.04
+author: Samuel Bohman
+date: '2017-10-11'
+slug: install-cuda-on-ubuntu-16-04
+categories: []
+tags:
+  - cuda
+  - ubuntu 16.04
+---
+
+This is a short version of NVIDIAs CUDA Installation Guide for Linux. The exact appearance and the output lines might be different on your system. Read more at: http://docs.nvidia.com/cuda/cuda-installation-guide-linux/. 
+
+
+## Pre-Installation Actions
+
+### Verify You Have a CUDA-Capable GPU
+
+```{bash}
+lspci | grep -i nvidia
+```
+
+### Verify You Have a Supported Version of Linux
+
+```{bash}
+uname -m && cat /etc/*release
+```
+
+### Verify the System Has gcc Installed
+
+```{bash}
+gcc --version
+```
+
+### Verify the System has the Correct Kernel Headers and Development Packages Installed
+
+```{bash}
+uname -r
+```
+
+The kernel headers and development packages for the currently running kernel can be installed with:
+
+```{bash}
+sudo apt-get install linux-headers-$(uname -r)
+```
+
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+linux-headers-4.10.0-37-generic is already the newest version (4.10.0-37.41~16.04.1).
+linux-headers-4.10.0-37-generic set to manually installed.
+The following packages were automatically installed and are no longer required:
+  linux-headers-4.10.0-28 linux-headers-4.10.0-28-generic
+  linux-image-4.10.0-28-generic linux-image-extra-4.10.0-28-generic
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 92 not upgraded.
+
+### Choose an Installation Method
+
+NVIDIA recommends to use the distribution-specific packages, where possible.
+
+### Download the NVIDIA CUDA Toolkit
+
+The NVIDIA CUDA Toolkit is available [here](http://developer.nvidia.com/cuda-downloads). 
+
+Verify your download by comparing the [MD5 checksum](http://developer.download.nvidia.com/compute/cuda/9.0/Prod/docs/sidebar/md5sum.txt). To calculate the MD5 checksum of the downloaded file, run the following (you may need to change the `~/Downloads/` part):
+
+```{bash}
+md5sum ~/Downloads/cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64.deb
+```
+
+#### Handle Conflicting Installation Methods
+
+Before installing CUDA, any previously installations that could conflict should be uninstalled.
+
+```{bash}
+# Use the following command to uninstall a Toolkit runfile installation
+sudo /usr/local/cuda-X.Y/bin/uninstall_cuda_X.Y.pl
+
+# Use the following command to uninstall a Driver runfile installation
+sudo /usr/bin/nvidia-uninstall
+
+# Use the following commands to uninstall a RPM/Deb installation
+sudo apt-get --purge remove <package_name>  # Ubuntu
+```
+
+## Packet Manager Installation 
+
+1. Perform the pre-install actions (described above)
+2. Install repository meta-data
+
+```{bash}
+sudo dpkg -i cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64.deb
+```
+
+3. Install the CUDA public GPG key
+
+```{bash}
+sudo apt-key add /var/cuda-repo-9-0-local/7fa2af80.pub
+```
+
+4. Update the Apt repository cache
+
+```{bash}
+sudo apt-get update
+```
+
+5. Install CUDA
+
+```{bash}
+sudo apt-get install cuda
+```
+
+Done!
+
+## Package Upgrades
+
+The cuda package points to the latest stable release of the CUDA Toolkit. When a new version is available, use the following commands to upgrade the toolkit and driver:
+
+```{bash}
+sudo apt-get install cuda
+```
+
+```{bash}
+# Reboot to take effect
+sudo reboot
+```
+
+
+## Post-Installation Actions
+
+The post-installation actions must be manually performed. These actions are split into mandatory, recommended, and optional sections.
+
+### Environment Setup
+
+```{bash}
+export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+```
+
+### Install Writable Samples
+
+In order to modify, compile, and run the samples, the samples must be installed with write permissions. A convenience installation script is provided:
+
+```{bash}
+cuda-install-samples-9.0.sh ~/
+```
+
+### Verify the Installation
+
+Before continuing, it is important to verify that the CUDA toolkit can find and communicate correctly with the CUDA-capable hardware. To do this, you need to compile and run some of the included sample programs.
+
+#### Verify the driver version
+
+```{bash}
+cat /proc/driver/nvidia/version
+```
+
+#### Verify the CUDA Toolkit version
+
+```{bash}
+nvcc -V
+```
+
+#### Verify NVIDIA SMI
+
+```{bash}
+nvidia-smi
+```
+
+#### Compile CUDA Toolkit sample programs  
+
+Go to the folder where the samples resides: `~/NVIDIA_CUDA-9.0_Samples`. 
+
+```{bash}
+make
+```
+
+Run `deviceQuery`  
+
+If the CUDA software is installed and configured correctly, the output for deviceQuery should look similar to the output below. 
+
+```{bash}
+~/NVIDIA_CUDA-9.0_Samples/bin/x86_64/linux/release/./deviceQuery
+```
+
+The important outcomes are that a device was found (`Detected 1 CUDA Capable device(s)`), that the device matches the one on your system (`Device 0: "GeForce GTX 1060 6GB"`), and that the test passed (`Result = PASS`).
+
+Run `bandwidthTest`  
+
+Running the bandwidthTest program ensures that the system and the CUDA-capable device are able to communicate correctly. 
+
+```{bash}
+~/NVIDIA_CUDA-9.0_Samples/bin/x86_64/linux/release/./bandwidthTest
+```
+
+The important point is that you obtain measurements, and that the second-to-last line (`Result = PASS`) confirms that all necessary tests passed. 
+
+DONE!  
+
+Enjoy! `r emo::ji("smile")`  
