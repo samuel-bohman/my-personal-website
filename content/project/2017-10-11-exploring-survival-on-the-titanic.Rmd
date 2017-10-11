@@ -12,5 +12,218 @@ tags:
 
 The sinking of the RMS Titanic in 1912 is one of the most infamous shipwrecks in history. During her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. In this project, we predict which passengers were likely to survive the tragedy. 
 
+## A Single Decision Tree
+
+Let's start simple: load in the `rpart` package with the `library()` function.
+
+```{r}
+library(rpart)
+```
+
+## Creating your first decision tree
+
+- Build a decision tree my_tree_two:
+    - You want to predict Survived based on Pclass, Sex, Age, SibSp, Parch, Fare and Embarked.
+    - Use the train data to build the tree
+    - Use method to specify that you want to classify.
+- Visualize my_tree_two with plot() and text().
+- Load the R packages rattle, rpart.plot, and RColorBrewer.
+- Use fancyRpartPlot(my_tree) to create a much fancier visualization of your tree.
+
+```{r, message = FALSE}
+# Your train and test set are still loaded in
+# str(train)
+# str(test)
+
+# Build the decision tree
+my_tree_two <- rpart(Survived ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked, data = train, method = "class")
+
+# Visualize the decision tree using plot() and text()
+plot(my_tree_two)
+text(my_tree_two)
+
+# Load in the packages to build a fancy plot
+library(rattle)
+library(rpart.plot)
+library(RColorBrewer)
+
+# Time to plot your fancy tree
+fancyRpartPlot(my_tree_two)
+```
+
+## Interpreting your decision tree
+
+Based on your decision tree, what variables play the most important role to determine whether or not a passenger will survive?
+
+Answer: Sex, Age, Pclass, SibSp, Fare. 
+
+## Predict and submit to Kaggle
+
+```{r}
+# my_tree_two and test are available in the workspace
+
+# Make predictions on the test set
+my_prediction <- predict(my_tree_two, newdata = test, type = "class")
+
+# Finish the data.frame() call
+my_solution <- data.frame(PassengerId = test$PassengerId, Survived = my_prediction)
+
+# Use nrow() on my_solution
+nrow(my_solution)
+
+# Finish the write.csv() call
+write.csv(my_solution, file = "my_solution.csv", row.names = FALSE)
+```
+
+## Overfitting, the iceberg of decision trees
+
+- Change the command that builds `super_model`:
+    - Call the resulting tree `my_tree_three` instead of `super_model`
+    - Use the same `formula`, `data` and `method`.
+    - Set `minsplit` to 50 and `cp` to 0.
+- Visualize `my_tree_three` - your new decision tree - with `fancyRpartPlot()`.
+
+```{r}
+# Your train and test set are still loaded in
+
+# Change this command
+my_tree_three <- rpart(Survived ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked,
+                     data = train, method = "class", control = rpart.control(minsplit = 50, cp = 0))
+
+# Visualize my_tree_three
+fancyRpartPlot(my_tree_three)
+```
+
+## Re-engineering our Titanic data set
+
+- Create a new train set `train_two` that differs from `train` only by having an extra column with your feature engineered variable `family_size`.
+- Finish the command to build `my_tree_four`: The `formula` in `rpart()` should include `family_size` and the tree should be used on the `train_two data`.
+- Visualize your new decision tree with `fancyRpartPlot()`.
+
+
+```{r}
+# train and test are available
+
+# Create train_two
+train_two <- train
+train_two$family_size <- train_two$SibSp + train_two$Parch + 1
+
+# Finish the command
+my_tree_four <- rpart(Survived ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked + family_size, data = train_two, method = "class")
+
+# Visualize your new decision tree
+fancyRpartPlot(my_tree_four)
+```
+
+## Passenger Title and survival rate
+
+- Finish the command to create a decision tree `my_tree_five`: make sure to include the `Title` variable, and to create the tree based on `train_new`.
+- Visualize `my_tree_five` with `fancyRpartPlot()`. Notice that `Title` appears in one of the nodes.
+- Finish the `predict()` call to create `my_prediction`: the function should use `my_tree_five` and `test_new` to make predictions.
+- The code that creates a data frame `my_solution` and writes it to a CSV file is included: these steps make the solution ready for a submission on Kaggle.
+
+```{r}
+# train_new and test_new are available in the workspace
+
+# Finish the command
+my_tree_five <- rpart(Survived ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked + Title, data = train_new, method = "class")
+
+# Visualize my_tree_five
+fancyRpartPlot(my_tree_five)
+
+# Make prediction
+my_prediction <- predict(my_tree_five, newdata = test_new, type = "class")
+
+# Make results ready for submission
+my_solution <- data.frame(PassengerId = test_new$PassengerId, Survived = my_prediction)
+write.csv(my_solution, file = "my_solution.csv", row.names = FALSE)
+```
+
+## What is a Random Forest
+
+- The code to clean your entire dataset from missing data and split it up in training and test set is provided in the sample code. Study the code chunks closely so you understand what's going on. Just click Submit Answer to continue.
+- If you want to know how `all_data` itself was built from `train` and `test`, have a look at this R script.
+
+```{r}
+# All data, both training and test set
+all_data
+
+# Passenger on row 62 and 830 do not have a value for embarkment.
+# Since many passengers embarked at Southampton, we give them the value S.
+all_data$Embarked[c(62, 830)] <- "S"
+
+# Factorize embarkment codes.
+all_data$Embarked <- factor(all_data$Embarked)
+
+# Passenger on row 1044 has an NA Fare value. Let's replace it with the median fare value.
+all_data$Fare[1044] <- median(all_data$Fare, na.rm = TRUE)
+
+# How to fill in missing Age values?
+# We make a prediction of a passengers Age using the other variables and a decision tree model.
+# This time you give method = "anova" since you are predicting a continuous variable.
+library(rpart)
+predicted_age <- rpart(Age ~ Pclass + Sex + SibSp + Parch + Fare + Embarked + Title + family_size, data = all_data[!is.na(all_data$Age),], method = "anova")
+all_data$Age[is.na(all_data$Age)] <- predict(predicted_age, all_data[is.na(all_data$Age),])
+
+# Split the data back into a train set and a test set
+train <- all_data[1:891, ]
+test <- all_data[892:1309, ]
+```
+
+## A Random Forest analysis in R
+
+- Perform a Random Forest and name the model `my_forest`. Use the variables `Passenger Class`, `Sex`, `Age`, `Number of Siblings/Spouses Aboard`, `Number of Parents/Children Aboard`, `Passenger Fare`, `Port of Embarkation`, and `Title` (in this order).
+- Set the number of trees to grow to 1000 and make sure you can inspect variable importance.
+- Make a prediction (`my_prediction`) on the test set using the `predict()` function.
+- Create a data frame `my_solution` that contains the solution in line with the Kaggle standards.
+- Turn your solution into a csv file with the name `my_solution.csv`.
+
+```{r}
+# train and test are available in the workspace
+# str(train)
+# str(test)
+
+# Load in the package
+library(randomForest)
+
+# Train set and test set
+# str(train)
+# str(test)
+
+# Set seed for reproducibility
+set.seed(111)
+
+# Apply the Random Forest Algorithm
+my_forest <- randomForest(as.factor(Survived) ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked + Title, data = train, importance = T, ntree = 1000)
+
+# Make your prediction using the test set
+my_prediction <- predict(my_forest, test)
+
+# Create a data frame with two columns: PassengerId & Survived. Survived contains your predictions
+my_solution <- data.frame(PassengerId = test$PassengerId, Survived = my_prediction)
+
+# Write your solution away to a csv file with the name my_solution.csv
+write.csv(my_solution, "my_solution.csv", row.names = F)
+```
+
+## Important variables
+
+Your Random Forest object `my_forest` is still loaded in. Remember you set `importance = TRUE`? Now you can see what variables are important using `varImpPlot(my_forest)`. 
+
+```{r}
+varImpPlot(my_forest)
+```
+
+When running the function, two graphs appear: the accuracy plot shows how much worse the model would perform without the included variables. So a high decrease (= high value x-axis) links to a high predictive variable. The second plot is the Gini coefficient. The higher the variable scores here, the more important it is for the model.
+
+Based on the two plots, what variable has the highest impact on the model?
+
+- Fare
+- Sex
+- Title
+- Age
+
+Answer: Title. 
+
 
 
