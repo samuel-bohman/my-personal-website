@@ -37,10 +37,8 @@ weight = 1
 
 # About me
 
-I am a PhD student in the Department of Computer and Systems Sciences at Stockholm University. Prior to my PhD studies, I was a research assistant at the Institute for Futures Studies, an independent research institute based in Stockholm. 
+My name is Samuel Bohman and I am a PhD student in the Department of Computer and Systems Sciences at Stockholm University. This is my personal website where you will find blog posts, articles, projects, and tutorials. 
 
 {{< figure src="http://www.codewars.com/users/samuel303/badges/micro" link="https://www.codewars.com/users/samuel303">}}
-
-
 
 
