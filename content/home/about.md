@@ -24,12 +24,12 @@ weight = 1
   year = 2018
 
 [[education.courses]]
-  course = "MSc in Decision Analysis"
+  course = "MSc in Decision, Risk, and Policy Analysis"
   institution = "Stockholm University"
   year = 2009
 
 [[education.courses]]
-  course = "BSc in Economic History"
+  course = "BSc in Economic History, Economics, and Statistics"
   institution = "Stockholm University"
   year = 2007
  
