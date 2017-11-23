@@ -6,7 +6,7 @@ date = "2017-09-17"
 title = "Getting Started with Julia"
 
 # Project summary to display on homepage.
-summary = "Installation the Julia programming language and setup of IDEs on Ubuntu 16.04."
+summary = "Installation of the Julia programming language and setup of IJUlia on Ubuntu 16.04."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "julia-200x232.png"
@@ -28,11 +28,11 @@ math = false
 
 +++
 
-## Introduction
+# Introduction
 
 [Julia](https://julialang.org/) is a free and open source programming language that combines the performance of traditional statically-typed languages such as C or Fortran, with the ease and expressiveness of high-level languages such as R, MATLAB, and Python. This tutorial shows how to install Julia on a 64-bit Ubuntu 16.04 machine, together with [Anaconda](https://www.anaconda.com) (Jupyter Notebook) and [IJulia](https://github.com/JuliaLang/IJulia.jl).  
 
-### Install Julia
+## Install Julia
 
 Download the Generic Linux Binaries for x86 (64-bit) from the [Julia website](https://julialang.org/downloads/) and extract the `.tar.gz` file to a folder on your computer. To create a symbolic link, run the following command in a terminal:
 
@@ -65,7 +65,7 @@ To update the Julia packages, keeping Julia itself the same, run `Pkg.update()` 
 
 To remove Julia, type `sudo apt-get remove julia` at the terminal. 
 
-### Install Anaconda
+## Install Anaconda
 
 Anaconda is a free, platform-agnostic Python distribution and packet manager. The [Jupyter Notebook](http://jupyter.org/) comes bundled with Anaconda. 
 
@@ -77,7 +77,7 @@ $ bash Anaconda3-4.4.0-Linux-x86_64.sh
 
 If you want to check out the Anaconda Navigator GUI after installation, run the command `anaconda-navigator`. Pretty cool! :snake:
 
-### Install IJulia
+## Install IJulia
 
 Next, at the prompt, type
 
@@ -87,14 +87,13 @@ Pkg.add("IJulia")
 
 to install IJulia. On Linux, it defaults to looking for jupyter in your PATH first, and only installs the Conda Jupyter if that fails. 
 
-In Julia, at the `julia>` prompt, type 
+In Julia, at the `julia>` prompt, type the following to launch the IJulia notebook in your browser. 
 
 ```
 using IJulia
 notebook()
 ```
 
-to launch the IJulia notebook in your browser. Alternatively, you can run `jupyter notebook` from the command line. Click on the New button and choose the Julia option to start a new "notebook". 
+Alternatively, you can run `jupyter notebook` from the command line. Click on the New button and choose the Julia option to start a new "notebook". 
 
 Enjoy! :smile:
-
