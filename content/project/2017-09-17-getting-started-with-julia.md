@@ -69,9 +69,7 @@ To remove Julia, type `sudo apt-get remove julia` at the terminal.
 
 Anaconda is a free, platform-agnostic Python distribution and packet manager. The [Jupyter Notebook](http://jupyter.org/) comes bundled with Anaconda. 
 
-Download [Anaconda](https://www.anaconda.com). 
-
-After downloading the installer, run the following command from a terminal:
+Download [Anaconda](https://www.anaconda.com). After downloading the installer, run the following command from a terminal:
 
 ```
 $ bash Anaconda3-4.4.0-Linux-x86_64.sh
