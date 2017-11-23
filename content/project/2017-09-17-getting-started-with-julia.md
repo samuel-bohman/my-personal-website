@@ -30,7 +30,7 @@ math = false
 
 ## Introduction
 
-[Julia](https://julialang.org/) is a free and open source programming language that combines the performance of traditional statically-typed languages such as C or Fortran, with the ease and expressiveness of high-level languages such as R, MATLAB, and Python. This tutorial shows how to install Julia on a 64-bit Ubuntu 16.04 machine, together with [Anaconda](https://www.anaconda.com) and [IJulia](https://github.com/JuliaLang/IJulia.jl). 
+[Julia](https://julialang.org/) is a free and open source programming language that combines the performance of traditional statically-typed languages such as C or Fortran, with the ease and expressiveness of high-level languages such as R, MATLAB, and Python. This tutorial shows how to install Julia on a 64-bit Ubuntu 16.04 machine, together with [Anaconda](https://www.anaconda.com) and [IJulia](https://github.com/JuliaLang/IJulia.jl).  
 
 ### Install Julia
 
