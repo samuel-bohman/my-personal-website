@@ -28,11 +28,11 @@ math = false
 
 +++
 
-# Introduction
+## Introduction
 
-[Julia](https://julialang.org/) is a free and open source programming language that combines the performance of traditional statically-typed languages such as C or Fortran, with the ease and expressiveness of high-level languages such as R, MATLAB, and Python. This tutorial shows how to install julia on a 64-bit Ubuntu 16.04 machine. 
+[Julia](https://julialang.org/) is a free and open source programming language that combines the performance of traditional statically-typed languages such as C or Fortran, with the ease and expressiveness of high-level languages such as R, MATLAB, and Python. This tutorial shows how to install Julia on a 64-bit Ubuntu 16.04 machine, together with [Anaconda](https://www.anaconda.com) and [IJulia](https://github.com/JuliaLang/IJulia.jl). 
 
-## Julia
+### Install Julia
 
 Download the Generic Linux Binaries for x86 (64-bit) from the [Julia website](https://julialang.org/downloads/) and extract the `.tar.gz` file to a folder on your computer. To create a symbolic link, run the following command in a terminal:
 
@@ -65,7 +65,7 @@ To update the Julia packages, keeping Julia itself the same, run `Pkg.update()` 
 
 To remove Julia, type `sudo apt-get remove julia` at the terminal. 
 
-## Anaconda
+### Install Anaconda
 
 Anaconda is a free, platform-agnostic Python distribution and packet manager. The [Jupyter Notebook](http://jupyter.org/) comes bundled with Anaconda. 
 
@@ -79,7 +79,7 @@ $ bash Anaconda3-4.4.0-Linux-x86_64.sh
 
 If you want to check out the Anaconda Navigator GUI after installation, run the command `anaconda-navigator`. Pretty cool! :snake:
 
-## IJulia
+### Install IJulia
 
 Next, at the prompt, type
 
