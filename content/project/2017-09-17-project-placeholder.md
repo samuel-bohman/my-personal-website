@@ -6,7 +6,7 @@ date = "2017-09-17"
 title = "Julia project heading"
 
 # Project summary to display on homepage.
-summary = "Julia project summary placeholder. "
+summary = "Julia project summary placeholder. Julia project summary placeholder. Julia project summary placeholder."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "julia-200x232.png"
