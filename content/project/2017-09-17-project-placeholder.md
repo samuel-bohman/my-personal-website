@@ -3,7 +3,7 @@
 date = "2017-09-17"
 
 # Project title.
-title = "Julia project heading"
+title = "Julia programming language"
 
 # Project summary to display on homepage.
 summary = "Julia is a high-level, high-performance dynamic programming language for numerical computing."
