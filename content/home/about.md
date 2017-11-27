@@ -37,7 +37,7 @@ weight = 1
 
 # About me
 
-My name is Samuel Bohman and I am a PhD student in the Department of Computer and Systems Sciences at Stockholm University. This is my personal website where you will find blog posts, articles, projects, and tutorials. 
+My name is Samuel Bohman and I am studying for my doctoral degree in Computer Science at Stockholm University where I also earned a B.Sc. in Economic History with minors in Economics, Psychology, and Statistics. This is my personal website where you will find blog posts, articles, projects, and tutorials. 
 
 {{< figure src="http://www.codewars.com/users/samuel303/badges/micro" link="https://www.codewars.com/users/samuel303">}}
 
