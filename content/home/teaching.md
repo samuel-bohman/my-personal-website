@@ -14,8 +14,9 @@ weight = 60
 
 +++
 
-I have been teaching the following courses at Stockholm University:  
+I have been teaching the following courses in the Department of Computer and Systems Sciences:  
 
 - DSA: Decision Support and Analysis
+- DSK2:PRJ Project in Software Engineering
 
-In addition, I have been supervising over ten bachelor students carrying out their thesis projects. 
+In addition, I have supervised and mentored over ten undergraduate students in their thesis projects. 
