@@ -1,0 +1,96 @@
+---
+title: Git, Github, and RStudio
+author: Samuel Bohman
+date: '2017-12-13'
+slug: git-github-and-rstudio
+categories: []
+tags:
+  - r
+  - git
+  - rstudio
+---
+
+
+
+<p>This blog post contains some basic setup and use of Git and GitHub together with the RStudio IDE.</p>
+<div id="setup-git-with-rstudiossh" class="section level2">
+<h2>Setup Git with RStudio/SSH</h2>
+<p>In RStudio IDE: -&gt; Global Options -&gt; Git/SVN -&gt; Create RSA Key -&gt; Create -&gt; Copy the key.</p>
+<p>On GitHub: Your Profile -&gt; SSH and GPG keys -&gt; New SSH key.</p>
+</div>
+<div id="setup-new-github-repository" class="section level2">
+<h2>Setup new GitHub repository</h2>
+<p>Select “New repository” (click the + sign). Follow the onscreen instructions.</p>
+</div>
+<div id="create-an-new-git-repository" class="section level2">
+<h2><a href="https://git-scm.com/docs/git-init">Create an new Git repository</a></h2>
+<p>Initialize a new Git repository (a hidden <code>.git</code> directory with subdirectories) in an existing directory with the <code>git init</code> command.</p>
+<pre class="git"><code># Initialize a Git repository in an existing directory
+git init</code></pre>
+</div>
+<div id="stage-your-files" class="section level2">
+<h2><a href="https://git-scm.com/docs/git-add">Stage your files</a></h2>
+<p>In order to begin tracking new files with Git, you use the <code>git add</code> command. The <code>git status</code> command can be used to obtain a summary of which files have changes that are staged for the next commit.</p>
+<pre class="git"><code># Stage all changes
+git add .</code></pre>
+</div>
+<div id="add-remote-repository" class="section level2">
+<h2><a href="https://git-scm.com/docs/git-remote">Add remote repository</a></h2>
+<p>Add a remote repository on GitHub with <code>git remote add origin [GitHub link]</code>. The link you need to provide can be found by clicking on the green “Clone or download” button on your repository page on GitHub.</p>
+<pre class="git"><code># Add a remote repository on GitHub
+git remote add origin git@github.com:[user-name]/[name-of-repository].git</code></pre>
+</div>
+<div id="git-commit" class="section level2">
+<h2><a href="https://git-scm.com/docs/git-commit">Git commit</a></h2>
+<p>To record changes to the repository use the <code>git commit</code> command along with a log message from the user describing the changes.</p>
+<pre class="git"><code>git commit -m &quot;Commit message&quot;</code></pre>
+</div>
+<div id="git-pull" class="section level2">
+<h2><a href="https://git-scm.com/docs/git-pull">Git pull</a></h2>
+<p>Fetch new changes from a remote repository into the current local branch using <code>git pull</code>.</p>
+<pre class="git"><code># Pull initial remote work from GitHub (e.g. README.md and .gitignore)
+git pull git@github.com:[user-name]/[name-of-repository].git</code></pre>
+</div>
+<div id="git-push" class="section level2">
+<h2><a href="https://git-scm.com/docs/git-push">Git push</a></h2>
+<p>Update remote repository with the <code>git push</code> command. Add an upstream reference <code>-u</code> if “Pull” and “Push” buttons are greyed out in RStudio IDE (see <a href="https://www.r-bloggers.com/things-i-forget-pushpull-greyed-out-in-rstudio">this</a> post on R-bloggers).</p>
+<pre class="git"><code># Publish to GitHub
+git push origin master
+
+# Add an upstream reference
+git push -u origin master</code></pre>
+</div>
+<div id="git-checkout" class="section level2">
+<h2><a href="https://git-scm.com/docs/git-checkout">Git checkout</a></h2>
+<p>Switch branches with the <code>git checkout</code> command.</p>
+<pre class="git"><code># Create a new branch and switch to it
+git checkout -b [name of branch]
+
+# Switch back to master
+git checkout master</code></pre>
+</div>
+<div id="git-branch" class="section level2">
+<h2><a href="https://git-scm.com/docs/git-branch">Git branch</a></h2>
+<p>List, create, or delete branches with the <code>git branch</code> command.</p>
+<pre class="git"><code># Delete local branch
+git branch -d [name of branch]
+
+# Delete remote branch
+git branch -dr origin/[name of branch]</code></pre>
+</div>
+<div id="git-status" class="section level2">
+<h2><a href="https://git-scm.com/docs/git-status">Git status</a></h2>
+<p>Show changes made, untracked files, etc. with the <code>git status</code> command.</p>
+<pre class="git"><code># Show the working tree status
+git status</code></pre>
+</div>
+<div id="untrack-a-file" class="section level2">
+<h2><a href="https://git-scm.com/docs/git-rm">Untrack a file</a></h2>
+<p>Remove a file from just the index with <code>git rm</code>.</p>
+<pre class="git"><code>git rm --cached [filename]</code></pre>
+</div>
+<div id="list-tracked-files" class="section level2">
+<h2><a href="https://git-scm.com/docs/git-ls-files">List tracked files</a></h2>
+<p>Show information about files in the index and the working tree with the <code>git ls-files</code> command.</p>
+<pre class="git"><code>git ls-files</code></pre>
+</div>

@@ -1,0 +1,129 @@
+---
+title: Git, Github, and RStudio
+author: Samuel Bohman
+date: '2017-12-13'
+slug: git-github-and-rstudio
+categories: []
+tags:
+  - r
+  - git
+  - rstudio
+---
+
+This blog post contains some basic setup and use of Git and GitHub together with the RStudio IDE. 
+
+## Setup Git with RStudio/SSH
+
+In RStudio IDE: -> Global Options -> Git/SVN -> Create RSA Key -> Create -> Copy the key.  
+
+On GitHub: Your Profile -> SSH and GPG keys -> New SSH key.  
+
+## Setup new GitHub repository
+Select “New repository” (click the + sign). Follow the onscreen instructions.
+
+## [Create an new Git repository ](https://git-scm.com/docs/git-init)
+
+Initialize a new Git repository (a hidden `.git` directory with subdirectories) in an existing directory with the `git init` command. 
+
+```{git}
+# Initialize a Git repository in an existing directory
+git init
+```
+
+## [Stage your files](https://git-scm.com/docs/git-add)
+
+In order to begin tracking new files with Git, you use the `git add` command. The `git status` command can be used to obtain a summary of which files have changes that are staged for the next commit.
+
+```{git}
+# Stage all changes
+git add .
+```
+
+## [Add remote repository](https://git-scm.com/docs/git-remote)
+
+Add a remote repository on GitHub with `git remote add origin [GitHub link]`. The link you need to provide can be found by clicking on the green "Clone or download" button on your repository page on GitHub. 
+
+```{git}
+# Add a remote repository on GitHub
+git remote add origin git@github.com:[user-name]/[name-of-repository].git
+```
+
+## [Git commit](https://git-scm.com/docs/git-commit)
+
+To record changes to the repository use the `git commit` command along with a log message from the user describing the changes. 
+
+```{git}
+git commit -m "Commit message"
+```
+
+## [Git pull ](https://git-scm.com/docs/git-pull)
+
+Fetch new changes from a remote repository into the current local branch using `git pull`. 
+
+```{git}
+# Pull initial remote work from GitHub (e.g. README.md and .gitignore)
+git pull git@github.com:[user-name]/[name-of-repository].git
+```
+
+## [Git push ](https://git-scm.com/docs/git-push)
+
+Update remote repository with the `git push` command. Add an upstream reference `-u` if "Pull" and "Push" buttons are greyed out in RStudio IDE (see [this](https://www.r-bloggers.com/things-i-forget-pushpull-greyed-out-in-rstudio) post on R-bloggers).
+
+```{git}
+# Publish to GitHub
+git push origin master
+
+# Add an upstream reference
+git push -u origin master
+```
+
+## [Git checkout](https://git-scm.com/docs/git-checkout)
+
+Switch branches with the `git checkout` command. 
+
+```{git}
+# Create a new branch and switch to it
+git checkout -b [name of branch]
+
+# Switch back to master
+git checkout master
+```
+
+## [Git branch](https://git-scm.com/docs/git-branch)
+
+List, create, or delete branches with the `git branch` command. 
+
+```{git}
+# Delete local branch
+git branch -d [name of branch]
+
+# Delete remote branch
+git branch -dr origin/[name of branch]
+```
+
+## [Git status](https://git-scm.com/docs/git-status)
+
+Show changes made, untracked files, etc. with the `git status` command.  
+
+```{git}
+# Show the working tree status
+git status
+```
+
+## [Untrack a file](https://git-scm.com/docs/git-rm)
+
+Remove a file from just the index with `git rm`. 
+
+```{git}
+git rm --cached [filename]
+```
+
+## [List tracked files](https://git-scm.com/docs/git-ls-files)
+
+Show information about files in the index and the working tree with the `git ls-files` command. 
+
+```{git}
+git ls-files
+```
+
+
