@@ -8,9 +8,10 @@ tags:
   - r
   - git
   - rstudio
+summary: "This blog post contains basic setup and use of Git and GitHub together with the RStudio IDE."
 ---
 
-This blog post contains some basic setup and use of Git and GitHub together with the RStudio IDE. 
+This blog post contains basic setup and use of Git and GitHub together with the RStudio IDE. 
 
 ## Setup Git with RStudio/SSH
 
