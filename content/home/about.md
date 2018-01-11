@@ -40,9 +40,9 @@ weight = 1
 
 # About me
 
-My name is Samuel Bohman and I am studying for my doctoral degree in computer science at Stockholm University. I primarily rely on R as my data science workbench. 
+My name is Samuel Bohman and I am studying for my doctoral degree in computer science at Stockholm University. 
 
-However, I am constantly expanding my toolset with new languages and technologies. Currently I have my eyes on Python and GPU accelerated machine learning with NVIDIA Cuda. 
+I primarily rely on R as my data science workbench. However, I am constantly expanding my toolset with new languages and technologies. Currently I have my eyes on Python and GPU accelerated machine learning with NVIDIA Cuda. 
 
 This is my personal website where you will find blog posts, articles, projects, and tutorials. 
 
