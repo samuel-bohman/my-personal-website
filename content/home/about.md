@@ -40,7 +40,7 @@ weight = 1
 
 # About me
 
-My name is Samuel Bohman and I am studying for my doctoral degree in computer science at Stockholm University. This is my personal website where you will find blog posts, articles, projects, and tutorials. 
+My name is Samuel Bohman and I am studying for my doctoral degree in computer science at Stockholm University. I primarily rely on R as my data science workbench, but I am always on the lookout for new languages and tech that will expand my toolset. Currently I have my eyes on Python and GPU accelerated machine learning with NVIDIA Cuda. This is my personal website where you will find blog posts, articles, projects, and tutorials. 
 
 {{< figure src="http://www.codewars.com/users/samuel303/badges/micro" link="https://www.codewars.com/users/samuel303">}}
 
