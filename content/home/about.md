@@ -12,9 +12,12 @@ weight = 1
 # List your academic interests.
 [interests]
   interests = [
-    "Statistical Computing",
+    "Statistical Programming",
     "Machine Learning",
-    "Data Visualization"
+    "Data Visualization",
+    "Literate Programming",
+    "Scientific Communication",
+    "Reproducible Research"
   ]
 
 # List your qualifications (such as academic degrees).
