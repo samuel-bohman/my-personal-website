@@ -12,12 +12,9 @@ weight = 1
 # List your academic interests.
 [interests]
   interests = [
-    "Statistical Programming",
+    "Statistics",
     "Machine Learning",
-    "Data Visualization",
-    "Literate Programming",
-    "Scientific Communication",
-    "Reproducible Research"
+    "Data Visualization"
   ]
 
 # List your qualifications (such as academic degrees).
@@ -40,11 +37,7 @@ weight = 1
 
 # About me
 
-My name is Samuel Bohman and I am studying for my doctoral degree in computer science at Stockholm University. 
-
-I primarily rely on R as my data science workbench. However, I am constantly expanding my toolset with new languages and technologies. Currently I have my eyes on Python and GPU accelerated machine learning with NVIDIA Cuda. 
-
-This is my personal website where you will find blog posts, articles, projects, and tutorials. 
+I am studying for my doctoral degree at Stockholm University in the department of Computer and Systems Sciences. I primarily rely on R as my data science workbench. This is my personal website where you will find blog posts, articles, projects, and tutorials. 
 
 {{< figure src="http://www.codewars.com/users/samuel303/badges/micro" link="https://www.codewars.com/users/samuel303">}}
 
