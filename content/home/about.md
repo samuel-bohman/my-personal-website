@@ -19,17 +19,17 @@ weight = 1
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Computer and Systems Sciences"
+  course = "Ph.D. in Computer and Systems Sciences"
   institution = "Stockholm University"
-  year = 2018
+  year = 2019
 
 [[education.courses]]
-  course = "MSc in Decision, Risk, and Policy Analysis"
+  course = "M.S. in Decision Support and Risk Analysis"
   institution = "Stockholm University"
   year = 2009
 
 [[education.courses]]
-  course = "BSc in Economic History, Economics, and Statistics"
+  course = "B.S. in Economic History with minors in Economics, Statistics, and Psychology"
   institution = "Stockholm University"
   year = 2007
  
