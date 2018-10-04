@@ -62,4 +62,4 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/e
 export CUDA_HOME=/usr/local/cuda
 ```
 
-Save and close it. Now CUDA and cuDNN are installed and ready to go. If this post was helpful to you, please comment below!
+Save and close it. Now CUDA and cuDNN are installed and ready to go. 

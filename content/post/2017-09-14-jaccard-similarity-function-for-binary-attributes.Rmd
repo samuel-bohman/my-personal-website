@@ -86,4 +86,3 @@ df3
 jaccard(df3, 1)
 ```
 
-Enjoy! `r emo::ji("smile")`

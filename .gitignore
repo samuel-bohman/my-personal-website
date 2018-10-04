@@ -16,6 +16,9 @@
 
 # RStudio files
 .Rproj.user
+.Rhistory
+.Ruserdata
+*.Rproj
 
 # produced vignettes
 vignettes/*.html
@@ -35,5 +38,3 @@ vignettes/*.pdf
 # Hugo
 blogdown
 public
-
-*.Rproj

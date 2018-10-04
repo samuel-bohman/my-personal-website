@@ -4,7 +4,6 @@ author: Samuel Bohman
 date: "2017-10-03"
 tags: 
   - r
-  - r-packages 
 slug: which-package-a-dataset-comes-from
 output: blogdown::html_page
 summary: "Have you ever wondered where a particular dataset is coming from?"

@@ -4,7 +4,6 @@ author: Samuel Bohman
 date: "2017-10-03"
 tags: 
   - r
-  - r-packages 
 slug: which-package-a-dataset-comes-from
 output: blogdown::html_page
 summary: "Have you ever wondered where a particular dataset is coming from?"
@@ -19,17 +18,11 @@ summary: "Have you ever wondered where a particular dataset is coming from?"
 }
 
 datasearch(&quot;gold&quot;)</code></pre>
-<pre><code>##      Package     Item                                           Title
-## 276     alr3   jevons                          Jevon&#39;s gold coin data
-## 363     alr4   jevons                          Jevon&#39;s gold coin data
-## 2569  popbio hudsonia Projection matrices for mountain golden heather
-## 3066     TSA     gold                        Gold Price / time series</code></pre>
+<pre><code>##      Package Item                     Title
+## 225 forecast gold Daily morning gold prices</code></pre>
 <pre class="r"><code>datasearch(&quot;1982&quot;)</code></pre>
-<pre><code>##      Package     Item                                    Title
-## 174      AER PSID1982                  PSID Earnings Data 1982
-## 175      AER PSID7682     PSID Earnings Panel Data (1976-1982)
-## 2418  mlmRev    Hsb82            High School and Beyond - 1982
-## 2562   poLCA    gss82 1982 General Social Survey (sample data)</code></pre>
+<pre><code>## [1] Package Item    Title  
+## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
 <p>At the moment, the function only searches the packages that are available on the local computer, not on <a href="https://cran.r-project.org/">CRAN</a> or <a href="https://github.com/">GitHub</a>.</p>
 <p>Also useful:</p>
 <pre class="r"><code># list of datasets in a particular package

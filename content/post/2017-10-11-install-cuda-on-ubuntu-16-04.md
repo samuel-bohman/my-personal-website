@@ -176,7 +176,3 @@ Running the `bandwidthTest` program ensures that the system and the CUDA-capable
 ```
 
 The important point is that you obtain measurements, and that the second-to-last line (`Result = PASS`) confirms that all necessary tests passed. Finally done!
-
-If this post was helpful to you, please comment below! 
-
-Cheers `r emo::ji("smile")`  

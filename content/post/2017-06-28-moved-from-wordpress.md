@@ -30,4 +30,3 @@ For more detailed information and tutorials, I suggest the following resources:
 - [Migrating a blog (yes, this one!) from Wordpress to Hugo](http://justindunham.net/migrating-from-wordpress-to-hugo/) by Justin Dunham  
 - [The GitHub organization "rbind"](https://support.rbind.io/about/) 
 
-Enjoy! `r emo::ji("smile")`

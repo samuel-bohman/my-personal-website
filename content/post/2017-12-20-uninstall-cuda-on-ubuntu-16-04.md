@@ -30,7 +30,3 @@ sudo apt-get install cuda
 sudo apt autoremove
 export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
 ```
-
-If this post was helpful to you, please comment below! 
-
-Cheers!  

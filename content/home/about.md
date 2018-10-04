@@ -13,8 +13,8 @@ weight = 1
 [interests]
   interests = [
     "Statistics",
-    "Machine Learning",
-    "Data Visualization"
+    "Machine learning",
+    "Data visualization"
   ]
 
 # List your qualifications (such as academic degrees).
@@ -24,12 +24,12 @@ weight = 1
   year = 2019
 
 [[education.courses]]
-  course = "M.S. in Decision Support and Risk Analysis"
+  course = "M.Sc. in Decision, Risk and Policy Analysis"
   institution = "Stockholm University"
   year = 2009
 
 [[education.courses]]
-  course = "B.S. in Economic History with minors in Economics, Statistics, and Psychology"
+  course = "B.Sc. in Economic History with minors in Economics, Statistics, and Psychology"
   institution = "Stockholm University"
   year = 2007
  
@@ -37,7 +37,7 @@ weight = 1
 
 # About me
 
-I am studying for my doctoral degree at Stockholm University in the department of Computer and Systems Sciences. I primarily rely on R as my data science workbench. This is my personal website where you will find blog posts, articles, projects, and tutorials. 
+I am studying for my doctoral degree at Stockholm University in the department of Computer and Systems Sciences. I primarily rely on R as my data science workbench. This is my personal website where you will find blog posts, articles, projects, and tutorials.  
 
 {{< figure src="http://www.codewars.com/users/samuel303/badges/micro" link="https://www.codewars.com/users/samuel303">}}
 

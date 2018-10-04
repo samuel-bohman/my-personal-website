@@ -56,5 +56,3 @@ Some of the algorithmic properties of k-means are:
 - Finds a local optimum; often converges quickly  
 - Guaranteed to converge after at most $K^N$ iterations  
 - Choice of initial points can have a large influence on the result  
-
-Cheers! `r emo::ji("smile")`
