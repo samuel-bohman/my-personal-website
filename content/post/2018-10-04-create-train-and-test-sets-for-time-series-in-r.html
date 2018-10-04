@@ -13,7 +13,7 @@ summary: "Prepare a train and a test set for time series with the forecast packa
 
 
 
-<p>The <a href="http://pkg.robjhyndman.com/forecast/">forecast</a> package by Rob Hyndman supports since version 8.0 <code>head</code> and <code>tail</code> for time series. This enables a very handy mechanism for creating train and test sets without the <code>window</code> or the <code>subset</code> function. All you need is to provide the size of the train set, as exemplified below.</p>
+<p>The <a href="http://pkg.robjhyndman.com/forecast/">forecast</a> package by Rob Hyndman supports since version 8.0 <code>head</code> and <code>tail</code> for time series. This enables a very handy mechanism for creating train and test sets without the <code>window</code> or the <code>subset</code> function. All you need is to provide the size of the train set, as exemplified below with the built-in AirPassengers dataset.</p>
 <pre class="r"><code>library(forecast)
 train &lt;- head(AirPassengers, round(length(AirPassengers) * 0.8))
 h &lt;- length(AirPassengers) - length(train)
