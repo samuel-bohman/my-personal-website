@@ -28,7 +28,7 @@ train2 <- head(AirPassengers, round(length(AirPassengers) - h2))
 test2 <- tail(AirPassengers, h2)
 ```
 
-Check that they are identical:
+Test that they are identical:
 
 ```{r}
 identical(train, train2)
@@ -36,13 +36,19 @@ identical(test, test2)
 identical(h, h2)
 ```
 
+Inspect train: 
+
 ```{r}
 train
 ```
 
+Inspect test: 
+
 ```{r}
 test
 ```
+
+Plot train and test: 
 
 ```{r}
 autoplot(train) + autolayer(test)
