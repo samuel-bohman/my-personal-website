@@ -11,39 +11,41 @@ tags:
 summary: "Prepare a train and a test set for time series with the forecast package."
 ---
 
-The [forecast](http://pkg.robjhyndman.com/forecast/) package by Rob Hyndman supports since version 8.0 `head` and `tail` for time series. This enables a very handy mechanism for creating train and test sets without the `window` or the `subset` function. All you have to do is provide the size of the train set, as exemplified below with the built-in AirPassengers dataset. 
+The [forecast](http://pkg.robjhyndman.com/forecast/) package by Rob Hyndman supports since version 8.0 `head` and `tail` for time series. This enables a very handy mechanism for creating train and test sets without the `window` or the `subset` function. All you have to do is provide the size of the training set, as exemplified in the code below. 
 
 ```{r}
 library(forecast)
-train1 <- head(AirPassengers, round(length(AirPassengers) * 0.8))
-h1 <- length(AirPassengers) - length(train1)
-test1 <- tail(AirPassengers, h1)
+train <- head(AirPassengers, round(length(AirPassengers) * 0.6))
+h <- length(AirPassengers) - length(train)
+test <- tail(AirPassengers, h)
 ```
 
 Alternatively, you can provide the length of the forecast horizon:
 
 ```{r}
-h2 <- 29L
+h2 <- 58L
 train2 <- head(AirPassengers, round(length(AirPassengers) - h2))
 test2 <- tail(AirPassengers, h2)
 ```
 
+Check that they are identical:
+
 ```{r}
-identical(train1, train2)
-identical(test1, test2)
-identical(h1, h2)
+identical(train, train2)
+identical(test, test2)
+identical(h, h2)
 ```
 
 ```{r}
-train1
+train
 ```
 
 ```{r}
-test1
+test
 ```
 
 ```{r}
-autoplot(train1) + autolayer(test1)
+autoplot(train) + autolayer(test)
 ```
 
 ## Links
