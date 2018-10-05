@@ -15,10 +15,20 @@ summary: "Prepare a train and a test set for time series with the forecast packa
 
 <p>The <a href="http://pkg.robjhyndman.com/forecast/">forecast</a> package by Rob Hyndman supports since version 8.0 <code>head</code> and <code>tail</code> for time series. This enables a very handy mechanism for creating train and test sets without the <code>window</code> or the <code>subset</code> function. All you have to do is provide the size of the train set, as exemplified below with the built-in AirPassengers dataset.</p>
 <pre class="r"><code>library(forecast)
-train &lt;- head(AirPassengers, round(length(AirPassengers) * 0.8))
-h &lt;- length(AirPassengers) - length(train)
-test &lt;- tail(AirPassengers, h)</code></pre>
-<pre class="r"><code>train</code></pre>
+train1 &lt;- head(AirPassengers, round(length(AirPassengers) * 0.8))
+h1 &lt;- length(AirPassengers) - length(train1)
+test1 &lt;- tail(AirPassengers, h1)</code></pre>
+<p>Alternatively, you can provide the length of the forecast horizon:</p>
+<pre class="r"><code>h2 &lt;- 29L
+train2 &lt;- head(AirPassengers, round(length(AirPassengers) - h2))
+test2 &lt;- tail(AirPassengers, h2)</code></pre>
+<pre class="r"><code>identical(train1, train2)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>identical(test1, test2)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>identical(h1, h2)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>train1</code></pre>
 <pre><code>##      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
 ## 1949 112 118 132 129 121 135 148 148 136 119 104 118
 ## 1950 115 126 141 135 125 149 170 170 158 133 114 140
@@ -30,13 +40,13 @@ test &lt;- tail(AirPassengers, h)</code></pre>
 ## 1956 284 277 317 313 318 374 413 405 355 306 271 306
 ## 1957 315 301 356 348 355 422 465 467 404 347 305 336
 ## 1958 340 318 362 348 363 435 491</code></pre>
-<pre class="r"><code>test</code></pre>
+<pre class="r"><code>test1</code></pre>
 <pre><code>##      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
 ## 1958                             505 404 359 310 337
 ## 1959 360 342 406 396 420 472 548 559 463 407 362 405
 ## 1960 417 391 419 461 472 535 622 606 508 461 390 432</code></pre>
-<pre class="r"><code>autoplot(train) + autolayer(test)</code></pre>
-<p><img src="/post/2018-10-04-create-train-and-test-sets-for-time-series-in-r_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>autoplot(train1) + autolayer(test1)</code></pre>
+<p><img src="/post/2018-10-04-create-train-and-test-sets-for-time-series-in-r_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <div id="links" class="section level2">
 <h2>Links</h2>
 <p><a href="https://robjhyndman.com/hyndsight/forecast8/" class="uri">https://robjhyndman.com/hyndsight/forecast8/</a></p>

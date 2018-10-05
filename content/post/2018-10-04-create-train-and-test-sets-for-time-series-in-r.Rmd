@@ -15,21 +15,35 @@ The [forecast](http://pkg.robjhyndman.com/forecast/) package by Rob Hyndman supp
 
 ```{r}
 library(forecast)
-train <- head(AirPassengers, round(length(AirPassengers) * 0.8))
-h <- length(AirPassengers) - length(train)
-test <- tail(AirPassengers, h)
+train1 <- head(AirPassengers, round(length(AirPassengers) * 0.8))
+h1 <- length(AirPassengers) - length(train1)
+test1 <- tail(AirPassengers, h1)
+```
+
+Alternatively, you can provide the length of the forecast horizon:
+
+```{r}
+h2 <- 29L
+train2 <- head(AirPassengers, round(length(AirPassengers) - h2))
+test2 <- tail(AirPassengers, h2)
 ```
 
 ```{r}
-train
+identical(train1, train2)
+identical(test1, test2)
+identical(h1, h2)
 ```
 
 ```{r}
-test
+train1
 ```
 
 ```{r}
-autoplot(train) + autolayer(test)
+test1
+```
+
+```{r}
+autoplot(train1) + autolayer(test1)
 ```
 
 ## Links
