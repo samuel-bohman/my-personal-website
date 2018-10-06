@@ -12,8 +12,9 @@ weight = 1
 # List your academic interests.
 [interests]
   interests = [
-    "Statistics",
+    "Computational statistics",
     "Machine learning",
+    "Time series analysis",
     "Data visualization"
   ]
 
@@ -29,7 +30,7 @@ weight = 1
   year = 2009
 
 [[education.courses]]
-  course = "B.Sc. in Economic History with minors in Economics, Statistics, and Psychology"
+  course = "B.Sc. in Economic History, Economics, Statistics"
   institution = "Stockholm University"
   year = 2007
  
@@ -37,7 +38,7 @@ weight = 1
 
 # About me
 
-I am studying for my doctoral degree at Stockholm University in the department of Computer and Systems Sciences. I primarily rely on R as my data science workbench. This is my personal website where you will find blog posts, articles, projects, and tutorials.  
+Hi, my name is Samuel and I am studying for my doctoral degree at Stockholm University in the department of Computer and Systems Sciences. This is my personal website where you will find blog posts, articles, projects, and tutorials.  
 
 {{< figure src="http://www.codewars.com/users/samuel303/badges/micro" link="https://www.codewars.com/users/samuel303">}}
 

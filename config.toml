@@ -34,7 +34,7 @@ defaultContentLanguageInSubdir = false
 
   # Your details.
   name = "Samuel Bohman"
-  role = "PhD student"
+  role = "Ph.D. Student"
   
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
@@ -46,7 +46,7 @@ defaultContentLanguageInSubdir = false
   address = "Borgarfjordsgatan 12 (Nodhuset), Campus Kista"
   office_hours = "email for appointment"
   phone = "08-16 20 00"
-  skype = "samuel.bohman"
+  # skype = "samuel.bohman"
   twitter = "samuelbohman"
   github = "samuel-bohman"
   telegram = ""

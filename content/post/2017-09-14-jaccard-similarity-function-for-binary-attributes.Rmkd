@@ -1,0 +1,88 @@
+---
+title: Jaccard similarity for binary attributes
+author: Samuel Bohman
+date: '2017-09-14'
+tags:
+  - r
+  - jaccard-similarity
+  - jaccard-distance
+slug: jaccard-similarity-for-binary-attributes
+output:
+  blogdown::html_page
+summary: "In this blog post I describe an R function for calculating the Jaccard similarity for binary attributes."
+---
+
+## Introduction
+
+The Jaccard similarity is a distance function which measures the similarity between two sets of data. In the simplest case where we have  binary attributes, meaning the attributes are either 0 or 1, true or false, etc., the Jaccard similarity is equal to the intersection of A and B divided by their union: 
+
+$$
+J_S(A, B) = \frac{|A \cap B|}{|A \cup B|} = \frac{|A \cap B|}{|A| + |B| - |A \cap B|}
+$$
+
+The complement to the Jaccard similarity is the Jaccard distance and it measures dissimilarity between two sets: 
+
+$$
+J_D(A, B) = 1 - J_S(A, B)
+$$
+
+### Example 
+
+For example, Assume we have two vectors A and B. To calculate the Jaccard similarity we use the following formula: 
+
+$$
+J = \frac{M_{11}}{M_{01} + M_{10} + M_{11}}
+$$
+
+In other words, the Jaccard similarity coefficient measures the number of attributes where A and B are both 1, divided by the number of attributes where A and B are dissimilar, plus the number of attributes where they are both 1. 
+
+{{% alert note %}}
+Notice that the Jaccard similarity does not include the combination where they are both 0. An alternative measure is the Single Matching Coefficient (SMC) which takes this combination into account. 
+{{% /alert %}}
+
+## The Function `jaccard.R`
+
+The function calcuates the Jaccard similarity and the Jaccard distance for binary attributes. It takes two arguments: `x` a dataframe or matrix object, and `m` the `MARGIN` argument used in the `apply` function. If your data is in long format set `m = 1` to apply `sum` over the rows. Conversely, If your data is in wide format set `m = 2` to apply `sum` over the columns. Logical vectors work too. 
+
+```{r, echo = FALSE}
+blogdown::shortcode("gist", "samuel-bohman", "e0df06467661da6023a4eab6ab06e791")
+```
+
+## Examples
+
+Data in long format: 
+
+```{r}
+df1 <- data.frame(
+  IDS = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 0), 
+  CESD = c(1, 1, 1, 0, 1, 1, 0, 0, 0, 0))
+head(df1)
+```
+
+```{r}
+source("jaccard.R")
+jaccard(df1, 1)
+```
+
+Data in wide format: 
+
+```{r}
+df2 <- data.frame(Q1 = c(1L, 0L), Q2 = c(0L, 1L), Q3 = c(0L, 1L), Q4 = c(1L, 0L), Q5 = c(1L, 1L))
+df2
+```
+
+```{r}
+jaccard(df2, 2)
+```
+
+Logical vectors work too: 
+
+```{r}
+df3 <- data.frame(A = c(TRUE, TRUE, TRUE), B = c(TRUE, TRUE, FALSE))
+df3
+```
+
+```{r}
+jaccard(df3, 1)
+```
+
