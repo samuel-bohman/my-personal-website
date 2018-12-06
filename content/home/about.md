@@ -25,7 +25,7 @@ weight = 1
   year = 2019
 
 [[education.courses]]
-  course = "M.Sc. in Decision, Risk and Policy Analysis"
+  course = "M.Sc. in Computer and Systems Sciences"
   institution = "Stockholm University"
   year = 2009
 
