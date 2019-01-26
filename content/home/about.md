@@ -39,7 +39,7 @@ weight = 1
 
 # About me
 
-Hi, my name is Samuel and I'm studying for my doctoral degree at Stockholm University in the Department of Computer and Systems Sciences. This is my personal website where you will find blog posts, articles, projects, tutorials, and notes. 
+Hi, my name is Samuel and I'm studying for my doctoral degree at Stockholm University in the Department of Computer and Systems Sciences. This is my personal website where you will find blog posts, articles, projects, tutorials, and notes.  
 
 {{< figure src="http://www.codewars.com/users/samuel303/badges/micro" link="https://www.codewars.com/users/samuel303">}}
 
