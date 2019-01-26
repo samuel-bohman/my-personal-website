@@ -21,7 +21,7 @@ datasearch("gold")
 ```
 
 ```{r, warning = FALSE}
-datasearch("1982")
+datasearch("beer")
 ```
 
 At the moment, the function only searches the packages that are available on the local computer, not on [CRAN](https://cran.r-project.org/) or [GitHub](https://github.com/).
@@ -30,6 +30,6 @@ Also useful:
 
 ```{r}
 # list of datasets in a particular package
-data(package = "ggplot2")
+try(data(package = "ggplot2"))
 ```
 
